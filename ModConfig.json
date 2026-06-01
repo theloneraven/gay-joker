@@ -2,9 +2,9 @@
   "ModId": "p5rpc.BiJoker.events",
   "ModName": "Gay Joker",
   "ModAuthor": "Alive_Neptuna, theloneraven, oceanstuck",
-  "ModVersion": "2.0.0",
+  "ModVersion": "1.2.3",
   "ModDescription": "Romance the guys",
-  "ModDll": "",
+  "ModDll": "RemixToolkit.HostMod.dll",
   "ModIcon": "",
   "ModR2RManagedDll32": "",
   "ModR2RManagedDll64": "",
@@ -18,6 +18,15 @@
   "PluginData": {
     "GitHubDependencies": {
       "IdToConfigMap": {
+        "p5rpc.bustupparam.merging": {
+          "Config": {
+            "UserName": "DeathChaos25",
+            "RepositoryName": "p5rpc.bustupparam.merging",
+            "UseReleaseTag": true,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "p5rpc.bustupparam.merging.ReleaseMetadata.json"
+        },
         "p5rpc.modloader": {
           "Config": {
             "UserName": "Sewer56",
@@ -27,23 +36,23 @@
           },
           "ReleaseMetadataName": "p5rpc.modloader.ReleaseMetadata.json"
         },
-        "p5rpc.lib": {
+        "RemixToolkit.Reloaded": {
           "Config": {
-            "UserName": "AnimatedSwine37",
-            "RepositoryName": "p5rpc.lib",
-            "UseReleaseTag": true,
+            "UserName": "RyoTune",
+            "RepositoryName": "RemixToolkit",
+            "UseReleaseTag": false,
             "AssetFileName": "Mod.zip"
           },
-          "ReleaseMetadataName": "p5rpc.lib.ReleaseMetadata.json"
+          "ReleaseMetadataName": "RemixToolkit.Reloaded.ReleaseMetadata.json"
         },
-        "reloaded.sharedlib.hooks": {
+        "crifs.v2.hook": {
           "Config": {
             "UserName": "Sewer56",
-            "RepositoryName": "Reloaded.SharedLib.Hooks.ReloadedII",
-            "UseReleaseTag": true,
-            "AssetFileName": "reloaded.sharedlib.hooks.zip"
+            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
           },
-          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
+          "ReleaseMetadataName": "CriFs.V2.Hook.ReleaseMetadata.json"
         },
         "Reloaded.Memory.SigScan.ReloadedII": {
           "Config": {
@@ -54,6 +63,24 @@
           },
           "ReleaseMetadataName": "Reloaded.Memory.SigScan.ReloadedII.ReleaseMetadata.json"
         },
+        "reloaded.sharedlib.hooks": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "Reloaded.SharedLib.Hooks.ReloadedII",
+            "UseReleaseTag": true,
+            "AssetFileName": "reloaded.sharedlib.hooks.zip"
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
+        },
+        "p5rpc.lib": {
+          "Config": {
+            "UserName": "AnimatedSwine37",
+            "RepositoryName": "p5rpc.lib",
+            "UseReleaseTag": true,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "p5rpc.lib.ReleaseMetadata.json"
+        },
         "CriFs.V2.Hook.Awb": {
           "Config": {
             "UserName": "Sewer56",
@@ -62,15 +89,6 @@
             "AssetFileName": "Mod.zip"
           },
           "ReleaseMetadataName": "CriFs.V2.Hook.Awb.ReleaseMetadata.json"
-        },
-        "crifs.v2.hook": {
-          "Config": {
-            "UserName": "Sewer56",
-            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
-            "UseReleaseTag": false,
-            "AssetFileName": "Mod.zip"
-          },
-          "ReleaseMetadataName": "CriFs.V2.Hook.ReleaseMetadata.json"
         },
         "reloaded.universal.fileemulationframework.pak": {
           "Config": {
@@ -173,8 +191,10 @@
   },
   "IsUniversalMod": false,
   "ModDependencies": [
+    "p5rpc.bustupparam.merging",
     "p5rpc.misc.maleromanceconftext",
-    "p5rpc.modloader"
+    "p5rpc.modloader",
+    "RemixToolkit.Reloaded"
   ],
   "OptionalDependencies": [],
   "SupportedAppId": [
