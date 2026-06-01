@@ -1,0 +1,3 @@
+e511_561.EVT
+e511_561.ECS
+../../../event_data/message/e100/e511_561.bmd

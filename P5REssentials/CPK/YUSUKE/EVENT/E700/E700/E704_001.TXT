@@ -1,0 +1,4 @@
+e704_001.EVT
+e704_001.ECS
+../../../event_data/message/e700/e704_001.bmd
+../../../event_data/script/e800/e800_004.bf

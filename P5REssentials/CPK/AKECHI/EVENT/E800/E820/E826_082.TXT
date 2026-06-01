@@ -1,0 +1,4 @@
+e826_082.EVT
+e826_082.ECS
+../../../event_data/message/e800/e826_082.bmd
+../../../event_data/script/e800/e826_082.bf

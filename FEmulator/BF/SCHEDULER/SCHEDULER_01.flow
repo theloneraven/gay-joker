@@ -1,0 +1,251 @@
+void RYUJI_RANKUP_INVITE_CHAT_hook()
+{
+    int var49;
+    int var50;
+
+    if (BIT_CHK(3735) == 1)
+    {
+        return;
+    }
+
+    var49 = CMM_GET_LV(GET_INVITE_WORK(1));
+    var50 = -1;
+
+    if ((var49 == 4) && (CHK_DAYS_STARTEND(4, 9, 5, 1) == 1))
+    {
+        return;
+    }
+
+
+    if ((var49 >= 1) && (var49 <= 5))
+    {
+        var50 = (474 + var49);
+    }
+    else if (var49 == 6)
+    {
+        return;
+    }
+    else if ((var49 >= 7) && (var49 <= 8))
+    {
+        var50 = (474 + var49);
+    }
+    else if (var49 == 9)
+    {
+
+        if (BIT_CHK(3785) == 1)
+        {
+            var50 = 1404;
+        }
+        else
+        {
+            var50 = 483;
+        }
+
+    }
+
+
+    if (var50 >= 0)
+    {
+        CALL_CHAT_ARRIVAL(var50);
+        BIT_ON(4071);
+        BIT_ON(4358);
+        SET_COUNT(51, (GET_COUNT(51) + 1));
+    }
+
+}
+
+
+// Procedure Index: 423
+void YUSUKE_RANKUP_INVITE_CHAT_hook()
+{
+    int var39;
+    int var40;
+
+    if (BIT_CHK(3732) == 1)
+    {
+        return;
+    }
+
+    var39 = CMM_GET_LV(GET_INVITE_WORK(1));
+    var40 = -1;
+
+    if (var39 == 5)
+    {
+
+        if (BIT_CHK(3870) == 1)
+        {
+            return;
+        }
+
+    }
+    else if (var39 == 9)
+    {
+
+        if (BIT_CHK(3789) == 1)
+        {
+            var40 = 1401;
+        }
+        else
+        {
+            var40 = 440;
+        }
+
+    }
+
+
+    if ((var39 >= 1) && (var39 <= 8))
+    {
+        var40 = (431 + var39);
+    }
+
+
+    if (var40 >= 0)
+    {
+        CALL_CHAT_ARRIVAL(var40);
+        BIT_ON(4068);
+        BIT_ON(4355);
+        SET_COUNT(51, (GET_COUNT(51) + 1));
+    }
+
+}
+
+
+// Procedure Index: 314
+void MISHIMA_RANKUP_INVITE_CHAT_hook()
+{
+    int var67;
+    int var68;
+
+    if (BIT_CHK(3746) == 1)
+    {
+        return;
+    }
+
+
+    if (BIT_CHK(11791) == 1)
+    {
+        return;
+    }
+
+    var67 = CMM_GET_LV(GET_INVITE_WORK(1));
+    var68 = -1;
+
+    if ((var67 >= 2) && (var67 <= 4))
+    {
+        var68 = (639 + var67);
+    }
+    else if (var67 == 5)
+    {
+        var68 = 646;
+    }
+    else if (var67 == 6)
+    {
+
+        if (BIT_CHK(3978) == 1)
+        {
+            var68 = 645;
+        }
+        else if (BIT_CHK(3976) == 0)
+        {
+            var68 = 644;
+            BIT_ON(3976);
+        }
+
+    }
+    else if ((var67 >= 7) && (var67 <= 8))
+    {
+        var68 = (640 + var67);
+    }
+    else if (var67 == 9)
+    {
+
+        if (BIT_CHK(3791) == 1)
+        {
+            var68 = 1400;
+        }
+        else
+        {
+            var68 = 649;
+        }
+
+    }
+
+
+    if (var68 >= 0)
+    {
+        CALL_CHAT_ARRIVAL(var68);
+        BIT_ON(4082);
+        BIT_ON(4369);
+        SET_COUNT(51, (GET_COUNT(51) + 1));
+    }
+    else
+    {
+        return;
+    }
+
+}
+
+
+void sdl01_16_PM_D_S3_hook()
+{
+    EveryNight();
+
+    if (BIT_CHK(5293) == 1)
+    {
+        CALL_EVENT(726, 110);
+    }
+
+    KeyFree_Night();
+}
+
+
+void sdl01_18_PM_D_S3_hook()
+{
+    EveryNight();
+    KeyFree_Night();
+
+    if (BIT_CHK(3786) == 1)
+    {
+        CALL_CHAT_ARRIVAL(1316);
+    }
+
+}
+
+
+void sdl01_21_PM_D_S3_hook()
+{
+    EveryNight();
+    KeyFree_Night();
+
+    if (BIT_CHK(3786) == 1)
+    {
+        CALL_CHAT_ARRIVAL(1316);
+    }
+
+}
+
+
+void sdl01_25_PM_D_S3_hook()
+{
+    EveryNight();
+    KeyFree_Night();
+
+    if (BIT_CHK(3786) == 1)
+    {
+        CALL_CHAT_ARRIVAL(1316);
+    }
+
+}
+
+
+void sdl01_30_PM_D_S3_hook()
+{
+    EveryNight();
+    KeyFree_Night();
+
+    if (BIT_CHK(3786) == 1)
+    {
+        CALL_CHAT_ARRIVAL(1316);
+    }
+
+}

@@ -1,0 +1,4 @@
+e750_012.EVT
+e750_012.ECS
+../../../event_data/message/e700/e750_012.bmd
+../../../event_data/script/e700/e750_0012.bf

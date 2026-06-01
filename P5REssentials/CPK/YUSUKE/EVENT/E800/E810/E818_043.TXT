@@ -1,0 +1,4 @@
+e818_043.EVT
+e818_043.ECS
+../../../event_data/message/e800/e818_043.bmd
+../../../event_data/script/e800/e818_043.bf
