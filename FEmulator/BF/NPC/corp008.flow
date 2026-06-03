@@ -721,7 +721,7 @@ void SUB_BEGIN_MSG_AKECHI_THEATER_hook()
     sVar0 = -1;
 }
 
-void SUB_COOP_FIGHT_EVT_hook()
+void SUB_COOP_FIGHT_EVT()
 {
     NET_SET_NIGHT_ACTION(93);
     Fld_FadeOut_CallEvent();
@@ -799,8 +799,6 @@ void SUB_COOP_LOVERS_EVT()
     CALL_CALENDAR();
 }
 
-
-// Procedure Index: 100
 void SUB_COOP_SPOT_EVT_REV()
 {
     int selId;
@@ -1158,8 +1156,6 @@ void SUB_COOP_SPOT_EVT_REV()
 
 }
 
-
-// Procedure Index: 101
 void SUB_COOP_FIGHT_EVT()
 {
     NET_SET_NIGHT_ACTION(93);
@@ -1214,8 +1210,6 @@ void SUB_COOP_FIGHT_EVT()
     CALL_CALENDAR();
 }
 
-
-// Procedure Index: 102
 void SUB_COOP_GENERAL_EVT_REV()
 {
     NET_SET_NIGHT_ACTION(93);
