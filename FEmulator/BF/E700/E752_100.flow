@@ -1,0 +1,532 @@
+void e752_100_00_init_hook()
+{
+    int eventMinor;
+    SET_COUNT(104, 0);
+    SET_COUNT(105, 0);
+    SET_COUNT(106, 0);
+    SET_COUNT(107, 0);
+    SET_COUNT(108, 0);
+    SET_COUNT(109, 0);
+    SET_COUNT(110, 0);
+    SET_COUNT(111, 0);
+    SET_COUNT(122, 0);
+    SET_COUNT(60, 0);
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+    eventMinor = GET_COUNT(62);
+
+    // new counts for tracking guys
+    // these should all be counts whose values are invisible & irrelevant in the epilogue, eg. special action turn counters
+    SET_COUNT(199, 0);
+    SET_COUNT(200, 0);
+    SET_COUNT(201, 0);
+    
+    if (GET_COUNT(62) == 90)
+    {
+        BIT_ON(3839);
+    }
+
+    
+    if (((BIT_CHK(3794) == 1) && (CMM_GET_LV(7) == 10)) && (eventMinor != 20))
+    {
+        BIT_ON(3825);
+        SET_COUNT(104, 1);
+    }
+
+    
+    if (((BIT_CHK(3816) == 1) && (CMM_GET_LV(33) == 10)) && (eventMinor != 120))
+    {
+        BIT_ON(3834);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 2);
+        }
+        else 
+        {
+            SET_COUNT(105, 2);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3792) == 1) && (CMM_GET_LV(3) == 10)) && (eventMinor != 0))
+    {
+        BIT_ON(3826);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 3);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 3);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 3);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3793) == 1) && (CMM_GET_LV(4) == 10)) && (eventMinor != 10))
+    {
+        BIT_ON(3827);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 4);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 4);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 4);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 4);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3795) == 1) && (CMM_GET_LV(10) == 10)) && (eventMinor != 30))
+    {
+        BIT_ON(3828);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 5);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 5);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 5);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 5);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 5);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3800) == 1) && (CMM_GET_LV(18) == 10)) && (eventMinor != 80))
+    {
+        BIT_ON(3829);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 6);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 6);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 6);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 6);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 6);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 6);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3799) == 1) && (CMM_GET_LV(0x10) == 10)) && (eventMinor != 70))
+    {
+        BIT_ON(3830);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 7);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 7);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 7);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 7);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 7);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 7);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 7);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3797) == 1) && (CMM_GET_LV(14) == 10)) && (eventMinor != 50))
+    {
+        BIT_ON(3831);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 8);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 8);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 8);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 8);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 8);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 8);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 8);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 8);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3798) == 1) && (CMM_GET_LV(5) == 10)) && (eventMinor != 60))
+    {
+        BIT_ON(3832);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 9);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 9);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 9);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 9);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 9);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 9);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 9);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 9);
+        }
+        else if (GET_COUNT(122) == 0)
+        {
+            SET_COUNT(122, 9);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3796) == 1) && (CMM_GET_LV(11) == 10)) && (eventMinor != 40)) // chihaya
+    {
+        BIT_ON(3833);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 10);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 10);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 10);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 10);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 10);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 10);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 10);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 10);
+        }
+        else if (GET_COUNT(122) == 0)
+        {
+            SET_COUNT(122, 10);
+        }
+        else if (GET_COUNT(123) == 0)
+        {
+            SET_COUNT(199, 10);
+        }
+
+    }
+
+    if (BIT_CHK(3789) && CMM_GET_LV(5) == 10 && eventMinor != 12) // yusuke
+    {
+        BIT_ON(3835); // leaving a gap between this and the chihaya flag so its easier to copypaste between og and royal cheating event
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 11);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 11);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 11);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 11);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 11);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 11);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 11);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 11);
+        }
+        else if (GET_COUNT(122) == 0)
+        {
+            SET_COUNT(122, 11);
+        }
+        else if (GET_COUNT(199) == 0)
+        {
+            SET_COUNT(199, 11);
+        }
+        else if (GET_COUNT(200) == 0)
+        {
+            SET_COUNT(200, 11);
+        }
+    }
+
+    if (BIT_CHK(3785) && CMM_GET_LV(8) == 10 && eventMinor != 13) // ryuji
+    {
+        BIT_ON(3836);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 12);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 12);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 12);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 12);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 12);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 12);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 12);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 12);
+        }
+        else if (GET_COUNT(122) == 0)
+        {
+            SET_COUNT(122, 12);
+        }
+        else if (GET_COUNT(199) == 0)
+        {
+            SET_COUNT(199, 12);
+        }
+        else if (GET_COUNT(200) == 0)
+        {
+            SET_COUNT(200, 12);
+        }
+        else if (GET_COUNT(201) == 0)
+        {
+            SET_COUNT(201, 12);
+        }
+    }
+
+    if (BIT_CHK(3791) && CMM_GET_LV(19) == 10 && eventMinor != 14) // mishima
+    {
+        BIT_ON(3837);
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 13);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 13);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 13);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 13);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 13);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 13);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 13);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 13);
+        }
+        else if (GET_COUNT(122) == 0)
+        {
+            SET_COUNT(122, 13);
+        }
+        else if (GET_COUNT(199) == 0)
+        {
+            SET_COUNT(199, 13);
+        }
+        else if (GET_COUNT(200) == 0)
+        {
+            SET_COUNT(200, 13);
+        }
+        else if (GET_COUNT(201) == 0)
+        {
+            SET_COUNT(201, 13);
+        }
+    }
+
+}
+
+void e752_100_99_end_init_hook()
+{
+    SET_COUNT(104, 0);
+    SET_COUNT(105, 0);
+    SET_COUNT(106, 0);
+    SET_COUNT(107, 0);
+    SET_COUNT(108, 0);
+    SET_COUNT(109, 0);
+    SET_COUNT(110, 0);
+    SET_COUNT(111, 0);
+    SET_COUNT(122, 0);
+    SET_COUNT(60, 0);
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+
+    // new counts for tracking guys
+    SET_COUNT(199, 0);
+    SET_COUNT(200, 0);
+    SET_COUNT(201, 0);
+}
+

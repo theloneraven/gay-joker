@@ -1,0 +1,418 @@
+import("E521_019.msg");
+
+void e521_019_00_init_hook()
+{
+    int numBitches;
+    SET_COUNT(62, 0);
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    numBitches = 0;
+    
+    if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3799) && (CMM_GET_LV(0x10) == 10))
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3816) && (CMM_GET_LV(33) == 10))
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3791) && (CMM_GET_LV(19) == 10)) // mishima
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3789) && (CMM_GET_LV(5) == 10)) // yusuke
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (BIT_CHK(3785) && (CMM_GET_LV(8) == 10)) // ryuji
+    {
+        numBitches = (numBitches + 1);
+    }
+
+    
+    if (numBitches == 1)
+    {
+        BIT_ON(3824);
+    }
+
+}
+
+
+// Procedure Index: 1
+void e521_019_01_hook()
+{
+    int var2;
+    int hiddenOptions;
+    int selChoice;
+    int eventMinor;
+    sVar0 = 0;
+    var2 = -1;
+    BIT_ON(4040);
+    
+    if (BIT_CHK(3799) && (CMM_GET_LV(0x10) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(817);
+        sVar0 = 1;
+        var2 = 7;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 1);
+    }
+
+    
+    if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(815);
+        sVar0 = 1;
+        var2 = 5;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 2);
+    }
+
+    
+    if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(816);
+        sVar0 = 1;
+        var2 = 6;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 4);
+    }
+
+    
+    if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(818);
+        sVar0 = 1;
+        var2 = 8;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 8);
+    }
+
+    
+    if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(814);
+        sVar0 = 1;
+        var2 = 4;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x10);
+    }
+
+    
+    if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(813);
+        sVar0 = 1;
+        var2 = 3;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x20);
+    }
+
+    
+    if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(812);
+        sVar0 = 1;
+        var2 = 2;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x40);
+    }
+
+    
+    if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(810);
+        sVar0 = 1;
+        var2 = 0;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x80);
+    }
+
+    
+    if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(811);
+        sVar0 = 1;
+        var2 = 1;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x0100);
+    }
+
+    
+    if (BIT_CHK(3816) && (CMM_GET_LV(33) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(819);
+        sVar0 = 1;
+        var2 = 8;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x0200);
+    }
+
+    // yusuke
+    if (BIT_CHK(3789) && (CMM_GET_LV(5) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(1334);
+        sVar0 = 1;
+        var2 = 8;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x0400);
+    }
+    
+    // ryuji
+    if (BIT_CHK(3785) && (CMM_GET_LV(8) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(1335);
+        sVar0 = 1;
+        var2 = 8;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x0800);
+    }
+    
+    // mishima
+    if (BIT_CHK(3791) && (CMM_GET_LV(19) == 10))
+    {
+        e521_019_03_link_msg();
+        CALL_CHAT_DIRECT(1333);
+        sVar0 = 1;
+        var2 = 8;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x1000);
+    }
+
+    
+    if (var2 == -1)
+    {
+        selChoice = 10;
+        MSG_WND_DSP();
+        MSG_MIND(MND_003_0_0, 0);
+        MSG_WND_CLS();
+    }
+    else 
+    {
+        WAIT(15);
+        
+        if (BIT_CHK(3824) == 1)
+        {
+            MSG_WND_DSP();
+            MSG_MIND(MND_000_0_0, 0);
+            MSG_WND_CLS();
+        }
+        else 
+        {
+            MSG_WND_DSP();
+            MSG_MIND(MND_000_5_0, 0);
+            MSG_WND_CLS();
+        }
+
+        SEL_MASK(hiddenOptions);
+        selChoice = SEL_GENERIC_NOT_CANCEL(-1, SEL_001_0_0);
+    }
+
+    BIT_OFF(4040);
+    
+    if (selChoice == 0)
+    {
+        CALL_CHAT_DIRECT(817);
+        CHAT_SET_SWITCH(817, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 70;
+    }
+    else if (selChoice == 1)
+    {
+        CALL_CHAT_DIRECT(815);
+        CHAT_SET_SWITCH(815, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 50;
+    }
+    else if (selChoice == 2)
+    {
+        CALL_CHAT_DIRECT(816);
+        CHAT_SET_SWITCH(816, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 60;
+    }
+    else if (selChoice == 3)
+    {
+        CALL_CHAT_DIRECT(818);
+        CHAT_SET_SWITCH(818, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 80;
+    }
+    else if (selChoice == 4)
+    {
+        CALL_CHAT_DIRECT(814);
+        CHAT_SET_SWITCH(814, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 40;
+    }
+    else if (selChoice == 5)
+    {
+        CALL_CHAT_DIRECT(813);
+        CHAT_SET_SWITCH(813, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 30;
+    }
+    else if (selChoice == 6)
+    {
+        CALL_CHAT_DIRECT(812);
+        CHAT_SET_SWITCH(812, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 20;
+    }
+    else if (selChoice == 7)
+    {
+        CALL_CHAT_DIRECT(810);
+        CHAT_SET_SWITCH(810, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 0;
+    }
+    else if (selChoice == 8)
+    {
+        CALL_CHAT_DIRECT(811);
+        CHAT_SET_SWITCH(811, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 10;
+    }
+    else if (selChoice == 9)
+    {
+        CALL_CHAT_DIRECT(819);
+        CHAT_SET_SWITCH(819, 1);
+        BIT_ON(1288);
+        eventMinor = 120;
+    }
+    else if (selChoice == 10)
+    {
+        CALL_CHAT_DIRECT(1334);
+        CHAT_SET_SWITCH(1334, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 130;
+    }
+    else if (selChoice == 11)
+    {
+        CALL_CHAT_DIRECT(1335);
+        CHAT_SET_SWITCH(1335, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 140;
+    }
+    else if (selChoice == 12)
+    {
+        CALL_CHAT_DIRECT(1333);
+        CHAT_SET_SWITCH(1333, 1);
+        BIT_ON(1288);
+        BIT_ON(3825);
+        eventMinor = 150;
+    }
+    else 
+    {
+        eventMinor = 90;
+        BIT_ON(4041);
+    }
+
+    SET_COUNT(62, eventMinor);
+    SET_COUNT(352, eventMinor);
+}

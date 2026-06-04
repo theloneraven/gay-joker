@@ -193,6 +193,12 @@ void sdl02_13_PM_D_RE_hook()
     }
 
 
+    if (BIT_CHK(3786) && (CMM_GET_LV(19) == 10) // no actual akechi date for obvious reasons but the star will still change
+    {
+        bitchesBitfield = (bitchesBitfield + 0x2000);
+    }
+
+
     if (bitchesBitfield != 0)
     {
         CALL_EVENT(521, 19); // valentines invite r
