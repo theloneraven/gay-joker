@@ -195,7 +195,7 @@ void sdl02_13_PM_D_RE_hook()
 
     if (bitchesBitfield != 0)
     {
-        CALL_EVENT(521, 19); // valentines invite
+        CALL_EVENT(521, 19); // valentines invite r
     }
     else
     {
@@ -376,17 +376,28 @@ void sdl02_15_PM_D_hook()
         numBitches = (numBitches + 1);
     }
 
-    if (((((((((CHAT_CHECK_SWITCH(400) == 1) || (CHAT_CHECK_SWITCH(428) == 1)) || (CHAT_CHECK_SWITCH(474) == 1)) || (CHAT_CHECK_SWITCH(517) == 1)) || (CHAT_CHECK_SWITCH(520) == 1)) || (CHAT_CHECK_SWITCH(565) == 1)) || (CHAT_CHECK_SWITCH(671) == 1)) || (CHAT_CHECK_SWITCH(609) == 1)) || (CHAT_CHECK_SWITCH(672) == 1))
+    if (CHAT_CHECK_SWITCH(400)
+        || CHAT_CHECK_SWITCH(428)
+        || CHAT_CHECK_SWITCH(474)
+        || CHAT_CHECK_SWITCH(517)
+        || CHAT_CHECK_SWITCH(520)
+        || CHAT_CHECK_SWITCH(565)
+        || CHAT_CHECK_SWITCH(671)
+        || CHAT_CHECK_SWITCH(609)
+        || CHAT_CHECK_SWITCH(672)
+        || CHAT_CHECK_SWITCH(1337)  // yusuke
+        || CHAT_CHECK_SWITCH(1338)  // ryuji
+        || CHAT_CHECK_SWITCH(1336)) // mishima
     {
         wentOnDate = 1;
     }
 
-    
-    if (((var3 == 9) && (BIT_CHK(4041) == 0)) && (wentOnDate == 0))
+    // cheating event
+    if (((numBitches == 9) && (BIT_CHK(4041) == 0)) && (wentOnDate == 0))
     {
         CALL_EVENT(750, 11);
     }
-    else if ((var3 == 0) || ((var3 == 1) && (wentOnDate == 1)))
+    else if ((numBitches == 0) || ((numBitches == 1) && (wentOnDate == 1)))
     {
         SYNC();
     }
@@ -491,17 +502,29 @@ void sdl02_15_PM_D_RE_hook()
         numBitches = (numBitches + 1);
     }
 
-    if ((((((((((CHAT_CHECK_SWITCH(810) == 1) || (CHAT_CHECK_SWITCH(811) == 1)) || (CHAT_CHECK_SWITCH(812) == 1)) || (CHAT_CHECK_SWITCH(813) == 1)) || (CHAT_CHECK_SWITCH(814) == 1)) || (CHAT_CHECK_SWITCH(815) == 1)) || (CHAT_CHECK_SWITCH(816) == 1)) || (CHAT_CHECK_SWITCH(817) == 1)) || (CHAT_CHECK_SWITCH(818) == 1)) || (CHAT_CHECK_SWITCH(819) == 1))
+    if (CHAT_CHECK_SWITCH(810)
+        || CHAT_CHECK_SWITCH(811)
+        || CHAT_CHECK_SWITCH(812)
+        || CHAT_CHECK_SWITCH(813)
+        || CHAT_CHECK_SWITCH(814)
+        || CHAT_CHECK_SWITCH(815)
+        || CHAT_CHECK_SWITCH(816)
+        || CHAT_CHECK_SWITCH(817)
+        || CHAT_CHECK_SWITCH(818)
+        || CHAT_CHECK_SWITCH(819)
+        || CHAT_CHECK_SWITCH(1334)  // yusuke
+        || CHAT_CHECK_SWITCH(1335)  // ryuji
+        || CHAT_CHECK_SWITCH(1333)) // mishima
     {
         wentOnDate = 1;
     }
 
-    
-    if (((wentOnDate == 13) && (BIT_CHK(4041) == 1)) && (wentOnDate == 0))
+    // cheating event r
+    if (((numBitches == 13) && (BIT_CHK(4041) == 1)) && (wentOnDate == 0))
     {
         CALL_EVENT(752, 110);
     }
-    else if ((wentOnDate == 0) || ((wentOnDate == 1) && (wentOnDate == 1)))
+    else if ((numBitches == 0) || ((numBitches == 1) && (wentOnDate == 1)))
     {
         SYNC();
     }

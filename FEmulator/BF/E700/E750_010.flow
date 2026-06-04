@@ -1,0 +1,468 @@
+// asset ids in evt are 33 for yusuke, 34 for ryuji, 35 for mishima
+void e750_010_00_init_hook()
+{
+    int eventMinor;
+    SET_COUNT(104, 0);
+    SET_COUNT(105, 0);
+    SET_COUNT(106, 0);
+    SET_COUNT(107, 0);
+    SET_COUNT(108, 0);
+    SET_COUNT(109, 0);
+    SET_COUNT(110, 0);
+    SET_COUNT(111, 0);
+    SET_COUNT(60, 0);
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+    eventMinor = GET_COUNT(62); // minor id for which valentines date was seen
+
+    // new counts for tracking guys
+    // these should all be counts whose values are invisible & irrelevant in the epilogue, eg. special action turn counters
+    SET_COUNT(199, 0);
+    SET_COUNT(200, 0);
+    SET_COUNT(201, 0);
+    
+    if (GET_COUNT(62) == 9) // saw platonic event
+    {
+        BIT_ON(3839);
+    }
+
+    
+    if (((BIT_CHK(3794) == 1) && (CMM_GET_LV(7) == 10)) && (eventMinor != 2)) // ann
+    {
+        BIT_ON(3825); // section 1 id 753
+        SET_COUNT(104, 1);
+    }
+
+    
+    if (((BIT_CHK(3792) == 1) && (CMM_GET_LV(3) == 10)) && (eventMinor != 0)) // makoto
+    {
+        BIT_ON(3826); // section 1 id 754
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 2);
+        }
+        else 
+        {
+            SET_COUNT(105, 2);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3793) == 1) && (CMM_GET_LV(4) == 10)) && (eventMinor != 1)) // haru
+    {
+        BIT_ON(3827); // section 1 id 755
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 3);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 3);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 3);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3795) == 1) && (CMM_GET_LV(10) == 10)) && (eventMinor != 3)) // futaba
+    {
+        BIT_ON(3828); // section 1 id 756
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 4);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 4);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 4);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 4);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3800) == 1) && (CMM_GET_LV(18) == 10)) && (eventMinor != 8)) // hifumi
+    {
+        BIT_ON(3829); // section 1 id 757
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 5);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 5);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 5);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 5);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 5);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3799) == 1) && (CMM_GET_LV(16) == 10)) && (eventMinor != 7)) // ohya
+    {
+        BIT_ON(3830); // section 1 id 758
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 6);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 6);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 6);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 6);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 6);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 6);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3797) == 1) && (CMM_GET_LV(14) == 10)) && (eventMinor != 5)) // takemi
+    {
+        BIT_ON(3831); // section 1 id 759
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 7);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 7);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 7);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 7);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 7);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 7);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 7);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3798) == 1) && (CMM_GET_LV(15) == 10)) && (eventMinor != 6)) // kawakami
+    {
+        BIT_ON(3832); // section 1 id 760
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 8);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 8);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 8);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 8);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 8);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 8);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 8);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 8);
+        }
+
+    }
+
+    
+    if (((BIT_CHK(3796) == 1) && (CMM_GET_LV(11) == 10)) && (eventMinor != 4)) // chihaya
+    {
+        BIT_ON(3833); // section 1 id 761
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 9);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 9);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 9);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 9);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 9);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 9);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 9);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 9);
+        }
+        else if (GET_COUNT(199) == 0)
+        {
+            SET_COUNT(199, 9);
+        }
+    }
+
+    if (BIT_CHK(3789) && CMM_GET_LV(5) == 10 && eventMinor != 12) // yusuke
+    {
+        BIT_ON(3835); // section 1 id 763, leaving a gap between this and the chihaya flag so its easier to copypaste between og and royal cheating event
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 11);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 11);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 11);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 11);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 11);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 11);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 11);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 11);
+        }
+        else if (GET_COUNT(199) == 0)
+        {
+            SET_COUNT(199, 11);
+        }
+        else if (GET_COUNT(200) == 0)
+        {
+            SET_COUNT(200, 11);
+        }
+    }
+
+    if (BIT_CHK(3785) && CMM_GET_LV(8) == 10 && eventMinor != 13) // ryuji
+    {
+        BIT_ON(3836); // section 1 id 764
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 12);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 12);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 12);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 12);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 12);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 12);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 12);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 12);
+        }
+        else if (GET_COUNT(199) == 0)
+        {
+            SET_COUNT(199, 12);
+        }
+        else if (GET_COUNT(200) == 0)
+        {
+            SET_COUNT(200, 12);
+        }
+        else if (GET_COUNT(201) == 0)
+        {
+            SET_COUNT(201, 12);
+        }
+    }
+
+    if (BIT_CHK(3791) && CMM_GET_LV(19) == 10 && eventMinor != 14) // mishima
+    {
+        BIT_ON(3837); // section 1 id 765
+        
+        if (GET_COUNT(104) == 0)
+        {
+            SET_COUNT(104, 13);
+        }
+        else if (GET_COUNT(105) == 0)
+        {
+            SET_COUNT(105, 13);
+        }
+        else if (GET_COUNT(106) == 0)
+        {
+            SET_COUNT(106, 13);
+        }
+        else if (GET_COUNT(107) == 0)
+        {
+            SET_COUNT(107, 13);
+        }
+        else if (GET_COUNT(108) == 0)
+        {
+            SET_COUNT(108, 13);
+        }
+        else if (GET_COUNT(109) == 0)
+        {
+            SET_COUNT(109, 13);
+        }
+        else if (GET_COUNT(110) == 0)
+        {
+            SET_COUNT(110, 13);
+        }
+        else if (GET_COUNT(111) == 0)
+        {
+            SET_COUNT(111, 13);
+        }
+        else if (GET_COUNT(199) == 0)
+        {
+            SET_COUNT(199, 13);
+        }
+        else if (GET_COUNT(200) == 0)
+        {
+            SET_COUNT(200, 13);
+        }
+        else if (GET_COUNT(201) == 0)
+        {
+            SET_COUNT(201, 13);
+        }
+    }
+}
+
+void e750_010_99_end_init_hook()
+{
+    SET_COUNT(104, 0);
+    SET_COUNT(105, 0);
+    SET_COUNT(106, 0);
+    SET_COUNT(107, 0);
+    SET_COUNT(108, 0);
+    SET_COUNT(109, 0);
+    SET_COUNT(110, 0);
+    SET_COUNT(111, 0);
+    SET_COUNT(60, 0);
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+
+    // new counts for tracking guys
+    SET_COUNT(199, 0);
+    SET_COUNT(200, 0);
+    SET_COUNT(201, 0);
+}
