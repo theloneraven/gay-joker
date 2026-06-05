@@ -1,0 +1,269 @@
+import("fhit_001_004_00.msg");
+
+void SUB_KFEVT_CALL_TEL_hook()
+{
+    int bitchesBitfield;
+    int selChoice;
+    
+    if (BIT_CHK(3819) == 0)
+    {
+        SET_COUNT(62, 100);
+        MSG_WND_DSP();
+        MSG_MIND(MND_E65510400_TEL_005_00, 0);
+        MSG_WND_CLS();
+    }
+    else 
+    {
+        MSG_WND_DSP();
+        MSG(MSG_E65510400_TEL_000_00, 0);
+        MSG_WND_CLS();
+        Fld_FadeOut_CutChange();
+        BIT_ON(6161);
+        BIT_OFF(66);
+        FLD_PC_MODEL_CHANGE();
+        FLD_PC_MODEL_SET_POS(810);
+        Fld_FadeIn_Default();
+        SUB_PhonePickup();
+        MSG_WND_DSP();
+        MSG_MIND(MND_E65510400_TEL_001_00, 0);
+        MSG_WND_CLS();
+        
+        if (BIT_CHK(3799) == 0)
+        {
+            bitchesBitfield = (bitchesBitfield + 1);
+        }
+
+        
+        if (BIT_CHK(3797) == 0)
+        {
+            bitchesBitfield = (bitchesBitfield + 2);
+        }
+
+        
+        if (BIT_CHK(3798) == 0)
+        {
+            bitchesBitfield = (bitchesBitfield + 4);
+        }
+
+        
+        if (BIT_CHK(3800) == 0)
+        {
+            bitchesBitfield = (bitchesBitfield + 8);
+        }
+
+        
+        if (BIT_CHK(3796) == 0)
+        {
+            bitchesBitfield = (bitchesBitfield + 0x10);
+        }
+
+        
+        if (BIT_CHK(3795) == 0)
+        {
+            bitchesBitfield = (bitchesBitfield + 0x20);
+        }
+
+        
+        if (BIT_CHK(3794) == 0)
+        {
+            bitchesBitfield = (bitchesBitfield + 0x40);
+        }
+
+        
+        if (BIT_CHK(3792) == 0)
+        {
+            bitchesBitfield = (bitchesBitfield + 0x80);
+        }
+
+        
+        if (BIT_CHK(3793) == 0)
+        {
+            bitchesBitfield = (bitchesBitfield + 0x0100);
+        }
+
+        
+        if (BIT_CHK(3816) == 0)
+        {
+            bitchesBitfield = (bitchesBitfield + 0x0200);
+        }
+
+        
+        if (BIT_CHK(3789) == 0) // yusuke
+        {
+            bitchesBitfield = (bitchesBitfield + 0x0400);
+        }
+
+        
+        if (BIT_CHK(3785) == 0) // ryuji
+        {
+            bitchesBitfield = (bitchesBitfield + 0x0800);
+        }
+
+        
+        if (BIT_CHK(3791) == 0) // mishima
+        {
+            bitchesBitfield = (bitchesBitfield + 0x1000);
+        }
+
+        SEL_MASK(bitchesBitfield);
+        selChoice = SEL_GENERIC_NOT_CANCEL(-1, SEL_E65510400_TEL_001_00);
+        MSG_WND_CLS();
+        SUB_PhoneCall();
+        WAIT(30);
+        
+        if (selChoice == 0)
+        {
+            SET_COUNT(62, 70);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_00, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_00, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 1)
+        {
+            SET_COUNT(62, 50);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_01, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_01, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 2)
+        {
+            SET_COUNT(62, 60);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_02, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_02, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 3)
+        {
+            SET_COUNT(62, 80);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_03, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_03, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 4)
+        {
+            SET_COUNT(62, 40);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_04, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_04, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 5)
+        {
+            SET_COUNT(62, 30);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_05, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_05, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 6)
+        {
+            SET_COUNT(62, 20);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_06, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_06, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 7) // makoto
+        {
+            SET_COUNT(62, 0);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_07, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_07, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 8)
+        {
+            SET_COUNT(62, 10);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_08, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_08, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 9)
+        {
+            SET_COUNT(62, 90);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_09, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_09, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 10) // yusuke
+        {
+            SET_COUNT(62, 100);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_10, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_10, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 11) // ryuji
+        {
+            SET_COUNT(62, 110);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_11, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_11, 0);
+            MSG_WND_CLS();
+        }
+        else if (selChoice == 12) // mishima
+        {
+            SET_COUNT(62, 120);
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_002_12, 0);
+            selChoice = SEL(SEL_E65510400_TEL_002_00);
+            MSG_WND_CLS();
+            MSG_WND_DSP();
+            MSG(MSG_E65510400_TEL_003_12, 0);
+            MSG_WND_CLS();
+        }
+
+        SUB_PhoneEnd();
+        MSG_WND_DSP();
+        MSG_MIND(MND_E65510400_TEL_004_00, 0);
+        MSG_WND_CLS();
+        BIT_ON(1288);
+    }
+
+    EVT_FAST_PROC_END();
+    BIT_OFF(2305);
+    Fld_FadeOut_Subway();
+    CALL_CALENDAR();
+}
