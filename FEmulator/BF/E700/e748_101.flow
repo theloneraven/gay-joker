@@ -1,0 +1,162 @@
+import("e748_101.msg");
+
+void E748_101_01_invite_hook()
+{
+    int hiddenOptions;
+    int selChoice;
+    int eventMinor;
+    hiddenOptions = 255;
+    sVar0 = 0;
+    BIT_ON(4040);
+    
+    if (CMM_GET_LV(3) >= 9)
+    {
+        E748_101_03_link_msg();
+        CALL_CHAT_DIRECT(412);
+        hiddenOptions = (hiddenOptions - 1);
+        sVar0 = 1;
+        eventMinor = 0;
+    }
+
+    E748_101_03_link_msg();
+    CALL_CHAT_DIRECT(426);
+    hiddenOptions = (hiddenOptions - 2);
+    sVar0 = 1;
+    eventMinor = 1;
+    
+    if (CMM_GET_LV(7) >= 9)
+    {
+        E748_101_03_link_msg();
+        CALL_CHAT_DIRECT(472);
+        hiddenOptions = (hiddenOptions - 4);
+        sVar0 = 1;
+        eventMinor = 2;
+    }
+
+    
+    if (CMM_GET_LV(15) >= 10)
+    {
+        E748_101_03_link_msg();
+        CALL_CHAT_DIRECT(593);
+        hiddenOptions = (hiddenOptions - 8);
+        sVar0 = 1;
+        eventMinor = 3;
+    }
+
+    
+    if (CMM_GET_LV(8) >= 10 && !BIT_CHK(3785) && !BIT_CHK(3791)) // the guys (platonic)
+    {
+        E748_101_03_link_msg();
+        BIT_ON(3839);
+        CALL_CHAT_DIRECT(488);
+        hiddenOptions = (hiddenOptions - 16);
+        sVar0 = 1;
+        eventMinor = 4;
+    }
+
+    
+    if (BIT_CHK(3789) == 1) // yusuke
+    {
+        E748_101_03_link_msg();
+        CALL_CHAT_DIRECT(1325);
+        hiddenOptions = (hiddenOptions - 32);
+        sVar0 = 1;
+    }
+
+    
+    if (BIT_CHK(3785) == 1) // ryuji
+    {
+        E748_101_03_link_msg();
+        CALL_CHAT_DIRECT(1326);
+        hiddenOptions = (hiddenOptions - 64);
+        sVar0 = 1;
+    }
+
+    
+    if (BIT_CHK(3791) == 1) // mishima
+    {
+        E748_101_03_link_msg();
+        CALL_CHAT_DIRECT(1324);
+        hiddenOptions = (hiddenOptions - 128);
+        sVar0 = 1;
+    }
+
+    MSG_WND_DSP();
+    
+    if (hiddenOptions != 253)
+    {
+        MSG_MIND(MND_000_0_0, 0);
+        MSG_WND_CLS();
+        SEL_MASK(hiddenOptions);
+        selChoice = SEL_GENERIC_NOT_CANCEL(-1, 9);
+        BIT_OFF(4040);
+    }
+    else // only haru available
+    {
+        MSG_MIND(MND_003_0_0, 0);
+        MSG_WND_CLS();
+        BIT_OFF(4040);
+        selChoice = 1;
+    }
+
+    
+    if (selChoice == 0)
+    {
+        CALL_CHAT_DIRECT(412);
+        CHAT_SET_SWITCH(412, 1);
+        eventMinor = 0;
+        BIT_ON(1288);
+    }
+    else if (selChoice == 1)
+    {
+        CALL_CHAT_DIRECT(426);
+        CHAT_SET_SWITCH(426, 1);
+        eventMinor = 10;
+    }
+    else if (selChoice == 2)
+    {
+        CALL_CHAT_DIRECT(472);
+        CHAT_SET_SWITCH(472, 1);
+        eventMinor = 20;
+        BIT_ON(1288);
+    }
+    else if (selChoice == 3)
+    {
+        CALL_CHAT_DIRECT(593);
+        CHAT_SET_SWITCH(593, 1);
+        eventMinor = 40;
+        BIT_ON(1288);
+    }
+    else if (selChoice == 5)
+    {
+        CALL_CHAT_DIRECT(1325);
+        CHAT_SET_SWITCH(1325, 1);
+        eventMinor = 50;
+        BIT_ON(1288);
+    }
+    else if (selChoice == 6)
+    {
+        CALL_CHAT_DIRECT(1326);
+        CHAT_SET_SWITCH(1326, 1);
+        eventMinor = 60;
+        BIT_ON(1288);
+    }
+    else if (selChoice == 7)
+    {
+        CALL_CHAT_DIRECT(1324);
+        CHAT_SET_SWITCH(1324, 1);
+        eventMinor = 70;
+        BIT_ON(1288);
+    }
+    else 
+    {
+        CALL_CHAT_DIRECT(488);
+        CHAT_SET_SWITCH(488, 1);
+        eventMinor = 30;
+    }
+
+    MSG_WND_DSP();
+    MSG_MIND(MND_002_0_0, 0);
+    MSG_WND_CLS();
+    SET_COUNT(62, eventMinor);
+}
