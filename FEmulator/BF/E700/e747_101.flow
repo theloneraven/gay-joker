@@ -1,4 +1,4 @@
-import("e747_010.msg");
+import("e747_101.msg");
 
 void e747_101_01_dummy_hook()
 {
