@@ -1,0 +1,46 @@
+void chk_steady_lover____hook()
+{
+    BIT_OFF(3825);
+    
+    if (BIT_CHK(3792)
+        || BIT_CHK(3793)
+        || BIT_CHK(3794)
+        || BIT_CHK(3795)
+        || BIT_CHK(3796)
+        || BIT_CHK(3797)
+        || BIT_CHK(3798)
+        || BIT_CHK(3799)
+        || BIT_CHK(3800)
+        || BIT_CHK(3816)
+        || BIT_CHK(3789)    // yusuke
+        || BIT_CHK(3785)    // ryuji
+        || BIT_CHK(3791))   // mishima
+    {
+        BIT_ON(3825);
+    }
+}
+
+void check_lovers_quarrel_hook()
+{
+    int eventMinor;
+    eventMinor = GET_COUNT(352); // minor id of whichever valentines event you saw
+    
+    // check if you ditched anyone on valentines
+    if ((BIT_CHK(3792) && eventMinor != 0)
+        || (BIT_CHK(3793) && eventMinor != 10)
+        || (BIT_CHK(3794) && eventMinor != 20)
+        || (BIT_CHK(3795) && eventMinor != 30)
+        || (BIT_CHK(3796) && eventMinor != 40)
+        || (BIT_CHK(3797) && eventMinor != 50)
+        || (BIT_CHK(3798) && eventMinor != 60)
+        || (BIT_CHK(3799) && eventMinor != 70)
+        || (BIT_CHK(3800) && eventMinor != 80)
+        || (BIT_CHK(3816) && eventMinor != 120)
+        || (BIT_CHK(3789) && eventMinor != 130)     // yusuke
+        || (BIT_CHK(3785) && eventMinor != 140)     // ryuji
+        || (BIT_CHK(3891) && eventMinor != 150))    // mishima
+    {
+        BIT_ON(3826);
+    }
+}
+
