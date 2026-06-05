@@ -1,0 +1,323 @@
+import("E485_340.msg");
+
+void e485_340_00_init_hook()
+{
+    SET_COUNT(62, 0);
+    BIT_OFF(3824);
+    
+    if (!(
+        (BIT_CHK(3792) && CMM_GET_LV(3) == 10)
+        || (BIT_CHK(3793) && CMM_GET_LV(4) == 10)
+        || (BIT_CHK(3789) && CMM_GET_LV(5) == 10) // yusuke
+        || (BIT_CHK(3794) && CMM_GET_LV(7) == 10)
+        || (BIT_CHK(3785) && CMM_GET_LV(8) == 10) // ryuji
+        || (BIT_CHK(3795) && CMM_GET_LV(10) == 10)
+        || (BIT_CHK(3796) && CMM_GET_LV(11) == 10)
+        || (BIT_CHK(3797) && CMM_GET_LV(14) == 10)
+        || (BIT_CHK(3798) && CMM_GET_LV(15) == 10)
+        || (BIT_CHK(3799) && CMM_GET_LV(16) == 10)
+        || (BIT_CHK(3800) && CMM_GET_LV(18) == 10)
+        || (BIT_CHK(3791) && CMM_GET_LV(19) == 10) // mishima
+      ))
+    {
+        BIT_ON(3824);
+    }
+
+}
+
+void e485_340_01_hook()
+{
+    int numBitches;
+    int hiddenOptions = 0;
+    int selChoice;
+    int eventMinor;
+    sVar0 = 0;
+    numBitches = -1;
+    BIT_ON(4040);
+    
+    if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(822);
+        sVar0 = 1;
+        numBitches = 2;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 1);
+    }
+
+    
+    if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(823);
+        sVar0 = 1;
+        numBitches = 3;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 2);
+    }
+
+    
+    if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(821);
+        sVar0 = 1;
+        numBitches = 1;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 4);
+    }
+
+    
+    if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(828);
+        sVar0 = 1;
+        numBitches = 8;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 8);
+    }
+
+    
+    if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(820);
+        sVar0 = 1;
+        numBitches = 0;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x10);
+    }
+
+    
+    if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(824);
+        sVar0 = 1;
+        numBitches = 4;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x20);
+    }
+
+    
+    if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(826);
+        sVar0 = 1;
+        numBitches = 6;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x40);
+    }
+
+    
+    if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(825);
+        sVar0 = 1;
+        numBitches = 5;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x80);
+    }
+
+    
+    if (BIT_CHK(3799) && (CMM_GET_LV(16) == 10))
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(827);
+        sVar0 = 1;
+        numBitches = 7;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x0100);
+    }
+
+    
+    if (BIT_CHK(3789) && CMM_GET_LV(5) == 10) // yusuke
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(1328);
+        sVar0 = 1;
+        numBitches = 9;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x0200);
+    }
+
+    
+    if (BIT_CHK(3785) && CMM_GET_LV(8) == 10) // ryuji
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(1329);
+        sVar0 = 1;
+        numBitches = 10;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x0400);
+    }
+
+    
+    if (BIT_CHK(3791) && CMM_GET_LV(19) == 10) // mishima
+    {
+        e485_340_03_link_msg();
+        CALL_CHAT_DIRECT(1327);
+        sVar0 = 1;
+        numBitches = 11;
+    }
+    else 
+    {
+        hiddenOptions = (hiddenOptions + 0x0800);
+    }
+
+    
+    if (numBitches == -1)
+    {
+        selChoice = 95;
+        CALL_CHAT_DIRECT(829);
+        eventMinor = 95;
+    }
+    else 
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_000_0_0, 0);
+        MSG_WND_CLS();
+        SEL_MASK(hiddenOptions);
+        selChoice = SEL_GENERIC_NOT_CANCEL(-1, 10);
+    }
+
+    BIT_OFF(4040);
+    
+    if (selChoice == 0)
+    {
+        CALL_CHAT_DIRECT(822);
+        CHAT_SET_SWITCH(822, 1);
+        BIT_ON(1288);
+        eventMinor = 20;
+    }
+    else if (selChoice == 1)
+    {
+        CALL_CHAT_DIRECT(823);
+        CHAT_SET_SWITCH(823, 1);
+        BIT_ON(1288);
+        eventMinor = 30;
+    }
+    else if (selChoice == 2)
+    {
+        CALL_CHAT_DIRECT(821);
+        CHAT_SET_SWITCH(821, 1);
+        BIT_ON(1288);
+        eventMinor = 10;
+    }
+    else if (selChoice == 3)
+    {
+        CALL_CHAT_DIRECT(828);
+        CHAT_SET_SWITCH(828, 1);
+        BIT_ON(1288);
+        eventMinor = 80;
+    }
+    else if (selChoice == 4)
+    {
+        CALL_CHAT_DIRECT(820);
+        CHAT_SET_SWITCH(820, 1);
+        BIT_ON(1288);
+        eventMinor = 0;
+    }
+    else if (selChoice == 5)
+    {
+        CALL_CHAT_DIRECT(824);
+        CHAT_SET_SWITCH(824, 1);
+        BIT_ON(1288);
+        eventMinor = 40;
+    }
+    else if (selChoice == 6)
+    {
+        CALL_CHAT_DIRECT(826);
+        CHAT_SET_SWITCH(826, 1);
+        BIT_ON(1288);
+        eventMinor = 60;
+    }
+    else if (selChoice == 7)
+    {
+        CALL_CHAT_DIRECT(825);
+        CHAT_SET_SWITCH(825, 1);
+        BIT_ON(1288);
+        eventMinor = 50;
+    }
+    else if (selChoice == 8)
+    {
+        CALL_CHAT_DIRECT(827);
+        CHAT_SET_SWITCH(827, 1);
+        BIT_ON(1288);
+        eventMinor = 70;
+    }
+    else if (selChoice == 9) // yusuke
+    {
+        CALL_CHAT_DIRECT(1328);
+        CHAT_SET_SWITCH(1328, 1);
+        BIT_ON(1288);
+        eventMinor = 120;
+    }
+    else if (selChoice == 10) // ryuji
+    {
+        CALL_CHAT_DIRECT(1329);
+        CHAT_SET_SWITCH(1329, 1);
+        BIT_ON(1288);
+        eventMinor = 100;
+    }
+    else if (selChoice == 11) // mishima
+    {
+        CALL_CHAT_DIRECT(1327);
+        CHAT_SET_SWITCH(1327, 1);
+        BIT_ON(1288);
+        eventMinor = 110;
+    }
+
+    
+    if (selChoice != 12)
+    {
+        MSG_WND_DSP();
+        
+        if (selChoice == 95)
+        {
+            MSG_MIND(MND_003_0_0, 0);
+            MSG_WND_CLS();
+        }
+        else 
+        {
+            MSG_MIND(MND_002_0_0, 0);
+            MSG_WND_CLS();
+        }
+
+        BIT_ON(6270);
+        BIT_ON(6271);
+    }
+    else 
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_003_0_0, 0);
+        MSG_WND_CLS();
+    }
+
+    SET_COUNT(62, eventMinor);
+}

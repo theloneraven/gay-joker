@@ -1,0 +1,25 @@
+[msg GENERIC_HELP_10]
+[s]Should I spend time[n]alone with Yusuke...?[n][e]
+
+[msg GENERIC_HELP_11]
+[s]Should I spend time[n]alone with Ryuji...?[n][e]
+
+[msg GENERIC_HELP_12]
+[s]Should I spend time[n]alone with Mishima...?[n][e]
+
+[msg MND_000_0_0]
+[s][vp 8 0 0 0 65535 0]Who should I spend time with?[n][f 1 3 65535][w][e]
+
+[sel SEL_001_0_0 top]
+[s]Spend time with Ann[ref 0 0][e]
+[s]Spend time with Futaba[ref 1 1][e]
+[s]Spend time with Haru[ref 2 2][e]
+[s]Spend time with Hifumi[ref 3 3][e]
+[s]Spend time with Makoto[ref 4 4][e]
+[s]Spend time with Chihaya[ref 5 5][e]
+[s]Spend time with Kawakami[ref 6 6][e]
+[s]Spend time with Takemi[ref 7 7][e]
+[s]Spend time with Ohya[ref 8 8][e]
+[s]Spend time with Yusuke[ref 9 14][e]
+[s]Spend time with Ryuji[ref 10 15][e]
+[s]Spend time with Mishima[ref 11 16][e]
