@@ -1,0 +1,44 @@
+void e434_004_MSG_LOVERS_hook()
+{
+    if ( BIT_CHK(3792) == 1 )
+    {
+        EVT_SET_LOCAL_DATA( 46, 1 );
+    }
+    else 
+    {
+        EVT_SET_LOCAL_DATA( 46, 0 );
+    }
+
+    if ( BIT_CHK(3793) == 1 )
+    {
+        EVT_SET_LOCAL_DATA( 45, 1 );
+    }
+    else 
+    {
+        EVT_SET_LOCAL_DATA( 45, 0 );
+    }
+
+    if ( BIT_CHK(3794) == 1 )
+    {
+        EVT_SET_LOCAL_DATA( 44, 1 );
+    }
+    else 
+    {
+        EVT_SET_LOCAL_DATA( 44, 0 );
+    }
+
+    if ( BIT_CHK( (3795) == 1 )
+    {
+        EVT_SET_LOCAL_DATA( 43, 1 );
+    }
+    else 
+    {
+        EVT_SET_LOCAL_DATA( 43, 0 );
+    }
+
+    if (BIT_CHK(3785)) { EVT_SET_LOCAL_DATA(41, 1); } // ryuji
+    else { EVT_SET_LOCAL_DATA(41, 0); }
+
+    if (BIT_CHK(3789)) { EVT_SET_LOCAL_DATA(42, 1); } // yusuke
+    else { EVT_SET_LOCAL_DATA(42, 0); }
+}
