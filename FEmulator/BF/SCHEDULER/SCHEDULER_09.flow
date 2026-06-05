@@ -1,1 +1,12 @@
 import("../chat_common.flow");
+
+
+void sdl09_10_PM_D_hook()
+{
+    EveryNight();
+    if (GET_COUNT(62) < 6) CALL_EVENT(319, 23);
+    CALL_EVENT(723, 65);
+    BIT_ON(5270);
+    BIT_ON(5265);
+    return;
+}
