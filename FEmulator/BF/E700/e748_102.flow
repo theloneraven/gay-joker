@@ -1,4 +1,4 @@
-import("e748_101.msg");
+import("e748_102.msg");
 
 void E748_101_01_invite_hook()
 {
