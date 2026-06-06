@@ -1,0 +1,53 @@
+
+// 
+// FlowScript decompiled using Atlus Script Tools
+// 
+
+
+// 
+// Imports
+// 
+
+import("E752_140.msg");
+
+// 
+// Procedure declarations
+// 
+
+// Procedure Index: 0
+void e752_140_00_init()
+{
+}
+
+
+// Procedure Index: 1
+void COOP_SEASON_PRESENT()
+{
+    GET_ITEM_WINDOW((12288 + 475), 1, 0);
+    SET_ITEM_NUM((12288 + 475), (GET_ITEM_NUM((12288 + 475)) + 1));
+    BIT_OFF(1288);
+}
+
+
+// Procedure Index: 2
+void e752_140_02()
+{
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+    return;
+}
+
