@@ -1,0 +1,137 @@
+
+// 
+// FlowScript decompiled using Atlus Script Tools
+// 
+
+
+// 
+// Imports
+// 
+
+import("E710_090.msg");
+
+// 
+// Procedure declarations
+// 
+
+// Procedure Index: 0
+void e710_090_00_init()
+{
+    
+    if ((BIT_CHK(3810) == 1) && (BIT_CHK(3815) == 1))
+    {
+        BIT_ON(3824);
+    }
+
+}
+
+
+// Procedure Index: 1
+void e710_090_01_rank_up()
+{
+    CMM_RANKUP(11, 9, 1);
+}
+
+
+// Procedure Index: 2
+void E710_090_02_end_init()
+{
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+}
+
+
+// Procedure Index: 3
+void ABILITY_KUDOKITECHNIQUE()
+{
+    
+    if (CMM_CHECK_ENABLE_FUNC(60) && (BIT_CHK(3824) == 0))
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_KUDOKITECHNIQUE_00, 0);
+        
+        if (SEL(SEL_KUDOKITECHNIQUE_01) == 0)
+        {
+            BIT_ON(3824);
+        }
+
+        MSG_WND_CLS();
+    }
+
+}
+
+
+// Procedure Index: 4
+void e710_090_04()
+{
+}
+
+
+// Procedure Index: 5
+void e710_090_05_word()
+{
+    EVT_SET_LOCAL_DATA(40, 0);
+}
+
+
+// Procedure Index: 6
+void e710_090_06_word2()
+{
+    EVT_SET_LOCAL_DATA(40, 1);
+}
+
+
+// Procedure Index: 7
+void e710_090_06_word3()
+{
+    EVT_SET_LOCAL_DATA(40, 2);
+}
+
+
+// Procedure Index: 8
+void lovers_check()
+{
+    
+    if (((((((((((BIT_CHK(3793) == 1) || (BIT_CHK(3792) == 1)) || (BIT_CHK(3794) == 1)) || (BIT_CHK(3795) == 1)) || (BIT_CHK(3797) == 1)) || (BIT_CHK(3798) == 1)) || (BIT_CHK(3799) == 1)) || (BIT_CHK(3800) == 1)) || (BIT_CHK(3791) == 1)) || (BIT_CHK(3789) == 1)) || (BIT_CHK(3785) == 1))
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_202_0_0, 0);
+        MSG_WND_CLS();
+    }
+    else 
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_201_0_0, 0);
+        MSG_WND_CLS();
+    }
+
+}
+
+
+// Procedure Index: 9
+void e710_090_add_money()
+{
+    GET_MONEY_WINDOW(100000, 0);
+    CALL_GLOBAL_MONEY_PANEL();
+    WAIT(14);
+    CHANGE_GLOBAL_MONEY(100000, 0);
+    WAIT(28);
+    DEL_GLOBAL_MONEY_PANEL();
+    WAIT(60);
+    return;
+}
+

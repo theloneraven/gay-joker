@@ -1,0 +1,101 @@
+
+// 
+// FlowScript decompiled using Atlus Script Tools
+// 
+
+
+// 
+// Imports
+// 
+
+import("E717_091.msg");
+
+// 
+// Procedure declarations
+// 
+
+// Procedure Index: 0
+void e717_091_00_init()
+{
+}
+
+
+// Procedure Index: 1
+void e717_091_01_hifumi_rank_up_4()
+{
+    CMM_RANKUP(18, 9, 1);
+}
+
+
+// Procedure Index: 2
+void e717_091_02_end_init()
+{
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+}
+
+
+// Procedure Index: 3
+void e717_091_03()
+{
+}
+
+
+// Procedure Index: 4
+void e717_091_04()
+{
+}
+
+
+// Procedure Index: 5
+void e717_091_05()
+{
+}
+
+
+// Procedure Index: 6
+void e717_091_06()
+{
+}
+
+
+// Procedure Index: 7
+void e717_091_07()
+{
+}
+
+
+// Procedure Index: 8
+void lovers_check()
+{
+    
+    if (((((((((((BIT_CHK(3793) == 1) || (BIT_CHK(3792) == 1)) || (BIT_CHK(3794) == 1)) || (BIT_CHK(3795) == 1)) || (BIT_CHK(3796) == 1)) || (BIT_CHK(3797) == 1)) || (BIT_CHK(3798) == 1)) || (BIT_CHK(3799) == 1)) || (BIT_CHK(3791) == 1)) || (BIT_CHK(3789) == 1)) || (BIT_CHK(3785) == 1))
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_202_0_0, 0);
+        MSG_WND_CLS();
+    }
+    else 
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_201_0_0, 0);
+        MSG_WND_CLS();
+    }
+
+    return;
+}
+
