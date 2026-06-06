@@ -1,0 +1,146 @@
+
+// 
+// FlowScript decompiled using Atlus Script Tools
+// 
+
+
+// 
+// Imports
+// 
+
+import("0366.msg");
+
+// 
+// Procedure declarations
+// 
+
+// Procedure Index: 0
+void BTL_0370_ENCOUNT()
+{
+}
+
+
+// Procedure Index: 1
+void BTL_0368_BTLSTART()
+{
+    int bcd;
+    FADEIN(0, 15);
+    BTL_LETTERBOX_IN(1);
+    
+    if (BIT_CHK(11572) == 1)
+    {
+        AI_SET_ENID_MAXSERIAL(570, 2);
+        bcd = BTL_CUTSCENE_LOAD(828, 2);
+        BTL_CUTSCENE_LOADSYNC(bcd);
+        BTL_CUTSCENE_PLAY(bcd, 2, 570, 1, 1);
+        MSG_WND_DSP();
+        MSG(MSG_START_001, 0);
+        MSG_WND_CLS();
+        BTL_CUTSCENE_END(bcd);
+    }
+    else 
+    {
+        AI_SET_ENID_MAXSERIAL(570, 2);
+        bcd = BTL_CUTSCENE_LOAD(828, 1);
+        BTL_CUTSCENE_LOADSYNC(bcd);
+        BTL_CUTSCENE_PLAY(bcd, 2, 570, 1, 1);
+        MSG_WND_DSP();
+        MSG(MSG_START_000, 0);
+        MSG_WND_CLS();
+        BTL_CUTSCENE_END(bcd);
+    }
+
+    BTL_LETTERBOX_OUT(1);
+}
+
+
+// Procedure Index: 2
+void BTL_0400_AISTART()
+{
+    int hp;
+    int var1;
+    int bcd;
+    hp = GET_HP(1);
+    
+    if (((((BTL_GET_CURRENT_CHARAID() == 570) && (AI_CHK_ENIDHP(570, 70) == 1)) && (AI_CHK_ENHP_O(28) == 1)) && (hp >= 2)) && (BIT_CHK(3817) == 0))
+    {
+        FADEIN(0, 15);
+        BTL_LETTERBOX_IN(1);
+        var1 = AI_GET_GLOBAL(28);
+        bcd = BTL_CUTSCENE_LOAD(828, 111);
+        BTL_CUTSCENE_LOADSYNC(bcd);
+        BTL_CUTSCENE_PLAY(bcd, 2, 570, 1, 1);
+        MSG_WND_DSP();
+        MSG(MSG_TURN_000, 0);
+        MSG_WND_CLS();
+        BTL_CUTSCENE_END(bcd);
+        AI_SET_GLOBAL(28, 1);
+        AI_SET_GLOBAL(1, 28);
+        BIT_ON(3817);
+        BTL_LETTERBOX_OUT(1);
+    }
+
+}
+
+
+// Procedure Index: 3
+void BTL_0400_ACTSTART()
+{
+}
+
+
+// Procedure Index: 4
+void BTL_0400_ACTEND()
+{
+}
+
+
+// Procedure Index: 5
+void BTL_0400_BTLEND()
+{
+    int bcd;
+    FADEIN(0, 15);
+    BTL_LETTERBOX_IN(1);
+    bcd = BTL_CUTSCENE_LOAD(828, 121);
+    BTL_CUTSCENE_LOADSYNC(bcd);
+    BTL_CUTSCENE_PLAY(bcd, 2, 570, 1, 1);
+    MSG_WND_DSP();
+    MSG(MSG_END_000, 0);
+    MSG_WND_CLS();
+    BTL_CUTSCENE_SYNC(bcd);
+    BTL_CUTSCENE_END(bcd);
+    bcd = BTL_CUTSCENE_LOAD(828, 999);
+    BTL_CUTSCENE_LOADSYNC(bcd);
+    BTL_CUTSCENE_PLAY(bcd, 2, 570, 1, 1);
+    BTL_CUTSCENE_SYNC(bcd);
+    BTL_CUTSCENE_END(bcd);
+    BIT_OFF(11572);
+    BIT_OFF(3817);
+    BTL_LETTERBOX_OUT(1);
+}
+
+
+// Procedure Index: 6
+void BTL_0400_TALK()
+{
+}
+
+
+// Procedure Index: 7
+void BTL_0400_TALK02()
+{
+}
+
+
+// Procedure Index: 8
+void BTL_0400_EVENT0()
+{
+}
+
+
+// Procedure Index: 9
+void BTL_030D_EVENT1()
+{
+    return;
+}
+
