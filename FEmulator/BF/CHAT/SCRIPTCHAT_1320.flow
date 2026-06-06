@@ -1,0 +1,596 @@
+
+// 
+// FlowScript decompiled using Atlus Script Tools
+// 
+
+
+// 
+// Imports
+// 
+
+import("SCRIPTCHAT_1320.msg");
+
+// 
+// Script-level variable definitions
+// 
+
+int sVar0;
+int sVar1;
+int sVar2;
+
+// 
+// Procedure declarations
+// 
+
+// Procedure Index: 0
+void chatProc()
+{
+    
+    if (CHAT_CHECK_READ(-1) == 0)
+    {
+        CHAT_WND_DSP();
+    }
+
+    CHAT_MAIN();
+    
+    if (CHAT_CHECK_SWITCH(-1) == 1)
+    {
+        
+        if (BIT_CHK(4863) == 1)
+        {
+            MISHIMA_EVENT_FROM_CHAT();
+        }
+
+    }
+
+}
+
+
+// Procedure Index: 1
+void CHAT_MAIN()
+{
+    int var3;
+    int var4;
+    int var5;
+    int var6;
+    int var7;
+    var3 = CHAT_GET_ARRIVAL_MONTH(-1);
+    var4 = CHAT_GET_ARRIVAL_DAY(-1);
+    var5 = 19;
+    MSG(MSG_000_0_0, 0);
+    MSG(MSG_001_0_0, 0);
+    MSG(MSG_002_0_0, 0);
+    MSG(MSG_003_0_0, 0);
+    
+    if (CHAT_CHECK_READ(-1) == 1)
+    {
+        
+        if (CHAT_CHECK_SWITCH(-1) == 1)
+        {
+            CHAT_SEL_LINE(5, 0);
+            MSG(CHAT_REACTION_01, 0);
+            MSG(CHAT_REACTION_02, 0);
+            MSG(CHAT_REACTION_03, 0);
+            MSG(CHAT_REACTION_04, 0);
+        }
+
+        CHAT_WND_DSP();
+        CHAT_WAIT_PAD();
+    }
+
+    
+    if ((GET_DAY() == var4) && (GET_MONTH() == var3))
+    {
+        
+        if (GET_TIME() == 5)
+        {
+            CMM_VSET_COMMUNITY(var5);
+            var6 = 1;
+            _11_3:
+            
+            if (var6 == 1)
+            {
+                COOP_RANKUP_MSG();
+                
+                if ((var3 == 11) && (var4 >= 24))
+                {
+                    MSG_WND_DSP();
+                    MSG(MSG_CORP_PLAY_CHECK2, 0);
+                }
+                else if ((var3 == 12) && (var4 <= 17))
+                {
+                    MSG_WND_DSP();
+                    MSG(MSG_CORP_PLAY_CHECK2, 0);
+                }
+                else 
+                {
+                    MSG_WND_DSP();
+                    MSG(MSG_CORP_PLAY_CHECK1, 0);
+                }
+
+                SEL_DEFKEY(14, 2);
+                var7 = SEL(SEL_001);
+                MSG_WND_CLS();
+                
+                if (var7 == 0)
+                {
+                    CHAT_SET_SEL(-1, 0, 0);
+                    CHAT_SEL_LINE(6, 0);
+                    MSG(CHAT_REACTION_01, 0);
+                    MSG(CHAT_REACTION_02, 0);
+                    MSG(CHAT_REACTION_03, 0);
+                    MSG(CHAT_REACTION_04, 0);
+                    CHAT_SET_SWITCH(-1, 1);
+                    CHAT_WND_CLS();
+                    BIT_ON(4863);
+                    CHAT_SET_HOLD(-1, 0);
+                    return;
+                }
+                else if (var7 == 1)
+                {
+                    CALL_CONF_COOPERATION(var5, CMM_GET_LV(var5));
+                }
+                else if (var7 == 2)
+                {
+                    CHAT_WND_CLS();
+                    CHAT_SET_HOLD(-1, 1);
+                    return;
+                }
+
+                goto _11_3;
+            }
+
+        }
+
+    }
+
+    CHAT_WND_CLS();
+}
+
+
+// Procedure Index: 2
+void SUB_PhoneRing()
+{
+    int var8;
+    var8 = FLD_PC_GET_RESHND(0);
+    MDL_ICON(var8, 15);
+    FLD_COMSE_PLAY(1048);
+    WAIT(10);
+    RUMBLE_START_S(6, 12, 2, 30);
+    WAIT(30);
+}
+
+
+// Procedure Index: 3
+void SUB_PhoneRumble()
+{
+    int var9;
+    var9 = FLD_PC_GET_RESHND(0);
+    MDL_ICON(var9, 18);
+    FLD_COMSE_PLAY(1047);
+    WAIT(10);
+    RUMBLE_START_S(6, 12, 2, 30);
+    WAIT(30);
+}
+
+
+// Procedure Index: 4
+void SUB_PhonePickup()
+{
+    sVar0 = 0;
+    FLD_SET_CELLPHONE(1);
+    WAIT(15);
+    sVar0 = 1;
+}
+
+
+// Procedure Index: 5
+void SUB_PhoneCall()
+{
+    sVar1 = FLD_PC_GET_RESHND(0);
+    
+    if (FLD_UMBREALLA_CHECK_USE() == 1)
+    {
+        sVar2 = FLD_MODEL_ADDMOTION_LOAD(sVar1, 101);
+    }
+    else 
+    {
+        sVar2 = FLD_MODEL_ADDMOTION_LOAD(sVar1, 1);
+    }
+
+    FLD_MODEL_LOADSYNC(sVar2);
+    FLD_MODEL_COPY_POSE_ANIM(sVar2, sVar1);
+    FLD_MODEL_SET_VISIBLE(sVar1, 0, 0);
+    FLD_MODEL_SET_VISIBLE(sVar2, 1, 0);
+    FLD_CELLPHONE_MODEL_VISIBLE(sVar2, 1);
+    MDL_ANIM(sVar2, (60 + 0), 0, 5, 1.00f);
+    MDL_ANIM_NEXT(sVar2, (60 + 1), 1, 0, 1.00f);
+    sVar0 = 2;
+    WAIT(30);
+}
+
+
+// Procedure Index: 6
+void SUB_PhoneTalk()
+{
+    SUB_PhonePickup();
+    SUB_PhoneCall();
+}
+
+
+// Procedure Index: 7
+void SUB_PhoneEnd()
+{
+    
+    if (sVar0 == 0)
+    {
+        return;
+    }
+
+    
+    if (sVar0 != 2)
+    {
+        FLD_SET_CELLPHONE(0);
+    }
+    else 
+    {
+        FLD_MODEL_SET_VISIBLE(sVar1, 0, 0);
+        FLD_MODEL_SET_VISIBLE(sVar2, 1, 0);
+        MDL_ANIM(sVar2, (60 + 2), 0, 10, 1.00f);
+        WAIT(65);
+        FLD_CELLPHONE_MODEL_VISIBLE(sVar2, 0);
+        MDL_ANIM_SYNC(sVar2);
+        MDL_ANIM(sVar2, 0, 1, 0, 1.00f);
+        MDL_ANIM_BLENDSYNC(sVar2);
+        FLD_MODEL_COPY_POSE_ANIM(sVar1, sVar2);
+        FLD_MODEL_SET_VISIBLE(sVar1, 1, 0);
+        FLD_MODEL_SET_VISIBLE(sVar2, 0, 0);
+        FLD_MODEL_FREE(sVar2);
+        FLD_SET_CELLPHONE(0);
+    }
+
+    sVar0 = 0;
+}
+
+
+// Procedure Index: 8
+void SUB_MoruShowFace()
+{
+    int var10;
+    int var11;
+    
+    if (FLD_CHECK_MORGANA_BAG() == 1)
+    {
+        var10 = FLD_PC_GET_CURRENT_RESHND(0);
+        var11 = MDL_GET_ITEM_RESHND(var10, 2);
+        MDL_ANIM(var11, 50, 0, 0, 1.00f);
+        MDL_ANIM_NEXT(var11, 51, 1, 0, 1.00f);
+    }
+
+}
+
+
+// Procedure Index: 9
+void SUB_MoruReturnBag()
+{
+    int var12;
+    int var13;
+    
+    if (FLD_CHECK_MORGANA_BAG() == 1)
+    {
+        var12 = FLD_PC_GET_CURRENT_RESHND(0);
+        var13 = MDL_GET_ITEM_RESHND(var12, 2);
+        MDL_ANIM(var13, 52, 0, 5, 1.00f);
+        MDL_ANIM_NEXT(var13, 0, 1, 0, 1.00f);
+    }
+
+}
+
+
+// Procedure Index: 10
+void Fld_FadeOut_CallField()
+{
+    FADEOUT(27, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 11
+void Fld_FadeOut_Crowd()
+{
+    FLD_REQ_SCN_CHANGE(0);
+}
+
+
+// Procedure Index: 12
+void Fld_FadeOut_CallEvent()
+{
+    FADEOUT(15, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 13
+void Fld_FadeOut_CallCalendar()
+{
+    FADEOUT(15, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 14
+void Fld_FadeOut_Default()
+{
+    FADEOUT(0, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 15
+void Fld_FadeOut_Wait10()
+{
+    FADEOUT(0, 10);
+    FADE_SYNC();
+    WAIT(10);
+}
+
+
+// Procedure Index: 16
+void Fld_FadeIn_Default()
+{
+    FADEIN(0, 20);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 17
+void Fld_FadeOut_Subway()
+{
+    FADEOUT(8, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 18
+void Fld_FadeOut_Symbol()
+{
+    FADEOUT(15, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 19
+void Fld_FadeOut_Rain()
+{
+    FADEOUT(11, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 20
+void Fld_FadeOut_Cross()
+{
+    FADEOUT(13, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 21
+void Fld_FadeOut_Parallel()
+{
+    FADEOUT(14, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 22
+void Fld_FadeOut_CutChange()
+{
+    FADEOUT(5, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 23
+void Fld_FadeOut_Velvet()
+{
+    FADEOUT(19, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 24
+void Holiday_ChatNotSend()
+{
+    MSG_WND_DSP();
+    MSG_MIND(MND_CHAT_INVITE_STOP, 0);
+    MSG_WND_CLS();
+    CHAT_RESERVE_END();
+}
+
+
+// Procedure Index: 25
+void COOP_DOUZOKUSEI_MSG()
+{
+    MSG_WND_DSP();
+    MSG_MIND(MND_COOP_DOUZOKUSEI_HAVE, 0);
+    MSG_WND_CLS();
+}
+
+
+// Procedure Index: 26
+void COOP_RANKUP_MSG()
+{
+    MSG_WND_DSP();
+    MSG_MIND(MND_COOP_RANK_UP_OK, 0);
+    MSG_WND_CLS();
+}
+
+
+// Procedure Index: 27
+void COOP_RANKUP_ROCK_MSG()
+{
+    MSG_WND_DSP();
+    MSG_MIND(MND_COOP_RANK_UP_ROCK, 0);
+    MSG_WND_CLS();
+}
+
+
+// Procedure Index: 28
+void COOP_FIRST_RANKUP_MSG()
+{
+    MSG_WND_DSP();
+    MSG_MIND(MND_COOP_RANKUP_2, 0);
+    MSG_WND_CLS();
+}
+
+
+// Procedure Index: 29
+void HERO_CHAT_CLOSE()
+{
+    MDL_ANIM(FLD_PC_GET_RESHND(0), 18, 0, 0, 1.00f);
+    WAIT(24);
+    
+    if (((FLD_GET_MAJOR() == 3) && (FLD_GET_MINOR() == 2)) && (BIT_CHK(6160) == 1))
+    {
+        BIT_OFF(6160);
+    }
+
+    
+    if ((GET_TIME() == 5) && (BIT_CHK(6270) == 0))
+    {
+        BIT_ON(6270);
+    }
+
+}
+
+
+// Procedure Index: 30
+void MISHIMA_EVENT_FROM_CHAT()
+{
+    int var14;
+    int var15;
+    int var16;
+    int var17;
+    int var18;
+    var14 = 300;
+    var15 = 0;
+    var16 = 19;
+    var17 = CMM_GET_LV(var16);
+    CHAT_RESERVE_END();
+    BIT_OFF(4082);
+    BIT_ON(4401);
+    NET_SET_NIGHT_ACTION(17);
+    var18 = CMM_GET_LV(var16);
+    
+    if ((var18 == 6) && (BIT_CHK(3978) == 0))
+    {
+        HERO_CHAT_CLOSE();
+        Fld_FadeOut_CallEvent();
+        CALL_EVENT(718, 70);
+        BIT_ON(4791);
+        BIT_ON(6226);
+        
+        if (BIT_CHK(77))
+        {
+            CALL_FIELD(3, 2, 51, 0);
+        }
+        else if (BIT_CHK(76))
+        {
+            CALL_FIELD(3, 2, 50, 1);
+        }
+        else if (BIT_CHK(75))
+        {
+            CALL_FIELD(1, 6, 10, 0);
+        }
+        else 
+        {
+            Fld_FadeOut_Symbol();
+            CALL_FIELD(2, 5, 0, 0);
+        }
+
+        BIT_OFF(4896);
+        BIT_OFF(1288);
+        BIT_OFF(4863);
+    }
+    else 
+    {
+        CMM_SETUP_EVENT(0, var16);
+        CMM_LVUP(var16);
+        
+        if (BIT_CHK(3791))
+        {
+            BIT_ON(1288);
+        }
+
+        var18 = CMM_GET_LV(var16);
+        
+        if (var18 == 6)
+        {
+            
+            if (BIT_CHK(10149) == 0)
+            {
+                BIT_ON(10149);
+                FLD_SHOW_NEW_SPOT_SYNC_MODE(17);
+                MSG_WND_DSP();
+                MSG_PERFORMANCE(MSG_SPOT_OPEN_INOKASHIRA);
+                MSG_WND_CLS();
+                
+                if (BIT_CHK(4054) == 0)
+                {
+                    CALL_TUTORIAL(2, 0x10);
+                    BIT_ON(4054);
+                }
+
+                FLD_SHOW_NEW_SPOT_SYNC_EXIT();
+            }
+
+            HERO_CHAT_CLOSE();
+            Fld_FadeOut_Subway();
+            var15 = 1;
+        }
+        else if (var18 == 7)
+        {
+            HERO_CHAT_CLOSE();
+            Fld_FadeOut_Subway();
+        }
+        else if (var18 == 10)
+        {
+            HERO_CHAT_CLOSE();
+            Fld_FadeOut_Subway();
+        }
+        else 
+        {
+            HERO_CHAT_CLOSE();
+            Fld_FadeOut_CallEvent();
+        }
+
+        CMM_EXEC_EVENT();
+        SET_COUNT(101, 3);
+        
+        if (var15 == 1)
+        {
+            TROPHY_REQUEST(116, 0);
+        }
+
+        
+        if (CMM_CHK_RANKUP_EVENT_NEXT(19, var17) == 1)
+        {
+            
+            if (CMM_CHK_INSERT_EVENT_RUBURAN(19, var17) == 1)
+            {
+                var14 = 310;
+            }
+
+            CALL_EVENT(700, var14);
+        }
+
+        BIT_OFF(4896);
+        BIT_OFF(1288);
+        CALL_CALENDAR();
+        BIT_OFF(4863);
+    }
+
+    return;
+}
+
