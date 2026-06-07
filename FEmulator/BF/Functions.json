@@ -1,0 +1,2271 @@
+[
+    {
+        "Index": "0x6CE3",
+        "ReturnType": "void",
+        "Name": "PUT_HEX",
+        "Description": "PUT but displays number in hex instead",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "value",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x2C29",
+        "ReturnType": "void",
+        "Name": "UNIT_CLEAR_ANALYSIS",
+        "Description": "Makes all affinities show up as ? in analysis again",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xBBEF",
+        "ReturnType": "void",
+        "Name": "SET_BULLETS",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Character",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Bullets",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x7C18",
+        "ReturnType": "int",
+        "Name": "GET_BULLETS",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Character",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x3799",
+        "ReturnType": "int",
+        "Name": "GET_MAXBULLETS",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Character",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xF243",
+        "ReturnType": "void",
+        "Name": "SET_TACTIC",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Character",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Tactic",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xD31A",
+        "ReturnType": "int",
+        "Name": "GET_TACTIC",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Character",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xFA1C",
+        "ReturnType": "void",
+        "Name": "SET_ENCOUNT_ENEMY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Encounter ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Slot",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xC5F2",
+        "ReturnType": "int",
+        "Name": "GET_ENCOUNT_ENEMY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Encounter ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Slot",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x92D5",
+        "ReturnType": "void",
+        "Name": "SET_ENCOUNT_FIELD",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Encounter ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Field Major",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Field Minor",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xD13A",
+        "ReturnType": "int",
+        "Name": "GET_ENCOUNT_FIELD_MAJOR",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Encounter ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xD0EF",
+        "ReturnType": "int",
+        "Name": "GET_ENCOUNT_FIELD_MINOR",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Encounter ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xD290",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_ARCANA",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Arcana",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x5FAE",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_ARCANA",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x5192",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_LEVEL",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Level",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x3C2B",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_LEVEL",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x14DE",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_HP",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "HP",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x5A7E",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_HP",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xF735",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_SP",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "SP",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x39D2",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_SP",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xAC20",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_STATS",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Stat",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Value",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xD7CC",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_STATS",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Stat",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x82C1",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_SKILL",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Skill Slot",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Skill",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x56C4",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_SKILL",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Skill Slot",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xB0EF",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_REWARD_EXP",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Exp",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x68CD",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_REWARD_EXP",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x494C",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_REWARD_MONEY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Yen",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x9251",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_REWARD_MONEY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xDE99",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_ATTACK_ELEMENT",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Element",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xDB0D",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_ATTACK_ELEMENT",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x7132",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_ATTACK_ACCURACY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Accuracy",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xCEA1",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_ATTACK_ACCURACY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x76D0",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_ATTACK_DAMAGE",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Damage",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x9A8C",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_ATTACK_DAMAGE",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x8E26",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_MODEL",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Model ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x4E09",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_MODEL",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x6D55",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_PERSONA_MASK",
+        "Description": "Sets the persona given when capturing this enemy",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Persona ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xAC48",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_PERSONA_MASK",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x6572",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_AI",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "BF ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x72D8",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_AI",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xF6EF",
+        "ReturnType": "void",
+        "Name": "SET_ENCOUNT_BGM",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Encounter ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "BGM ID",
+                "Description": "NOT Cue ID, this uses the hardcoded values"
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x8791",
+        "ReturnType": "int",
+        "Name": "GET_ENCOUNT_BGM",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Encounter ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x64BB",
+        "ReturnType": "void",
+        "Name": "SET_STATUS_EFFECT",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Party Member ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Status Ailment to Toggle",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Off (0) or On (1)",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x9DAB",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_FLAGS",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Flag to Toggle",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Off (0) or On (1)",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xCE1D",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_FLAGS",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Flag to Toggle",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x343C",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_AFFINITY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Affinity Type to Edit",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "New Affinity Value (Same as you use on TBL)",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xAC16",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_AFFINITY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Affinity Type",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index":  "0x0AE4",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_ELEMENT",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "Element",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x3396",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_ELEMENT",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xB0A4",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_PASSIVE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xB737",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_PASSIVE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xDE76",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_INHERITABLE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xD580",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_INHERITABLE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x30F8",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_AREA_USABLE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x0743",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_AREA_USABLE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x62FE",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_DAMAGE_STAT",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x0B28",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_DAMAGE_STAT",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x860E",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_COST_TYPE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x99C5",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_COST_TYPE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x596A",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_COST",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x5236",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_COST",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x0B0C",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_TARGETING_TYPE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x0616",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_TARGETING_TYPE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x8444",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_TARGETS",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xFBA0",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_TARGETS",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xC90D",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_ACCURACY",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x06EA",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_ACCURACY",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x258F",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_MIN_HITS",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xF31F",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_MIN_HITS",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x3552",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_MAX_HITS",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xDD10",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_MAX_HITS",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x6631",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_DAMAGE_HEALING_TYPE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x1754",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_DAMAGE_HEALING_TYPE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x16BB",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_DAMAGE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xFD25",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_DAMAGE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xB645",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_DEPLETE_SP",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x5B54",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_DEPLETE_SP",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xAC3D",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_CRIT_CHANCE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            },
+            {
+                "Type":  "int",
+                "Name":  "",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xBECB",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_CRIT_CHANCE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "Skill",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index": "0x3A0C",
+        "ReturnType": "void",
+        "Name": "SET_ENCOUNT_FLAG",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Encounter ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Flag to Toggle",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Off (0) or On (1)",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xE46F",
+        "ReturnType": "int",
+        "Name": "GET_ENCOUNT_FLAG",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Encounter ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Flag to check",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xC8DD",
+        "ReturnType": "void",
+        "Name": "SET_BATTLE_FLAG",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Party Member ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Flag to Toggle",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Off (0) or On (1)",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x4565",
+        "ReturnType": "int",
+        "Name": "GET_BATTLE_FLAG",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Party Member ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Flag to check",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x2CBB",
+        "ReturnType": "void",
+        "Name": "SET_SKILL_EFFECT_TYPE",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Skill ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "New Type Value",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xDE6F",
+        "ReturnType": "int",
+        "Name": "GET_SKILL_EFFECT_TYPE",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Skill ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xD823",
+        "ReturnType": "void",
+        "Name": "SET_SKILL_EFFECT_CHANCE",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Skill ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "chance percentage",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xFDA4",
+        "ReturnType": "int",
+        "Name": "GET_SKILL_EFFECT_CHANCE",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Skill ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x74B2",
+        "ReturnType": "void",
+        "Name": "SET_SKILL_EFFECT_EXTRA",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Skill ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "extra effect value",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xF8AD",
+        "ReturnType": "int",
+        "Name": "GET_SKILL_EFFECT_EXTRA",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Skill ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xB33C",
+        "ReturnType": "void",
+        "Name": "SET_SKILL_EFFECT",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Skill ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Flag to Toggle",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Off (0) or On (1)",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x4CCF",
+        "ReturnType": "int",
+        "Name": "GET_SKILL_EFFECT",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Skill ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Flag to check",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x4526",
+        "ReturnType": "void",
+        "Name": "AI_SET_FLAG",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Flag to Toggle",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Off (0) or On (1)",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x92CF",
+        "ReturnType": "int",
+        "Name": "AI_GET_FLAG",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Flag to check",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x42D8",
+        "ReturnType": "void",
+        "Name": "AI_SET_LV",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Target Lv",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x8756",
+        "ReturnType": "int",
+        "Name": "AI_GET_LV",
+        "Description": "",
+        "Parameters": [],
+        "Comment": ""
+    },
+    {
+        "Index": "0xC79B",
+        "ReturnType": "void",
+        "Name": "SET_SKILL_JYOKYO_MESSAGE",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Skill ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "datJyokyoHelp message ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x3BF7",
+        "ReturnType": "int",
+        "Name": "GET_SKILL_JYOKYO_MESSAGE",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Skill ID",
+                "Description": "Note: Only mods that add this via Custom Bonus Tweaks will have a non zero value here"
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xD88F",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_VOICE_ID",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Voice ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x0C21",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_VOICE_ID",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xD92B",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_TALK_PERSONALITY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Talk Personality ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xB425",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_TALK_PERSONALITY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x3848",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_VOICE_ABC",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "A, B or C value for voicepack",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x653B",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_VOICE_ABC",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index":  "0x1147",
+        "ReturnType":  "void",
+        "Name":  "AI_ACT_PERSONA_SKILL",
+        "Description":  "",
+        "Parameters":  [
+                            {
+                                "Type":  "int",
+                                "Name":  "param1",
+                                "Description":  ""
+                            },
+                            {
+                                "Type":  "BattleSkill",
+                                "Name":  "param2",
+                                "Description":  ""
+                            }
+                       ],
+        "Comment":  ""
+    },
+    {
+      "Index":  "0x0015",
+      "ReturnType":  "int",
+      "Name":  "BTL_GET_COUNTER",
+      "Description":  "",
+      "Parameters":  [
+          {
+              "Type":  "int",
+              "Name":  "param1",
+              "Description":  ""
+          }
+      ],
+      "Comment":  ""
+    },
+    {
+      "Index":  "0x0016",
+      "ReturnType":  "void",
+      "Name":  "BTL_SET_COUNTER",
+      "Description":  "",
+      "Parameters":  [
+          {
+              "Type":  "int",
+              "Name":  "param1",
+              "Description":  ""
+          },
+          {
+              "Type":  "int",
+              "Name":  "param2",
+              "Description":  ""
+          }
+      ],
+      "Comment":  ""
+    },
+    {
+        "Index":  "0x4000",
+        "ReturnType":  "int",
+        "Name":  "GET_ENCOUNTER_ID",
+        "Description":  "",
+        "Parameters":  [],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x5005",
+        "ReturnType":  "void",
+        "Name":  "SET_CUSTOM_SKILL_BED",
+        "Description":  "",
+        "Parameters":  [
+                           {
+                               "Type":  "string",
+                               "Name":  "param1",
+                               "Description":  ""
+                           }
+                       ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x5004",
+        "ReturnType":  "void",
+        "Name":  "SET_CUSTOM_SKILL_ACB",
+        "Description":  "",
+        "Parameters":  [
+                            {
+                                "Type":  "string",
+                                "Name":  "param1",
+                                "Description":  ""
+                            }
+                       ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x20d0",
+        "ReturnType":  "int",
+        "Name":  "CALL_NAVI_DIALOGUE",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "param1",
+                "Description":  "Character ID"
+            },
+            {
+                "Type":  "int",
+                "Name":  "param2",
+                "Description":  "Expression ID"
+            },
+            {
+                "Type":  "int",
+                "Name":  "param3",
+                "Description":  "Message Index"
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x20d1",
+        "ReturnType":  "int",
+        "Name":  "PLAYER_HAS_SKILL",
+        "Description":  "",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "PlayerID",
+                "Description":  ""
+            },
+            {
+                "Type":  "BattleSkill",
+                "Name":  "param2",
+                "Description":  ""
+            }
+       ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x20f0",
+        "ReturnType":  "void",
+        "Name":  "AI_ACT_SUMMON_UNITS",
+        "Description":  "",
+        "Parameters":  [
+                           {
+                               "Type":  "int",
+                               "Name":  "param1",
+                               "Description":  ""
+                           },
+                           {
+                            "Type":  "int",
+                            "Name":  "param2",
+                            "Description":  ""
+                           },
+                           {
+                            "Type":  "int",
+                            "Name":  "param3",
+                            "Description":  ""
+                           },
+                           {
+                            "Type":  "int",
+                            "Name":  "param4",
+                            "Description":  ""
+                           }
+                       ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x2160",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_VOICELINE",
+        "Description":  "Empty function",
+        "Parameters":  [
+                           {
+                               "Type":  "int",
+                               "Name":  "param1",
+                               "Description":  ""
+                           }
+                       ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x14",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_ANIM",
+        "Description":  "Empty function",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "param1",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x0012",
+        "ReturnType":  "void",
+        "Name":  "SET_SKILL_HITFRAME",
+        "Description":  "Empty function",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "param1",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x1230",
+        "ReturnType":  "void",
+        "Name":  "SET_ENEMY_CUTIN_TYPE",
+        "Description":  "Empty function",
+        "Parameters":  [
+            {
+                "Type":  "int",
+                "Name":  "param1",
+                "Description":  ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x11be",
+        "ReturnType":  "void",
+        "Name":  "FORCE_COMBAT_CUTIN",
+        "Description":  "Empty function",
+        "Parameters":  [],
+        "Comment":  ""
+    },
+    {
+        "Index": "0x010e",
+        "ReturnType": "void",
+        "Name": "AI_SET_TACTICS",
+        "Description": "Empty function",
+        "Parameters": [
+        {
+            "Type": "int",
+            "Name": "param1",
+            "Description": ""
+        }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xA146",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_ITEM_DROP_ITEM",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Item Slot ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Item ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x3685",
+        "ReturnType": "void",
+        "Name": "SET_UNIT_ITEM_DROP_PROBABILITY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Item Slot ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Probability %",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x32CF",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_ITEM_DROP_ITEM",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Item Slot ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xD957",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_ITEM_DROP_PROBABILITY",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Item Slot ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x8DA8",
+        "ReturnType": "int",
+        "Name": "SET_UNIT_EVT_ITEM",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Item Slot ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x4C15",
+        "ReturnType": "int",
+        "Name": "GET_UNIT_EVT_ITEM",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Item Slot ID",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x2A51",
+        "ReturnType": "void",
+        "Name": "BTL_SET_ENEMY_FLAG",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Flag to Toggle",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Off (0) or On (1)",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xE55B",
+        "ReturnType": "int",
+        "Name": "BTL_GET_ENEMY_FLAG",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Flag to Toggle",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x968E",
+        "ReturnType": "void",
+        "Name": "BTL_SET_ENEMY_STATUS",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Status Ailment to Toggle",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Off (0) or On (1)",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0xB80A",
+        "ReturnType": "int",
+        "Name": "BTL_GET_ENEMY_STATUS",
+        "Description": "",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Enemy ID",
+                "Description": ""
+            },
+            {
+                "Type": "int",
+                "Name": "Status Ailment to Toggle",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index": "0x98A4",
+        "ReturnType": "void",
+        "Name": "SELTEX_FORCE",
+        "Description": "Setting this forces the next instance of the Joker Select Dialogue to be a specific ID.",
+        "Parameters": [
+            {
+                "Type": "byte",
+                "Name": "Portrait ID to Force",
+                "Description": ""
+            }
+        ],
+        "Comment": ""
+    },
+    {
+        "Index":  "0xED64",
+        "ReturnType":  "void",
+        "Name":  "SELTEX_FORCE_CLEAR",
+        "Description":  "Clears the Queued up replacements",
+        "Parameters":  [],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0xFF94",
+        "ReturnType":  "int",
+        "Name":  "AI_ACT_ITEM",
+        "Description":  "Allows Party AI to use selected item",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Item ID",
+                "Description": ""
+            }
+        ],
+        "Comment":  ""
+    },
+    {
+        "Index":  "0x1A37",
+        "ReturnType":  "int",
+        "Name":  "GET_SKILL_FROM_ITEM",
+        "Description":  "Returns the skill ID of an associated item",
+        "Parameters": [
+            {
+                "Type": "int",
+                "Name": "Item ID",
+                "Description": ""
+            }
+        ],
+        "Comment":  ""
+    }
+]

@@ -21,31 +21,31 @@ void ai0232_main()
         
         if (AI_CHK_MYBAD(0x1000) == 0)
         {
-            AI_ACT_SKILL(674);
+            AI_ACT_PERSONA_SKILL(239, 674);
             AI_TAR_RND();
             return;
         }
         else if ((((AI_CHK_ENHOJO(1) == 1) || (AI_CHK_ENHOJO(4) == 1)) || (AI_CHK_ENHOJO(0x10) == 1)) || (AI_CHK_ENHOJO(0x40) == 1))
         {
-            AI_ACT_SKILL(356);
+            AI_ACT_PERSONA_SKILL(239, 356);
             AI_TAR_RND();
             return;
         }
         else if ((((AI_CHK_MYHOJO(2) == 1) || (AI_CHK_MYHOJO(8) == 1)) || (AI_CHK_MYHOJO(0x20) == 1)) || (AI_CHK_MYHOJO(0x80) == 1))
         {
-            AI_ACT_SKILL(355);
+            AI_ACT_PERSONA_SKILL(239, 355);
             AI_TAR_MINE();
             return;
         }
         else if ((((AI_CHK_MYHOJO(1) == 1) || (AI_CHK_MYHOJO(4) == 1)) || (AI_CHK_MYHOJO(0x10) == 1)) || (AI_CHK_MYHOJO(0x40) == 1))
         {
-            AI_ACT_SKILL(348);
+            AI_ACT_PERSONA_SKILL(239, 348);
             AI_TAR_RND();
             return;
         }
         else 
         {
-            AI_ACT_SKILL(338);
+            AI_ACT_PERSONA_SKILL(239, 338);
             AI_TAR_RND();
             return;
         }
@@ -109,13 +109,13 @@ void ai0232_butsuri_mode()
             
             if (AI_CHK_MYHOJO(0x4000) == 0)
             {
-                AI_ACT_SKILL(370);
+                AI_ACT_PERSONA_SKILL(239, 370);
                 AI_TAR_RND();
                 return;
             }
             else 
             {
-                AI_ACT_SKILL(243);
+                AI_ACT_PERSONA_SKILL(239, 243);
                 AI_TAR_RND();
                 return;
             }
@@ -126,7 +126,7 @@ void ai0232_butsuri_mode()
         {
             AI_SET_GLOBAL(15, 1);
             AI_SET_GLOBAL(18, 0);
-            AI_ACT_SKILL(212);
+            AI_ACT_PERSONA_SKILL(239, 212);
             AI_TAR_RND();
             return;
         }
@@ -135,7 +135,7 @@ void ai0232_butsuri_mode()
     else if (AI_GET_GLOBAL(18) == 0)
     {
         AI_SET_GLOBAL(18, 1);
-        AI_ACT_SKILL(267);
+        AI_ACT_PERSONA_SKILL(239, 267);
         AI_TAR_RND();
         return;
         return;
@@ -144,7 +144,7 @@ void ai0232_butsuri_mode()
     {
         AI_SET_GLOBAL(15, 0);
         AI_SET_GLOBAL(18, 0);
-        AI_ACT_SKILL(212);
+        AI_ACT_PERSONA_SKILL(239, 212);
         AI_TAR_RND();
         return;
     }
@@ -166,13 +166,13 @@ void ai0232_magic_mode()
             
             if (AI_CHK_MYHOJO(0x00008000) == 0)
             {
-                AI_ACT_SKILL(371);
+                AI_ACT_PERSONA_SKILL(239, 371);
                 AI_TAR_RND();
                 return;
             }
             else 
             {
-                AI_ACT_SKILL(72);
+                AI_ACT_PERSONA_SKILL(239, 72);
                 AI_TAR_RND();
                 return;
             }
@@ -183,7 +183,7 @@ void ai0232_magic_mode()
         {
             AI_SET_GLOBAL(0x10, 1);
             AI_SET_GLOBAL(18, 0);
-            AI_ACT_SKILL(66);
+            AI_ACT_PERSONA_SKILL(239, 66);
             AI_TAR_RND();
             return;
         }
@@ -192,7 +192,7 @@ void ai0232_magic_mode()
     else if (AI_GET_GLOBAL(18) == 0)
     {
         AI_SET_GLOBAL(18, 1);
-        AI_ACT_SKILL(14);
+        AI_ACT_PERSONA_SKILL(239, 14);
         AI_TAR_RND();
         return;
         return;
@@ -201,7 +201,7 @@ void ai0232_magic_mode()
     {
         AI_SET_GLOBAL(0x10, 0);
         AI_SET_GLOBAL(18, 0);
-        AI_ACT_SKILL(68);
+        AI_ACT_PERSONA_SKILL(239, 68);
         AI_TAR_RND();
         return;
     }
@@ -213,8 +213,8 @@ void ai0232_magic_mode()
 // Procedure Index: 3
 void ai0232_mix_mode()
 {
-    int var4;
-    var4 = RND(100);
+    int randVar;
+    randVar = RND(100);
     
     if (AI_GET_GLOBAL(17) == 0)
     {
@@ -240,7 +240,7 @@ void ai0232_mix_mode()
         if (AI_GET_GLOBAL(18) == 0)
         {
             AI_SET_GLOBAL(18, 1);
-            AI_ACT_SKILL(673);
+            AI_ACT_PERSONA_SKILL(239, 673);
             AI_TAR_ID(1);
             return;
         }
@@ -262,13 +262,13 @@ void ai0232_mix_mode()
             
             if (AI_CHK_MYHOJO(0x4000) == 0)
             {
-                AI_ACT_SKILL(370);
+                AI_ACT_PERSONA_SKILL(239, 370);
                 AI_TAR_RND();
                 return;
             }
             else 
             {
-                AI_ACT_SKILL(243);
+                AI_ACT_PERSONA_SKILL(239, 243);
                 AI_TAR_RND();
                 return;
             }
@@ -280,15 +280,15 @@ void ai0232_mix_mode()
             AI_SET_GLOBAL(17, 3);
             AI_SET_GLOBAL(18, 0);
             
-            if (var4 < 50)
+            if (randVar < 50)
             {
-                AI_ACT_SKILL(212);
+                AI_ACT_PERSONA_SKILL(239, 212);
                 AI_TAR_RND();
                 return;
             }
             else 
             {
-                AI_ACT_SKILL(267);
+                AI_ACT_PERSONA_SKILL(239, 267);
                 AI_TAR_RND();
                 return;
             }
@@ -305,13 +305,13 @@ void ai0232_mix_mode()
             
             if (AI_CHK_MYHOJO(0x4000) == 0)
             {
-                AI_ACT_SKILL(371);
+                AI_ACT_PERSONA_SKILL(239, 371);
                 AI_TAR_RND();
                 return;
             }
             else 
             {
-                AI_ACT_SKILL(72);
+                AI_ACT_PERSONA_SKILL(239, 72);
                 AI_TAR_RND();
                 return;
             }
@@ -323,15 +323,15 @@ void ai0232_mix_mode()
             AI_SET_GLOBAL(17, 0);
             AI_SET_GLOBAL(18, 0);
             
-            if (var4 < 50)
+            if (randVar < 50)
             {
-                AI_ACT_SKILL(14);
+                AI_ACT_PERSONA_SKILL(239, 14);
                 AI_TAR_RND();
                 return;
             }
             else 
             {
-                AI_ACT_SKILL(68);
+                AI_ACT_PERSONA_SKILL(239, 68);
                 AI_TAR_RND();
                 return;
             }

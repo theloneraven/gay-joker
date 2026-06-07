@@ -45,6 +45,24 @@
           },
           "ReleaseMetadataName": "RemixToolkit.Reloaded.ReleaseMetadata.json"
         },
+        "BGME.Framework": {
+          "Config": {
+            "UserName": "RyoTune",
+            "RepositoryName": "BGME",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "BGME.Framework.ReleaseMetadata.json"
+        },
+        "BGME.Framework.API": {
+          "Config": {
+            "UserName": "RyoTune",
+            "RepositoryName": "BGME",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "BGME.Framework.API.ReleaseMetadata.json"
+        },
         "crifs.v2.hook": {
           "Config": {
             "UserName": "Sewer56",
@@ -53,6 +71,24 @@
             "AssetFileName": "Mod.zip"
           },
           "ReleaseMetadataName": "CriFs.V2.Hook.ReleaseMetadata.json"
+        },
+        "P5R.CostumeFramework": {
+          "Config": {
+            "UserName": "RyoTune",
+            "RepositoryName": "P5R.CostumeFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "P5R.CostumeFramework.ReleaseMetadata.json"
+        },
+        "p5rpc.flowscriptframework": {
+          "Config": {
+            "UserName": "Secre-C",
+            "RepositoryName": "p5rpc.flowscriptframework",
+            "UseReleaseTag": true,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "p5rpc.flowscriptframework.ReleaseMetadata.json"
         },
         "Reloaded.Memory.SigScan.ReloadedII": {
           "Config": {
@@ -72,6 +108,24 @@
           },
           "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
         },
+        "reloaded.universal.fileemulationframework.bf": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "BF.File.Emulator.ReleaseMetadata.json"
+        },
+        "p5rpc.evt.fadeouttablemerge": {
+          "Config": {
+            "UserName": "DeathChaos25",
+            "RepositoryName": "p5rpc.evt.fadeouttablemerge",
+            "UseReleaseTag": true,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "p5rpc.evt.fadeouttablemerge.ReleaseMetadata.json"
+        },
         "p5rpc.lib": {
           "Config": {
             "UserName": "AnimatedSwine37",
@@ -81,14 +135,23 @@
           },
           "ReleaseMetadataName": "p5rpc.lib.ReleaseMetadata.json"
         },
-        "CriFs.V2.Hook.Awb": {
+        "Ryo.Reloaded": {
           "Config": {
-            "UserName": "Sewer56",
-            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
+            "UserName": "RyoTune",
+            "RepositoryName": "Ryo",
             "UseReleaseTag": false,
             "AssetFileName": "Mod.zip"
           },
-          "ReleaseMetadataName": "CriFs.V2.Hook.Awb.ReleaseMetadata.json"
+          "ReleaseMetadataName": "Ryo.Reloaded.ReleaseMetadata.json"
+        },
+        "SharedScans.Reloaded": {
+          "Config": {
+            "UserName": "RyoTune",
+            "RepositoryName": "SharedScans",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "SharedScans.Reloaded.ReleaseMetadata.json"
         },
         "reloaded.universal.fileemulationframework.pak": {
           "Config": {
@@ -99,24 +162,6 @@
           },
           "ReleaseMetadataName": "PAK.Stream.Emulator.ReleaseMetadata.json"
         },
-        "reloaded.universal.fileemulationframework.bmd": {
-          "Config": {
-            "UserName": "Sewer56",
-            "RepositoryName": "FileEmulationFramework",
-            "UseReleaseTag": false,
-            "AssetFileName": "Mod.zip"
-          },
-          "ReleaseMetadataName": "BMD.File.Emulator.ReleaseMetadata.json"
-        },
-        "reloaded.universal.fileemulationframework.bf": {
-          "Config": {
-            "UserName": "Sewer56",
-            "RepositoryName": "FileEmulationFramework",
-            "UseReleaseTag": false,
-            "AssetFileName": "Mod.zip"
-          },
-          "ReleaseMetadataName": "BF.File.Emulator.ReleaseMetadata.json"
-        },
         "reloaded.universal.fileemulationframework.spd": {
           "Config": {
             "UserName": "Sewer56",
@@ -125,6 +170,33 @@
             "AssetFileName": "Mod.zip"
           },
           "ReleaseMetadataName": "SPD.File.Emulator.ReleaseMetadata.json"
+        },
+        "BGME.BattleThemes": {
+          "Config": {
+            "UserName": "RyoTune",
+            "RepositoryName": "BGME.BattleThemes",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "BGME.BattleThemes.ReleaseMetadata.json"
+        },
+        "CriFs.V2.Hook.Awb": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "CriFs.V2.Hook.Awb.ReleaseMetadata.json"
+        },
+        "reloaded.universal.fileemulationframework.bmd": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "FileEmulationFramework",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "BMD.File.Emulator.ReleaseMetadata.json"
         },
         "Reloaded.Universal.Localisation.Framework": {
           "Config": {
@@ -179,18 +251,33 @@
     },
     "GameBananaDependencies": {
       "IdToConfigMap": {
+        "p5r.enhance.cbt": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 432481
+          },
+          "ReleaseMetadataName": "p5r.enhance.cbt.reloaded.ReleaseMetadata.json"
+        },
         "p5rpc.misc.maleromanceconftext": {
           "Config": {
             "ItemType": "Mod",
             "ItemId": 482718
           },
           "ReleaseMetadataName": "p5rpc.misc.maleromanceconftext.ReleaseMetadata.json"
+        },
+        "p5rpc.flowscriptframework": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 510809
+          },
+          "ReleaseMetadataName": "p5rpc.flowscriptframework.ReleaseMetadata.json"
         }
       }
     }
   },
   "IsUniversalMod": false,
   "ModDependencies": [
+    "p5r.enhance.cbt",
     "p5rpc.bustupparam.merging",
     "p5rpc.misc.maleromanceconftext",
     "p5rpc.modloader",
