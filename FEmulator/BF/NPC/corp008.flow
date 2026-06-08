@@ -15,7 +15,7 @@ void SUB_BEGIN_MSG_AKECHI_hook()
     var5 = (var5 / 10);
     var6 = GET_COUNT(56);
     var6 = REM(var6, 10);
-    rank = CMM_GET_LV(sVar1);
+    rank = CMM_GET_LV(sVar0);
     
     if (((var5 == 6) && (var6 == 5)) && BIT_CHK(1180))
     {
@@ -28,7 +28,7 @@ void SUB_BEGIN_MSG_AKECHI_hook()
             MSG_WND_DSP();
             MSG(MSG_C08_BEGIN_COOPNG_00, 0);
             MSG_WND_CLS();
-            sVar0 = -1;
+            sVar2 = -1;
         }
 
     }
@@ -45,9 +45,9 @@ void SUB_CORP_MSG_AKECHI_hook()
     int knowledge;
     int charm;
     int selChoice;
-    rank = CMM_GET_LV(sVar1);
+    rank = CMM_GET_LV(sVar0);
     
-    if (CMM_CHK_LVUP(sVar1) == 1)
+    if (CMM_CHK_LVUP(sVar0) == 1)
     {
         
         if (rank == 1)
@@ -123,7 +123,7 @@ void SUB_CORP_MSG_AKECHI_hook()
                 MSG(MSG_AKECHI_COOP_C02_05, 0);
                 MSG_WND_CLS();
                 BIT_ON(4840);
-                sVar0 = -1;
+                sVar2 = -1;
                 return;
             }
 
@@ -150,7 +150,7 @@ void SUB_CORP_MSG_AKECHI_hook()
                 MSG(MSG_AKECHI_COOP_C05_50, 0);
                 MSG_WND_CLS();
                 BIT_ON(4840);
-                sVar0 = -1;
+                sVar2 = -1;
                 return;
             }
             else 
@@ -185,7 +185,7 @@ void SUB_CORP_MSG_AKECHI_hook()
                     MDL_VISIBLE(FLD_NPCID_SEARCH_RESHND2(906, 21), 0);
                     FADEIN(0, 10);
                     FADE_SYNC();
-                    sVar0 = -1;
+                    sVar2 = -1;
                 }
 
                 BIT_OFF(4840);
@@ -210,7 +210,7 @@ void SUB_CORP_MSG_AKECHI_hook()
 
                 BIT_ON(3901);
                 BIT_ON(4840);
-                sVar0 = -1;
+                sVar2 = -1;
             }
             else 
             {
@@ -247,7 +247,7 @@ void SUB_CORP_MSG_AKECHI_hook()
                     MSG(MSG_AKECHI_COOP_C06_00_0_5, 0);
                     MSG_WND_CLS();
                     BIT_ON(4840);
-                    sVar0 = -1;
+                    sVar2 = -1;
                 }
 
             }
@@ -263,7 +263,7 @@ void SUB_CORP_MSG_AKECHI_hook()
                 MSG(MSG_C08_BEGIN_COOPNG_00, 0);
                 MSG_WND_CLS();
                 BIT_ON(4840);
-                sVar0 = -1;
+                sVar2 = -1;
                 return;
             }
             else if (BIT_CHK(3897) == 0)
@@ -319,9 +319,9 @@ void SUB_COOP_RANKUP_EVT_hook()
 {
     int rank;
     rank = 0;
-    CMM_SETUP_EVENT(0, sVar1);
-    CMM_LVUP(sVar1);
-    rank = CMM_GET_LV(sVar1);
+    CMM_SETUP_EVENT(0, sVar0);
+    CMM_LVUP(sVar0);
+    rank = CMM_GET_LV(sVar0);
     
     if (rank == 2)
     {
@@ -405,7 +405,7 @@ void SUB_COOP_GENERAL_EVT_CHECK_hook()
 {
     int selChoice;
     
-    if (sVar0 == 0)
+    if (sVar2 == 0)
     {
         selChoice = (selChoice + 1);
     }
@@ -423,29 +423,29 @@ void SUB_COOP_GENERAL_EVT_CHECK_hook()
             
             if (selChoice == 0)
             {
-                sVar0 = 5;
+                sVar2 = 5;
                 SUB_COOP_LOVERS_EVT();
             }
             else if (selChoice == 1)
             {
-                sVar0 = 2;
+                sVar2 = 2;
                 SUB_COOP_SPOT_EVT_REV();
             }
             else 
             {
-                sVar0 = 4;
+                sVar2 = 4;
                 SUB_COOP_GENERAL_EVT_REV();
             }
 
         }
         else 
         {
-            sVar0 = 4;
+            sVar2 = 4;
             SUB_COOP_GENERAL_EVT_REV();
         }
 
     }
-    else if (sVar2 != 0)
+    else if (sVar1 != 0)
     {
         MSG_WND_DSP();
         MSG(MSG_C08_SPOT_00_00, 0);
@@ -454,19 +454,19 @@ void SUB_COOP_GENERAL_EVT_CHECK_hook()
         
         if (selChoice == 0)
         {
-            sVar0 = 2;
+            sVar2 = 2;
             SUB_COOP_SPOT_EVT();
         }
         else 
         {
-            sVar0 = 4;
+            sVar2 = 4;
             SUB_COOP_GENERAL_EVT();
         }
 
     }
     else 
     {
-        sVar0 = 4;
+        sVar2 = 4;
         SUB_COOP_GENERAL_EVT();
     }
 }
@@ -496,8 +496,8 @@ void SUB_COOP_SPOT_EVT_hook()
 
     Set_CorpPlayNG_ON();
     BIT_ON(4607);
-    SET_COUNT(61, sVar1);
-    CALL_LMAP(sVar2);
+    SET_COUNT(61, sVar0);
+    CALL_LMAP(sVar1);
     FLD_PANEL_MAP_PROC_SYNC(0);
     BIT_OFF(4607);
     SET_COUNT(61, 0);
@@ -512,11 +512,11 @@ void SUB_COOP_LMAP_SPOT_CHECK_hook()
         
         if (((((BIT_CHK(10146) == 1) || (BIT_CHK(10148) == 1)) || (BIT_CHK(10157) == 1)) || (BIT_CHK(10161) == 1)) || (BIT_CHK(10164) == 1))
         {
-            sVar2 = 9;
+            sVar1 = 9;
         }
 
     }
-    else if (CMM_GET_LV(sVar1) > 3)
+    else if (CMM_GET_LV(sVar0) > 3)
     {
         
         if (BIT_CHK(3088) == 0)
@@ -524,13 +524,13 @@ void SUB_COOP_LMAP_SPOT_CHECK_hook()
             
             if ((((BIT_CHK(10145) == 1) || (BIT_CHK(10146) == 1)) || (BIT_CHK(10150) == 1)) || (BIT_CHK(10161) == 1))
             {
-                sVar2 = 1;
+                sVar1 = 1;
             }
 
         }
         else if (((((BIT_CHK(10145) == 1) || (BIT_CHK(10146) == 1)) || (BIT_CHK(10150) == 1)) || (BIT_CHK(10161) == 1)) || (BIT_CHK(10165) == 1))
         {
-            sVar2 = 2;
+            sVar1 = 2;
         }
 
     }
@@ -539,13 +539,13 @@ void SUB_COOP_LMAP_SPOT_CHECK_hook()
         
         if (((BIT_CHK(10146) == 1) || (BIT_CHK(10150) == 1)) || (BIT_CHK(10161) == 1))
         {
-            sVar2 = 30;
+            sVar1 = 30;
         }
 
     }
     else if ((((BIT_CHK(10146) == 1) || (BIT_CHK(10150) == 1)) || (BIT_CHK(10161) == 1)) || (BIT_CHK(10165) == 1))
     {
-        sVar2 = 31;
+        sVar1 = 31;
     }
 }
 
@@ -553,9 +553,9 @@ void SUB_COOP_TABLE_EVENT_START_hook()
 {
     int rank;
     
-    if (sVar0 == 1)
+    if (sVar2 == 1)
     {
-        rank = CMM_GET_LV(sVar1);
+        rank = CMM_GET_LV(sVar0);
     }
     else 
     {
@@ -603,7 +603,7 @@ void SUB_COOP_TABLE_EVENT_START_hook()
                 CALL_EVENT(881, 103);
             }
 
-            CMM_SET_LV(sVar1, 7);
+            CMM_SET_LV(sVar0, 7);
             FLD_PARTY_LOAD();
             BIT_ON(3997);
             BIT_OFF(3899);
@@ -718,7 +718,7 @@ void SUB_BEGIN_MSG_AKECHI_THEATER_hook()
     }
 
     MSG_WND_CLS();
-    sVar0 = -1;
+    sVar2 = -1;
 }
 
 void SUB_COOP_FIGHT_EVT()

@@ -31,7 +31,7 @@ void e485_340_01_hook()
     int hiddenOptions = 0;
     int selChoice;
     int eventMinor;
-    sVar0 = 0;
+    sVar1 = 0;
     numBitches = -1;
     BIT_ON(4040);
     
@@ -39,7 +39,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(822);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 2;
     }
     else 
@@ -52,7 +52,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(823);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 3;
     }
     else 
@@ -65,7 +65,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(821);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 1;
     }
     else 
@@ -78,7 +78,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(828);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 8;
     }
     else 
@@ -91,7 +91,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(820);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 0;
     }
     else 
@@ -104,7 +104,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(824);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 4;
     }
     else 
@@ -117,7 +117,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(826);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 6;
     }
     else 
@@ -130,7 +130,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(825);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 5;
     }
     else 
@@ -143,7 +143,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(827);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 7;
     }
     else 
@@ -156,7 +156,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(1328);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 9;
     }
     else 
@@ -169,7 +169,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(1329);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 10;
     }
     else 
@@ -182,7 +182,7 @@ void e485_340_01_hook()
     {
         e485_340_03_link_msg();
         CALL_CHAT_DIRECT(1327);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 11;
     }
     else 

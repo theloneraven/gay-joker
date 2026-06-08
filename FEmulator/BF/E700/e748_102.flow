@@ -6,7 +6,7 @@ void E748_101_01_invite_hook()
     int selChoice;
     int eventMinor;
     hiddenOptions = 255;
-    sVar0 = 0;
+    sVar1 = 0;
     BIT_ON(4040);
     
     if (CMM_GET_LV(3) >= 9)
@@ -14,14 +14,14 @@ void E748_101_01_invite_hook()
         E748_101_03_link_msg();
         CALL_CHAT_DIRECT(412);
         hiddenOptions = (hiddenOptions - 1);
-        sVar0 = 1;
+        sVar1 = 1;
         eventMinor = 0;
     }
 
     E748_101_03_link_msg();
     CALL_CHAT_DIRECT(426);
     hiddenOptions = (hiddenOptions - 2);
-    sVar0 = 1;
+    sVar1 = 1;
     eventMinor = 1;
     
     if (CMM_GET_LV(7) >= 9)
@@ -29,7 +29,7 @@ void E748_101_01_invite_hook()
         E748_101_03_link_msg();
         CALL_CHAT_DIRECT(472);
         hiddenOptions = (hiddenOptions - 4);
-        sVar0 = 1;
+        sVar1 = 1;
         eventMinor = 2;
     }
 
@@ -39,7 +39,7 @@ void E748_101_01_invite_hook()
         E748_101_03_link_msg();
         CALL_CHAT_DIRECT(593);
         hiddenOptions = (hiddenOptions - 8);
-        sVar0 = 1;
+        sVar1 = 1;
         eventMinor = 3;
     }
 
@@ -50,7 +50,7 @@ void E748_101_01_invite_hook()
         BIT_ON(3839);
         CALL_CHAT_DIRECT(488);
         hiddenOptions = (hiddenOptions - 16);
-        sVar0 = 1;
+        sVar1 = 1;
         eventMinor = 4;
     }
 
@@ -60,7 +60,7 @@ void E748_101_01_invite_hook()
         E748_101_03_link_msg();
         CALL_CHAT_DIRECT(1325);
         hiddenOptions = (hiddenOptions - 32);
-        sVar0 = 1;
+        sVar1 = 1;
     }
 
     
@@ -69,7 +69,7 @@ void E748_101_01_invite_hook()
         E748_101_03_link_msg();
         CALL_CHAT_DIRECT(1326);
         hiddenOptions = (hiddenOptions - 64);
-        sVar0 = 1;
+        sVar1 = 1;
     }
 
     
@@ -78,7 +78,7 @@ void E748_101_01_invite_hook()
         E748_101_03_link_msg();
         CALL_CHAT_DIRECT(1324);
         hiddenOptions = (hiddenOptions - 128);
-        sVar0 = 1;
+        sVar1 = 1;
     }
 
     MSG_WND_DSP();

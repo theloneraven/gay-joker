@@ -101,7 +101,7 @@ void e521_019_01_hook()
     int hiddenOptions;
     int selChoice;
     int eventMinor;
-    sVar0 = 0;
+    sVar1 = 0;
     var2 = -1;
     BIT_ON(4040);
     
@@ -109,7 +109,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(817);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 7;
     }
     else 
@@ -122,7 +122,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(815);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 5;
     }
     else 
@@ -135,7 +135,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(816);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 6;
     }
     else 
@@ -148,7 +148,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(818);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 8;
     }
     else 
@@ -161,7 +161,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(814);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 4;
     }
     else 
@@ -174,7 +174,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(813);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 3;
     }
     else 
@@ -187,7 +187,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(812);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 2;
     }
     else 
@@ -200,7 +200,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(810);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 0;
     }
     else 
@@ -213,7 +213,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(811);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 1;
     }
     else 
@@ -226,7 +226,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(819);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 8;
     }
     else 
@@ -239,7 +239,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(1334);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 8;
     }
     else 
@@ -252,7 +252,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(1335);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 8;
     }
     else 
@@ -265,7 +265,7 @@ void e521_019_01_hook()
     {
         e521_019_03_link_msg();
         CALL_CHAT_DIRECT(1333);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 8;
     }
     else 
