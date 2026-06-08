@@ -196,7 +196,8 @@ void SUB_TALK_COOP_EVT_hook()
         Fld_FadeOut_CallEvent();
     }
 
-    CMM_EXEC_EVENT();
+    if (BIT_CHK(3791)) { CALL_EVENT(718, 101); }
+    else { CMM_EXEC_EVENT(); }
     
     if (var19 == 1)
     {
