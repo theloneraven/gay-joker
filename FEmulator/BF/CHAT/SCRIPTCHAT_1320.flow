@@ -468,7 +468,7 @@ void HERO_CHAT_CLOSE()
 // Procedure Index: 30
 void MISHIMA_EVENT_FROM_CHAT()
 {
-    int minorID
+    int minorID;
     int mishimaID;
     int level;
     mishimaID = 19;
@@ -482,7 +482,7 @@ void MISHIMA_EVENT_FROM_CHAT()
     BIT_ON(1288);
     HERO_CHAT_CLOSE();
     Fld_FadeOut_Subway();
-    CMM_EXEC_EVENT(718, 101);
+    CALL_EVENT(718, 101);
     SET_COUNT(101, 3);
 
     if (CMM_CHK_RANKUP_EVENT_NEXT(19, level) == 1)
