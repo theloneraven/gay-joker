@@ -95,7 +95,7 @@ void e750_101_01_hook()
     int hiddenOptions;
     int selChoice;
     int eventMinor;
-    sVar0 = 0;
+    sVar1 = 0;
     var2 = -1;
     BIT_ON(4040);
     
@@ -103,7 +103,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(609);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 7;
     }
     else 
@@ -116,7 +116,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(565);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 5;
     }
     else 
@@ -129,7 +129,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(1337);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 8;
     }
     else 
@@ -142,7 +142,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(671);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 6;
     }
     else 
@@ -155,7 +155,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(1338);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 8;
     }
     else 
@@ -168,7 +168,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(1336);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 8;
     }
     else 
@@ -181,7 +181,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(672);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 8;
     }
     else 
@@ -194,7 +194,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(520);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 4;
     }
     else 
@@ -207,7 +207,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(517);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 3;
     }
     else 
@@ -220,7 +220,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(474);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 2;
     }
     else 
@@ -233,7 +233,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(400);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 0;
     }
     else 
@@ -246,7 +246,7 @@ void e750_101_01_hook()
     {
         E750_101_03_link_msg();
         CALL_CHAT_DIRECT(428);
-        sVar0 = 1;
+        sVar1 = 1;
         var2 = 1;
     }
     else 

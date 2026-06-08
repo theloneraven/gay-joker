@@ -157,7 +157,7 @@ void e749_101_01_hook()
     {
         E749_101_03_link_msg();
         CALL_CHAT_DIRECT(1331);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 9;
     }
     else 
@@ -170,7 +170,7 @@ void e749_101_01_hook()
     {
         E749_101_03_link_msg();
         CALL_CHAT_DIRECT(1332);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 10;
     }
     else 
@@ -183,7 +183,7 @@ void e749_101_01_hook()
     {
         E749_101_03_link_msg();
         CALL_CHAT_DIRECT(1330);
-        sVar0 = 1;
+        sVar1 = 1;
         numBitches = 11;
     }
     else 

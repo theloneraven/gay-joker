@@ -845,8 +845,8 @@ void go_spot_coop_hook()
     int commuId;
     int trainFare;
     int var184;
-    int var185;
-    int var186;
+    int eventMajor;
+    int eventMinor;
     int fldMajor;
     int fldMinor;
     int fldSub;
@@ -901,14 +901,14 @@ void go_spot_coop_hook()
 
     FLD_LMAP_FADE(0);
     MSG_WND_DSP();
-    MSG(sVar1, 0);
+    MSG(sVar188, 0);
     MSG_WND_CLS();
     Fld_FadeOut_Subway();
     FLD_PANEL_MAP_PROC_END(0);
     var184 = FLD_GET_LOCAL_COUNT((49152 + 10));
-    var185 = (var184 / 1000);
-    var186 = REM(var184, 1000);
-    CALL_EVENT(var185, var186);
+    eventMajor = (var184 / 1000);
+    eventMinor = REM(var184, 1000);
+    CALL_EVENT(eventMajor, eventMinor);
     TROPHY_REQUEST(116, 0);
     SYNC();
     BIT_OFF(1288);
@@ -1030,12 +1030,12 @@ void proc_SPOT_SET_RYUJI_hook()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 800071);
             BIT_ON(4514);
-            sVar1 = 165;
+            sVar188 = 165;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 800072);
-            sVar1 = 166;
+            sVar188 = 166;
         }
 
     }
@@ -1046,12 +1046,12 @@ void proc_SPOT_SET_RYUJI_hook()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 812071);
             BIT_ON(4512);
-            sVar1 = 167;
+            sVar188 = 167;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 812072);
-            sVar1 = 168;
+            sVar188 = 168;
         }
 
     }
@@ -1065,20 +1065,20 @@ void proc_SPOT_SET_RYUJI_hook()
             {
                 FLD_SET_LOCAL_COUNT((49152 + 10), 814071);
                 BIT_ON(4513);
-                sVar1 = 169;
+                sVar188 = 169;
             }
             else if (BIT_CHK(3785) == 1)
             {
                 FLD_SET_LOCAL_COUNT((49152 + 10), 814073);
                 BIT_ON(4513);
-                sVar1 = 374;
+                sVar188 = 374;
             }
 
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 814072);
-            sVar1 = 170;
+            sVar188 = 170;
         }
 
     }
@@ -1092,20 +1092,20 @@ void proc_SPOT_SET_RYUJI_hook()
             {
                 FLD_SET_LOCAL_COUNT((49152 + 10), 807071);
                 BIT_ON(4515);
-                sVar1 = 171;
+                sVar188 = 171;
             }
             else if (BIT_CHK(3785) == 1)
             {
                 FLD_SET_LOCAL_COUNT((49152 + 10), 807073);
                 BIT_ON(4515);
-                sVar1 = 373;
+                sVar188 = 373;
             }
 
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 807072);
-            sVar1 = 172;
+            sVar188 = 172;
         }
 
     }
@@ -1116,12 +1116,12 @@ void proc_SPOT_SET_RYUJI_hook()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 824071);
             BIT_ON(4517);
-            sVar1 = 173;
+            sVar188 = 173;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 824072);
-            sVar1 = 174;
+            sVar188 = 174;
         }
 
     }
@@ -1132,12 +1132,12 @@ void proc_SPOT_SET_RYUJI_hook()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 830071);
             BIT_ON(4518);
-            sVar1 = 175;
+            sVar188 = 175;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 830072);
-            sVar1 = 176;
+            sVar188 = 176;
         }
 
     }
@@ -1157,12 +1157,12 @@ void proc_SPOT_SET_YUSUKE_hook()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 800041);
             BIT_ON(4528);
-            sVar1 = 191;
+            sVar188 = 191;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 800042);
-            sVar1 = 192;
+            sVar188 = 192;
         }
 
     }
@@ -1173,12 +1173,12 @@ void proc_SPOT_SET_YUSUKE_hook()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 821041);
             BIT_ON(4533);
-            sVar1 = 193;
+            sVar188 = 193;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 821042);
-            sVar1 = 194;
+            sVar188 = 194;
         }
 
     }
@@ -1192,20 +1192,20 @@ void proc_SPOT_SET_YUSUKE_hook()
             {
                 FLD_SET_LOCAL_COUNT((49152 + 10), 818041);
                 BIT_ON(4529);
-                sVar1 = 195;
+                sVar188 = 195;
             }
             else if (BIT_CHK(3789) == 1)
             {
                 FLD_SET_LOCAL_COUNT((49152 + 10), 818043);
                 BIT_ON(4529);
-                sVar1 = 375;
+                sVar188 = 375;
             }
 
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 818042);
-            sVar1 = 196;
+            sVar188 = 196;
         }
 
     }
@@ -1216,12 +1216,12 @@ void proc_SPOT_SET_YUSUKE_hook()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 803041);
             BIT_ON(4530);
-            sVar1 = 197;
+            sVar188 = 197;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 803042);
-            sVar1 = 198;
+            sVar188 = 198;
         }
 
     }
@@ -1235,20 +1235,20 @@ void proc_SPOT_SET_YUSUKE_hook()
             {
                 FLD_SET_LOCAL_COUNT((49152 + 10), 806041);
                 BIT_ON(4531);
-                sVar1 = 199;
+                sVar188 = 199;
             }
             else if (BIT_CHK(3789) == 1)
             {
                 FLD_SET_LOCAL_COUNT((49152 + 10), 806043);
                 BIT_ON(4531);
-                sVar1 = 376;
+                sVar188 = 376;
             }
 
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 806042);
-            sVar1 = 200;
+            sVar188 = 200;
         }
 
     }
@@ -1259,12 +1259,12 @@ void proc_SPOT_SET_YUSUKE_hook()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 829041);
             BIT_ON(4532);
-            sVar1 = 201;
+            sVar188 = 201;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 829042);
-            sVar1 = 202;
+            sVar188 = 202;
         }
 
     }
@@ -1284,12 +1284,12 @@ void proc_SPOT_SET_AKECHI()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 821081);
             BIT_ON(4455);
-            sVar1 = 351;
+            sVar188 = 351;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 821082);
-            sVar1 = 352;
+            sVar188 = 352;
         }
 
     }
@@ -1300,12 +1300,12 @@ void proc_SPOT_SET_AKECHI()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 818081);
             BIT_ON(4456);
-            sVar1 = 353;
+            sVar188 = 353;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 818082);
-            sVar1 = 354;
+            sVar188 = 354;
         }
 
     }
@@ -1316,12 +1316,12 @@ void proc_SPOT_SET_AKECHI()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 811081);
             BIT_ON(4457);
-            sVar1 = 355;
+            sVar188 = 355;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 811082);
-            sVar1 = 356;
+            sVar188 = 356;
         }
 
     }
@@ -1332,12 +1332,12 @@ void proc_SPOT_SET_AKECHI()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 829081);
             BIT_ON(4458);
-            sVar1 = 357;
+            sVar188 = 357;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 829082);
-            sVar1 = 358;
+            sVar188 = 358;
         }
 
     }
@@ -1348,12 +1348,12 @@ void proc_SPOT_SET_AKECHI()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 812081);
             BIT_ON(4459);
-            sVar1 = 359;
+            sVar188 = 359;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 812082);
-            sVar1 = 360;
+            sVar188 = 360;
         }
 
     }
@@ -1364,12 +1364,12 @@ void proc_SPOT_SET_AKECHI()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 822081);
             BIT_ON(4460);
-            sVar1 = 361;
+            sVar188 = 361;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 822082);
-            sVar1 = 362;
+            sVar188 = 362;
         }
 
     }
@@ -1380,12 +1380,12 @@ void proc_SPOT_SET_AKECHI()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 807081);
             BIT_ON(4461);
-            sVar1 = 363;
+            sVar188 = 363;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 807082);
-            sVar1 = 364;
+            sVar188 = 364;
         }
 
     }
@@ -1396,12 +1396,12 @@ void proc_SPOT_SET_AKECHI()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 826081);
             BIT_ON(4462);
-            sVar1 = 365;
+            sVar188 = 365;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 826082);
-            sVar1 = 366;
+            sVar188 = 366;
         }
 
     }
@@ -1412,12 +1412,12 @@ void proc_SPOT_SET_AKECHI()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 803081);
             BIT_ON(4463);
-            sVar1 = 367;
+            sVar188 = 367;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 803082);
-            sVar1 = 368;
+            sVar188 = 368;
         }
 
     }
@@ -1428,12 +1428,12 @@ void proc_SPOT_SET_AKECHI()
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 806081);
             BIT_ON(4464);
-            sVar1 = 369;
+            sVar188 = 369;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 806082);
-            sVar1 = 370;
+            sVar188 = 370;
         }
 
     }

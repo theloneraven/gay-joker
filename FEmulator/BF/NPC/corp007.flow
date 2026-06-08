@@ -7,18 +7,18 @@ void SUB_TALK_COOP_RYUJI_hook()
     
     if (BIT_CHK(4863))
     {
-        sVar0 = 1;
+        sVar2 = 1;
         SUB_CORP_JUMP_MSG_RYUJI();
         return;
     }
 
     SUB_BEGIN_MSG_RYUJI();
     
-    if ((sVar0 == -1) || (sVar0 == 10))
+    if ((sVar2 == -1) || (sVar2 == 10))
     {
         return;
     }
-    else if (sVar0 == 6)
+    else if (sVar2 == 6)
     {
         BIT_OFF(4071);
         BIT_ON(4390);
@@ -38,7 +38,7 @@ void SUB_TALK_COOP_RYUJI_hook()
 
     SUB_CORP_MSG_RYUJI();
     
-    if (sVar0 == -1)
+    if (sVar2 == -1)
     {
         return;
     }
@@ -51,7 +51,7 @@ void SUB_TALK_COOP_RYUJI_hook()
     }
 
     
-    if (CMM_CHK_ARCANA_PSSTOCKLV(sVar1) != 0)
+    if (CMM_CHK_ARCANA_PSSTOCKLV(sVar0) != 0)
     {
         MSG_WND_DSP();
         MSG_MIND(MND_COOP_DOUZOKUSEI, 0);
@@ -70,9 +70,9 @@ void SUB_TALK_COOP_RYUJI_hook()
         if (selChoice == 0)
         {
             
-            if (CMM_CHK_LVUP(sVar1))
+            if (CMM_CHK_LVUP(sVar0))
             {
-                sVar0 = 1;
+                sVar2 = 1;
                 SUB_COOP_RANKUP_EVT();
             }
             else if (BIT_CHK(3782) == 1)
@@ -92,7 +92,7 @@ void SUB_TALK_COOP_RYUJI_hook()
         }
         else 
         {
-            sVar0 = -1;
+            sVar2 = -1;
             MSG_WND_DSP();
             MSG(MSG_C07_COOP_CANCEL_00, 0);
             MSG_WND_CLS();
@@ -109,9 +109,9 @@ void SUB_CORP_MSG_RYUJI_hook()
 {
     int rank;
     int selChoice;
-    rank = CMM_GET_LV(sVar1);
+    rank = CMM_GET_LV(sVar0);
     
-    if (CMM_CHK_LVUP(sVar1) == 1)
+    if (CMM_CHK_LVUP(sVar0) == 1)
     {
         
         if (rank == 1)
@@ -236,9 +236,9 @@ void SUB_CORP_MSG_RYUJI_hook()
 void SUB_COOP_START_MORGANA_MSG_hook()
 {
     int rank;
-    rank = CMM_GET_LV(sVar1);
+    rank = CMM_GET_LV(sVar0);
     
-    if (CMM_CHK_LVUP(sVar1) == 1)
+    if (CMM_CHK_LVUP(sVar0) == 1)
     {
         
         if (rank == 10)
@@ -299,9 +299,9 @@ void SUB_COOP_RANKUP_EVT_hook()
 {
     int rank;
     rank = 0;
-    CMM_SETUP_EVENT(0, sVar1);
-    CMM_LVUP(sVar1);
-    rank = CMM_GET_LV(sVar1);
+    CMM_SETUP_EVENT(0, sVar0);
+    CMM_LVUP(sVar0);
+    rank = CMM_GET_LV(sVar0);
     
     if (rank == 2)
     {
@@ -426,18 +426,18 @@ void SUB_COOP_RANKUP_EVT_hook()
 void SUB_COOP_GENERAL_EVT_hook()
 {
     int rank;
-    rank = CMM_GET_LV(sVar1);
+    rank = CMM_GET_LV(sVar0);
     
     if (rank == 4)
     {
         MSG_WND_DSP();
         MSG(MSG_RYUJI_K_NO, 0);
         MSG_WND_CLS();
-        sVar0 = -1;
+        sVar2 = -1;
         return;
     }
 
-    CMM_SETUP_EVENT(0, sVar1);
+    CMM_SETUP_EVENT(0, sVar0);
     
     if (rank != 10)
     {
@@ -478,9 +478,9 @@ void SUB_COOP_TABLE_EVENT_START_hook()
     int rank;
     var21 = 0;
     
-    if (sVar0 == 1)
+    if (sVar2 == 1)
     {
-        rank = CMM_GET_LV(sVar1);
+        rank = CMM_GET_LV(sVar0);
     }
     else 
     {
@@ -627,24 +627,24 @@ void SUB_COOP_LOVERS_EVT_CHECK()
         
         if (selChoice == 0)
         {
-            sVar0 = 2;
+            sVar2 = 2;
             SUB_COOP_SPOT_EVT();
         }
         else if (selChoice == 1)
         {
-            sVar0 = 5;
+            sVar2 = 5;
             SUB_COOP_LOVERS_EVT();
         }
         else 
         {
-            sVar0 = 4;
+            sVar2 = 4;
             SUB_COOP_GENERAL_EVT();
         }
 
     }
     else 
     {
-        sVar0 = 4;
+        sVar2 = 4;
         SUB_COOP_GENERAL_EVT();
     }
 

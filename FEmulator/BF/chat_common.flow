@@ -83,7 +83,7 @@ void MISHIMA_RANKUP_INVITE_CHAT_hook()
     }
 }
 
-void AKECHI_RANKUP_INVITE_CHAT()
+void AKECHI_RANKUP_INVITE_CHAT_hook()
 {
     int rank;
     int chatId;
