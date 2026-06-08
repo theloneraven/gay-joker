@@ -162,7 +162,7 @@ void e749_101_01_hook()
     }
     else 
     {
-        var2 = (var2 + 0x0200);
+        hiddenOptions = (hiddenOptions + 0x0200);
     }
 
     
@@ -175,7 +175,7 @@ void e749_101_01_hook()
     }
     else 
     {
-        var2 = (var2 + 0x0400);
+        hiddenOptions = (hiddenOptions + 0x0400);
     }
 
     
@@ -188,7 +188,7 @@ void e749_101_01_hook()
     }
     else 
     {
-        var2 = (var2 + 0x0800);
+        hiddenOptions = (hiddenOptions + 0x0800);
     }
 
     

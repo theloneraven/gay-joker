@@ -1155,3 +1155,18 @@ void SUB_COOP_SPOT_EVT_REV()
     }
 
 }
+
+void SUB_COOP_GENERAL_EVT_REV()
+{
+    NET_SET_NIGHT_ACTION(93);
+    BIT_ON(1288);
+    MSG_WND_DSP();
+    MSG(MSG_C08_YES_10_01, 0);
+    MSG(MSG_MORGANA_COOP_ESCAPE, 0);
+    MSG_WND_CLS();
+    Fld_FadeOut_CallEvent();
+    CALL_EVENT(840, 261);
+    BIT_OFF(1288);
+    CALL_CALENDAR();
+    return;
+}
