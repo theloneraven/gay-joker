@@ -25,73 +25,73 @@ void sdl02_13_PM_D_hook()
     BIT_ON(11825);
     bitchesBitfield = 0;
 
-    if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+    if (BIT_CHK(3792) && CMM_GET_LV(3) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 1);
     }
 
 
-    if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+    if (BIT_CHK(3793) && CMM_GET_LV(4) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 2);
     }
 
 
-    if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+    if (BIT_CHK(3794) && CMM_GET_LV(7) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 4);
     }
 
 
-    if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+    if (BIT_CHK(3795) && CMM_GET_LV(10) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 8);
     }
 
 
-    if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+    if (BIT_CHK(3796) && CMM_GET_LV(11) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x10);
     }
 
 
-    if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+    if (BIT_CHK(3797) && CMM_GET_LV(14) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x20);
     }
 
 
-    if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+    if (BIT_CHK(3798) && CMM_GET_LV(15) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x40);
     }
 
 
-    if (BIT_CHK(3799) && (CMM_GET_LV(16) == 10))
+    if (BIT_CHK(3799) && CMM_GET_LV(16) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x80);
     }
 
 
-    if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+    if (BIT_CHK(3800) && CMM_GET_LV(18) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x0100);
     }
 
 
-    if (BIT_CHK(3789) && (CMM_GET_LV(5) == 10) // yusuke
+    if (BIT_CHK(3789) && CMM_GET_LV(5) == 10) // yusuke
     {
         bitchesBitfield = (bitchesBitfield + 0x0400);
     }
 
 
-    if (BIT_CHK(3785) && (CMM_GET_LV(8) == 10) // ryuji
+    if (BIT_CHK(3785) && CMM_GET_LV(8) == 10) // ryuji
     {
         bitchesBitfield = (bitchesBitfield + 0x0800);
     }
 
 
-    if (BIT_CHK(3791) && (CMM_GET_LV(19) == 10) // mishima
+    if (BIT_CHK(3791) && CMM_GET_LV(19) == 10) // mishima
     {
         bitchesBitfield = (bitchesBitfield + 0x1000);
     }
@@ -115,85 +115,85 @@ void sdl02_13_PM_D_RE_hook()
     int bitchesBitfield;
     bitchesBitfield = 0;
 
-    if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+    if (BIT_CHK(3792) && CMM_GET_LV(3) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 1);
     }
 
 
-    if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+    if (BIT_CHK(3793) && CMM_GET_LV(4) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 2);
     }
 
 
-    if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+    if (BIT_CHK(3794) && CMM_GET_LV(7) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 4);
     }
 
 
-    if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+    if (BIT_CHK(3795) && CMM_GET_LV(10) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 8);
     }
 
 
-    if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+    if (BIT_CHK(3796) && CMM_GET_LV(11) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x10);
     }
 
 
-    if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+    if (BIT_CHK(3797) && CMM_GET_LV(14) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x20);
     }
 
 
-    if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+    if (BIT_CHK(3798) && CMM_GET_LV(15) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x40);
     }
 
 
-    if (BIT_CHK(3799) && (CMM_GET_LV(0x10) == 10))
+    if (BIT_CHK(3799) && CMM_GET_LV(0x10) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x80);
     }
 
 
-    if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+    if (BIT_CHK(3800) && CMM_GET_LV(18) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x0100);
     }
 
 
-    if (BIT_CHK(3816) && (CMM_GET_LV(33) == 10))
+    if (BIT_CHK(3816) && CMM_GET_LV(33) == 10)
     {
         bitchesBitfield = (bitchesBitfield + 0x0200);
     }
 
 
-    if (BIT_CHK(3789) && (CMM_GET_LV(5) == 10) // yusuke
+    if (BIT_CHK(3789) && CMM_GET_LV(5) == 10) // yusuke
     {
         bitchesBitfield = (bitchesBitfield + 0x0400);
     }
 
 
-    if (BIT_CHK(3785) && (CMM_GET_LV(8) == 10) // ryuji
+    if (BIT_CHK(3785) && CMM_GET_LV(8) == 10) // ryuji
     {
         bitchesBitfield = (bitchesBitfield + 0x0800);
     }
 
 
-    if (BIT_CHK(3791) && (CMM_GET_LV(19) == 10) // mishima
+    if (BIT_CHK(3791) && CMM_GET_LV(19) == 10) // mishima
     {
         bitchesBitfield = (bitchesBitfield + 0x1000);
     }
 
 
-    if (BIT_CHK(3786) && (CMM_GET_LV(19) == 10) // no actual akechi date for obvious reasons but the star will still change
+    if (BIT_CHK(3786) && CMM_GET_LV(19) == 10) // no actual akechi date for obvious reasons but the star will still change
     {
         bitchesBitfield = (bitchesBitfield + 0x2000);
     }
@@ -219,73 +219,73 @@ void sdl02_14_PM_D_hook()
     CALL_EVENT(750, GET_COUNT(62)); // valentines date
     numBitches = 0;
 
-    if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+    if (BIT_CHK(3792) && CMM_GET_LV(3) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+    if (BIT_CHK(3793) && CMM_GET_LV(4) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+    if (BIT_CHK(3794) && CMM_GET_LV(7) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+    if (BIT_CHK(3795) && CMM_GET_LV(10) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+    if (BIT_CHK(3796) && CMM_GET_LV(11) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+    if (BIT_CHK(3797) && CMM_GET_LV(14) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+    if (BIT_CHK(3798) && CMM_GET_LV(15) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3799) && (CMM_GET_LV(0x10) == 10))
+    if (BIT_CHK(3799) && CMM_GET_LV(0x10) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+    if (BIT_CHK(3800) && CMM_GET_LV(18) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3791) && (CMM_GET_LV(19) == 10) // mishima
+    if (BIT_CHK(3791) && CMM_GET_LV(19) == 10) // mishima
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3789) && (CMM_GET_LV(5) == 10) // yusuke
+    if (BIT_CHK(3789) && CMM_GET_LV(5) == 10) // yusuke
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3785) && (CMM_GET_LV(8) == 10) // ryuji
+    if (BIT_CHK(3785) && CMM_GET_LV(8) == 10) // ryuji
     {
         numBitches = (numBitches + 1);
     }
@@ -311,73 +311,73 @@ void sdl02_15_PM_D_hook()
     numBitches = 0;
     wentOnDate = 0;
 
-    if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+    if (BIT_CHK(3792) && CMM_GET_LV(3) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+    if (BIT_CHK(3793) && CMM_GET_LV(4) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+    if (BIT_CHK(3794) && CMM_GET_LV(7) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+    if (BIT_CHK(3795) && CMM_GET_LV(10) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+    if (BIT_CHK(3796) && CMM_GET_LV(11) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+    if (BIT_CHK(3797) && CMM_GET_LV(14) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+    if (BIT_CHK(3798) && CMM_GET_LV(15) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3799) && (CMM_GET_LV(0x10) == 10))
+    if (BIT_CHK(3799) && CMM_GET_LV(0x10) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+    if (BIT_CHK(3800) && CMM_GET_LV(18) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3791) && (CMM_GET_LV(19) == 10) // mishima
+    if (BIT_CHK(3791) && CMM_GET_LV(19) == 10) // mishima
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3789) && (CMM_GET_LV(5) == 10) // yusuke
+    if (BIT_CHK(3789) && CMM_GET_LV(5) == 10) // yusuke
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3785) && (CMM_GET_LV(8) == 10) // ryuji
+    if (BIT_CHK(3785) && CMM_GET_LV(8) == 10) // ryuji
     {
         numBitches = (numBitches + 1);
     }
@@ -423,7 +423,7 @@ void sdl02_15_PM_D_RE_hook()
     int numBitches;
     int wentOnDate;
 
-    if (CMM_GET_LV(26) == 10) // futaba giri-choco
+    if CMM_GET_LV(26) == 10) // futaba giri-choco
     {
         CALL_EVENT(753, 90);
     }
@@ -431,79 +431,79 @@ void sdl02_15_PM_D_RE_hook()
     numBitches = 0;
     wentOnDate = 0;
 
-    if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+    if (BIT_CHK(3792) && CMM_GET_LV(3) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+    if (BIT_CHK(3793) && CMM_GET_LV(4) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+    if (BIT_CHK(3794) && CMM_GET_LV(7) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+    if (BIT_CHK(3795) && CMM_GET_LV(10) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+    if (BIT_CHK(3796) && CMM_GET_LV(11) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+    if (BIT_CHK(3797) && CMM_GET_LV(14) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+    if (BIT_CHK(3798) && CMM_GET_LV(15) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3799) && (CMM_GET_LV(0x10) == 10))
+    if (BIT_CHK(3799) && CMM_GET_LV(0x10) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+    if (BIT_CHK(3800) && CMM_GET_LV(18) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3816) && (CMM_GET_LV(33) == 10))
+    if (BIT_CHK(3816) && CMM_GET_LV(33) == 10)
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3791) && (CMM_GET_LV(19) == 10) // mishima
+    if (BIT_CHK(3791) && CMM_GET_LV(19) == 10) // mishima
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3789) && (CMM_GET_LV(5) == 10) // yusuke
+    if (BIT_CHK(3789) && CMM_GET_LV(5) == 10) // yusuke
     {
         numBitches = (numBitches + 1);
     }
 
 
-    if (BIT_CHK(3785) && (CMM_GET_LV(8) == 10) // ryuji
+    if (BIT_CHK(3785) && CMM_GET_LV(8) == 10) // ryuji
     {
         numBitches = (numBitches + 1);
     }
