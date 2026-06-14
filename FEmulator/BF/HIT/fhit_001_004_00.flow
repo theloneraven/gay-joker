@@ -223,7 +223,7 @@ void SUB_KFEVT_CALL_TEL_hook()
         }
         else if (selChoice == 10) // yusuke
         {
-            SET_COUNT(62, 100);
+            SET_COUNT(62, 130);
             MSG_WND_DSP();
             MSG(MSG_E65510400_TEL_002_10, 0);
             selChoice = SEL(SEL_E65510400_TEL_002_00);
