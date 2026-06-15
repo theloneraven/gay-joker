@@ -1,0 +1,198 @@
+void rankup_after_yusuke_hook()
+{
+    sVar0 = 5;
+    sVar2 = CMM_GET_LV(sVar0);
+    sVar3 = 5;
+    
+    if (sVar2 == 2)
+    {
+        MESSAGE_REF(0, (140 + 0));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 3)
+    {
+        MESSAGE_REF(0, (140 + 7));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 4)
+    {
+        MESSAGE_REF(0, (140 + 14));
+        BIT_ON(3836);
+    }
+    else if (sVar2 == 5)
+    {
+        MESSAGE_REF(0, (140 + 21));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 6)
+    {
+        MESSAGE_REF(0, (140 + 28));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 7)
+    {
+        MESSAGE_REF(0, (140 + 35));
+        BIT_ON(3837);
+    }
+    else if (sVar2 == 8)
+    {
+        MESSAGE_REF(0, (140 + 42));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 9)
+    {
+        
+        if (BIT_CHK(3789) == 1)
+        {
+            MESSAGE_REF(0, (1337 + 0));
+            BIT_ON(3836);
+        }
+        else 
+        {
+            MESSAGE_REF(0, (140 + 49));
+            BIT_ON(3835);
+        }
+
+    }
+    else 
+    {
+        MESSAGE_REF(0, 0);
+        BIT_ON(3835);
+    }
+
+}
+
+void rankup_after_ryuji_hook()
+{
+    sVar0 = 8;
+    sVar2 = CMM_GET_LV(sVar0);
+    sVar3 = 2;
+    
+    if (BIT_CHK(3799) == 1)
+    {
+        MESSAGE_REF(0, (1330 + 0));
+        BIT_ON(3836);
+    }
+
+    
+    if (sVar2 == 2)
+    {
+        MESSAGE_REF(0, (350 + 0));
+        BIT_ON(3836);
+    }
+    else if (sVar2 == 3)
+    {
+        MESSAGE_REF(0, (350 + 7));
+        BIT_ON(3836);
+    }
+    else if (sVar2 == 4)
+    {
+        MESSAGE_REF(0, (350 + 14));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 5)
+    {
+        MESSAGE_REF(0, (350 + 21));
+        BIT_ON(3836);
+    }
+    else if (sVar2 == 6)
+    {
+        MESSAGE_REF(0, (350 + 28));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 7)
+    {
+        MESSAGE_REF(0, (350 + 35));
+        BIT_ON(3837);
+    }
+    else if (sVar2 == 8)
+    {
+        MESSAGE_REF(0, (350 + 42));
+        BIT_ON(3836);
+    }
+    else if (sVar2 == 9)
+    {
+        
+        if (BIT_CHK(3785) == 1)
+        {
+            MESSAGE_REF(0, (1330 + 0));
+            BIT_ON(3836);
+        }
+        else 
+        {
+            MESSAGE_REF(0, (350 + 49));
+            BIT_ON(3835);
+        }
+
+    }
+    else 
+    {
+        MESSAGE_REF(0, 0);
+        BIT_ON(3835);
+    }
+
+}
+
+void rankup_after_misima_hook()
+{
+    sVar0 = 19;
+    sVar2 = CMM_GET_LV(sVar0);
+    sVar3 = 1011;
+    
+    if (sVar2 == 2)
+    {
+        MESSAGE_REF(0, (1050 + 0));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 3)
+    {
+        MESSAGE_REF(0, (1050 + 7));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 4)
+    {
+        MESSAGE_REF(0, (1050 + 14));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 5)
+    {
+        MESSAGE_REF(0, (1050 + 21));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 6)
+    {
+        MESSAGE_REF(0, (1050 + 28));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 7)
+    {
+        MESSAGE_REF(0, (1050 + 35));
+        BIT_ON(3837);
+    }
+    else if (sVar2 == 8)
+    {
+        MESSAGE_REF(0, (1050 + 42));
+        BIT_ON(3835);
+    }
+    else if (sVar2 == 9)
+    {
+        
+        if (BIT_CHK(3791) == 1)
+        {
+            MESSAGE_REF(0, (1344 + 0));
+            BIT_ON(3835);
+        }
+        else 
+        {
+            MESSAGE_REF(0, (1050 + 49));
+            BIT_ON(3836);
+        }
+
+    }
+    else 
+    {
+        MESSAGE_REF(0, 0);
+        BIT_ON(3835);
+    }
+
+}
