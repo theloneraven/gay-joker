@@ -1,0 +1,29 @@
+// Procedure Index: 0
+void e704_101_00_init()
+{
+    DATE_DISP(1);
+}
+
+
+// Procedure Index: 1
+void E704_101_02_end()
+{
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+    return;
+}
+

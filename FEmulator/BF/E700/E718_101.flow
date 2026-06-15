@@ -1,0 +1,39 @@
+// Procedure Index: 0
+void e718_102_00_init()
+{
+}
+
+
+// Procedure Index: 1
+void E718_102_01_MISHIMA_rank_max()
+{
+    CMM_RANKUP(19, 10, 1);
+    TROPHY_REQUEST(118, 0);
+    AWARD_REQUEST(25, 19);
+    BIT_ON(12002);
+    DATE_DISP(1);
+}
+
+
+// Procedure Index: 2
+void E718_102_02_end()
+{
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+    return;
+}
+

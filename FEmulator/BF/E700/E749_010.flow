@@ -1,0 +1,31 @@
+// Procedure Index: 0
+void e749_006_00_init()
+{
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+}
+
+
+// Procedure Index: 1
+void COOP_SEASON_PRESENT()
+{
+    GET_ITEM_WINDOW((0x4000 + 0x20), 1, 0);
+    SET_ITEM_NUM((0x4000 + 0x20), (GET_ITEM_NUM((0x4000 + 0x20)) + 1));
+    BIT_OFF(1288);
+    return;
+}
+

@@ -1,0 +1,80 @@
+// Procedure Index: 0
+void e754_100_00_init()
+{
+}
+
+
+// Procedure Index: 1
+void e754_100_01()
+{
+    int var0;
+    var0 = GET_COUNT(352);
+    
+    if (60 == var0)
+    {
+        EVT_SET_LOCAL_DATA(47, 0);
+    }
+    else if (((((((((((BIT_CHK(3792) || BIT_CHK(3793)) || BIT_CHK(3794)) || BIT_CHK(3795)) || BIT_CHK(3796)) || BIT_CHK(3797)) || BIT_CHK(3798)) || BIT_CHK(3799)) || BIT_CHK(3800)) || BIT_CHK(3816)) || BIT_CHK(3785)) || BIT_CHK(3791))
+    {
+        EVT_SET_LOCAL_DATA(47, 2);
+    }
+    else 
+    {
+        EVT_SET_LOCAL_DATA(47, 1);
+    }
+
+}
+
+
+// Procedure Index: 2
+void e754_100_02_end()
+{
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+}
+
+
+// Procedure Index: 3
+void dbg_0214_state_select()
+{
+    int var1;
+    
+    if (CHK_DAYS(4, 1))
+    {
+        MSG_WND_DSP();
+        MSG(MND_0214_STATE_SELECT, 10);
+        var1 = SEL(SEL_0214_STATE_SELECT_DB);
+        MSG_WND_CLS();
+        
+        if (var1 == 0)
+        {
+            SET_COUNT(352, 60);
+        }
+        else if (var1 == 1)
+        {
+            SET_COUNT(352, 90);
+        }
+        else 
+        {
+            SET_COUNT(352, 1090);
+        }
+
+    }
+
+    return;
+}
+
