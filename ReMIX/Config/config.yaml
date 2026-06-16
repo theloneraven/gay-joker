@@ -1,0 +1,20 @@
+constants:
+    CRIFS_API: CriFs.V2.Hook.Interfaces.ICriFsRedirectorApi
+
+settings:
+    - id: jpvoice
+      type: toggle
+      default: false
+      name: Japanese Voices
+
+actions:
+    - using: '{CRIFS_API}'
+      if: jpvoice
+      run: AddProbingPath
+      with:
+        - '{ModDir}/jpvoice'
+    - using: '{CRIFS_API}'
+      if: jpvoice == false
+      run: AddProbingPath
+      with:
+        - '{ModDir}/engvoice'
