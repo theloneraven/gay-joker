@@ -423,7 +423,7 @@ void sdl02_15_PM_D_RE_hook()
     int numBitches;
     int wentOnDate;
 
-    if CMM_GET_LV(26) == 10) // futaba giri-choco
+    if (CMM_GET_LV(26) == 10) // futaba giri-choco
     {
         CALL_EVENT(753, 90);
     }
