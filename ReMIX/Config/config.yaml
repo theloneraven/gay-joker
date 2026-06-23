@@ -12,9 +12,9 @@ actions:
       if: jpvoice
       run: AddProbingPath
       with:
-        - '{ModDir}/jpvoice'
+        - '{ModDir}/VoiceLang/jpvoice'
     - using: '{CRIFS_API}'
       if: jpvoice == false
       run: AddProbingPath
       with:
-        - '{ModDir}/engvoice'
+        - '{ModDir}/VoiceLang/engvoice'
