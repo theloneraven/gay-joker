@@ -1,3 +1,5 @@
+import("whitedaydebug.msg");
+
 // Procedure Index: 0
 void e754_110_00_init()
 {
