@@ -22,7 +22,7 @@
 [s][bup 0 5 0 4 0][f 4 10 65535 0 0][vp 8 2 0 4127 65535 0]Is this... for White Day?[n][f 1 3 65535][w][e]
 
 [sel SEL_006_0_0 top]
-[s]It is[e]
+[s]It is.[e]
 [s]That's correct.[e]
 
 [msg MSG_007_0_0 [Yusuke]]

@@ -16,7 +16,7 @@
 
 [msg MSG_004_0_0 [Yusuke]]
 [s][bup 0 5 0 65535 0][f 4 10 65535 0 0][vp 8 2 0 4020 65535 0]Indeed. The city from up here[n]looks rather small.[n][f 1 3 65535][w][e]
- [s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]It gives us quite a different[n]perspective on our usual life.[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]It gives us quite a different[n]perspective on our usual life.[n][f 1 3 65535][w][e]
 
 [msg MSG_005_0_0 [Yusuke]]
 [s][bup 0 5 1 65535 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]Now that I'm out of my slump,[n]I need to make up for the[n]time I wasn't able to paint.[n][f 1 3 65535][w][e]
@@ -34,7 +34,7 @@
 [s][bup 0 5 1 65535 0][f 4 10 65535 0 0][vp 8 2 0 4189 65535 0]I am delighted that you agree.[n][f 1 3 65535][w][e]
 
 [msg MSG_009_0_0 [Yusuke]]
-[s][bup 0 5 0 65525 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]What...?[n][f 1 3 65535][w][e]
+[s][bup 0 5 0 65535 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]What...?[n][f 1 3 65535][w][e]
 
 [msg MSG_0010_0_0 [Yusuke]]
 [s][bup 0 5 0 65535 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]Well then, I shall reiterate my[n]prior promise to you.[n][f 1 3 65535][w][e]
