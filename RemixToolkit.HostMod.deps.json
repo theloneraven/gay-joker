@@ -1,0 +1,107 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "RemixToolkit.HostMod/1.0.0": {
+        "dependencies": {
+          "Reloaded.Mod.Interfaces": "2.4.0",
+          "RemixToolkit.Core.Configs": "1.0.0",
+          "RemixToolkit.Core.Serializers": "1.0.0"
+        },
+        "runtime": {
+          "RemixToolkit.HostMod.dll": {}
+        }
+      },
+      "Reloaded.Mod.Interfaces/2.4.0": {},
+      "System.Reflection.Emit/4.7.0": {},
+      "YamlDotNet/16.3.0": {
+        "runtime": {
+          "lib/net8.0/YamlDotNet.dll": {
+            "assemblyVersion": "16.0.0.0",
+            "fileVersion": "16.3.0.0"
+          }
+        }
+      },
+      "RemixToolkit.Core.Configs/1.0.0": {
+        "dependencies": {
+          "Reloaded.Mod.Interfaces": "2.4.0",
+          "RemixToolkit.Interfaces": "1.0.0",
+          "System.Reflection.Emit": "4.7.0"
+        },
+        "runtime": {
+          "RemixToolkit.Core.Configs.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "RemixToolkit.Core.Serializers/1.0.0": {
+        "dependencies": {
+          "RemixToolkit.Interfaces": "1.0.0",
+          "YamlDotNet": "16.3.0"
+        },
+        "runtime": {
+          "RemixToolkit.Core.Serializers.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "RemixToolkit.Interfaces/1.0.0": {
+        "runtime": {
+          "RemixToolkit.Interfaces.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RemixToolkit.HostMod/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Reloaded.Mod.Interfaces/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HKQu7M0MyToKU4NK5Ula29MXSNeHz01ZzMK9BWD+xqJCITemAPdMW+w60Swln3ceGCU/ZooFSKtn4I8rcSA9AQ==",
+      "path": "reloaded.mod.interfaces/2.4.0",
+      "hashPath": "reloaded.mod.interfaces.2.4.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
+      "path": "system.reflection.emit/4.7.0",
+      "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
+    },
+    "YamlDotNet/16.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SgMOdxbz8X65z8hraIs6hOEdnkH6hESTAIUa7viEngHOYaH+6q5XJmwr1+yb9vJpNQ19hCQY69xbFsLtXpobQA==",
+      "path": "yamldotnet/16.3.0",
+      "hashPath": "yamldotnet.16.3.0.nupkg.sha512"
+    },
+    "RemixToolkit.Core.Configs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RemixToolkit.Core.Serializers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RemixToolkit.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
