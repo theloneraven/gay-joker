@@ -120,7 +120,7 @@
 [msg MSG_037_0_0 [Mishima]]
 [s][bup 0 111 0 4 0][f 4 10 65535 0 0][vp 8 2 0 19027 65535 0]I honestly am a bit nervous[n]about you leaving...[n][f 1 3 65535][w][e]
 [s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]Not only are the thieves done,[n]but the one who gave me new confidence[n]is leaving as well...[n][f 1 3 65535][w][e]
-[s][bup 0 111 21 4 0][f 4 24 0 6 6 42 4 100][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]But... I'll be fine.[n]I want to believe that...[n]Because you do.[n][f 1 3 65535][w][e]
+[s][bup 0 111 21 4 0][f 4 24 0 6 6 42 4 100][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]But... I'll be fine. I want to[n]believe that... Because you do.[n][f 1 3 65535][w][e]
 
 [msg MSG_038_0_0 [Mishima]]
 [s][bup 0 111 20 4 0][f 4 10 65535 0 0][vp 8 2 0 19044 65535 0]Though, I do want to be with[n]you as much as I can.[n][f 1 3 65535][w][e]

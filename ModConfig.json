@@ -2,10 +2,10 @@
   "ModId": "p5rpc.BiJoker.events",
   "ModName": "Gay Joker",
   "ModAuthor": "Alive_Neptuna, theloneraven, oceanstuck",
-  "ModVersion": "1.2.3",
-  "ModDescription": "Romance the guys",
+  "ModVersion": "2.0.0",
+  "ModDescription": "Romance the guys - Community updated 2.0 version",
   "ModDll": "RemixToolkit.HostMod.dll",
-  "ModIcon": "",
+  "ModIcon": "modicon.jpg",
   "ModR2RManagedDll32": "",
   "ModR2RManagedDll64": "",
   "ModNativeDll32": "",
@@ -15,6 +15,14 @@
   "HasExports": false,
   "IsLibrary": false,
   "ReleaseMetadataFileName": "p5rpc.GayJoker.events.ReleaseMetadata.json",
+  "IgnoreRegexes": [
+    ".*\\.json"
+  ],
+  "IncludeRegexes": [
+    "\\.deps\\.json",
+    "\\.runtimeconfig\\.json",
+    "ModConfig\\.json"
+  ],
   "PluginData": {
     "GitHubDependencies": {
       "IdToConfigMap": {
@@ -247,7 +255,7 @@
     },
     "GameBanana": {
       "ItemType": "Mod",
-      "ItemId": 493214
+      "ItemId": 689383
     },
     "GameBananaDependencies": {
       "IdToConfigMap": {
@@ -277,17 +285,18 @@
   },
   "IsUniversalMod": false,
   "ModDependencies": [
-    "p5r.enhance.cbt",
     "p5rpc.bustupparam.merging",
     "p5rpc.misc.maleromanceconftext",
     "p5rpc.modloader",
+    "p5r.enhance.cbt",
+    "reloaded.universal.fileemulationframework.bf",
+    "reloaded.universal.fileemulationframework.bmd",
+    "reloaded.universal.fileemulationframework.pak",
     "RemixToolkit.Reloaded"
   ],
   "OptionalDependencies": [],
   "SupportedAppId": [
     "p5r.exe"
   ],
-  "ProjectUrl": "https://gamebanana.com/mods/493214",
-  "CreatorUrl": "",
-  "IsSeparator": false
+  "ProjectUrl": "https://gamebanana.com/mods/689383"
 }
