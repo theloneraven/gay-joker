@@ -1,0 +1,24 @@
+import("gift_common.msg");
+
+void e800_004_rank_up_announce_after_hook()
+{
+    
+    if (CMM_CHK_LVUP(5))
+    {
+        
+        if (BIT_CHK(3789) == 1)
+        {
+            MSG_WND_DSP();
+            MSG_MIND(MND_RANK_MAX_LOVER_ANNOU_11, 0);
+            MSG_WND_CLS();
+        }
+        else 
+        {
+            MSG_WND_DSP();
+            MSG_MIND(MND_RANK_UP_ANNOUNCE_04, 0);
+            MSG_WND_CLS();
+        }
+
+    }
+
+}

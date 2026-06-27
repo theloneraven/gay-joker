@@ -1,0 +1,30 @@
+import("cheating_common.msg");
+
+void lovers_check_hook()
+{
+    
+    if (BIT_CHK(3793)
+        || BIT_CHK(3792)
+        || BIT_CHK(3794)
+        || BIT_CHK(3796)
+        || BIT_CHK(3797)
+        || BIT_CHK(3798)
+        || BIT_CHK(3799)
+        || BIT_CHK(3800)
+        || BIT_CHK(3785)    // ryuji
+        || BIT_CHK(3789)    // yusuke
+        || BIT_CHK(3791))   // mishima
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_202_0_0, 0);
+        MSG_WND_CLS();
+    }
+    else 
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_201_0_0, 0);
+        MSG_WND_CLS();
+    }
+
+    return;
+}
