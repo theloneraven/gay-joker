@@ -16,12 +16,15 @@
   "IsLibrary": false,
   "ReleaseMetadataFileName": "p5rpc.GayJoker.events.ReleaseMetadata.json",
   "IgnoreRegexes": [
-    ".*\\.json"
+    ".*\\.json",
+    "\\.vs",
+    "\\.git"
   ],
   "IncludeRegexes": [
     "\\.deps\\.json",
     "\\.runtimeconfig\\.json",
-    "ModConfig\\.json"
+    "ModConfig\\.json",
+    "Functions\\.json"
   ],
   "PluginData": {
     "GitHubDependencies": {
@@ -298,5 +301,7 @@
   "SupportedAppId": [
     "p5r.exe"
   ],
-  "ProjectUrl": "https://gamebanana.com/mods/689383"
+  "ProjectUrl": "https://gamebanana.com/mods/689383",
+  "CreatorUrl": "",
+  "IsSeparator": false
 }
