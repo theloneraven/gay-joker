@@ -1,0 +1,1273 @@
+import("E800_018.msg");
+
+int giftItemsAvailable;
+int commuId;
+int itemId;
+int resHnd1;
+int resHnd2;
+int msgId4;
+int msgId5;
+int numNewPoints;
+
+// 
+// Procedure declarations
+// 
+
+// Procedure Index: 0
+void e800_004_init()
+{
+    int weather;
+    weather = GET_WEATHER();
+    
+    if (weather == 1)
+    {
+        BIT_OFF(3825);
+    }
+    else 
+    {
+        BIT_OFF(3825);
+    }
+
+    
+    if (CMM_GET_LV(19) == 1)
+    {
+        MESSAGE_REF(1, 0);
+        BIT_ON(3824);
+    }
+    else if (CMM_GET_LV(19) == 2)
+    {
+        MESSAGE_REF(1, 4);
+        BIT_ON(3826);
+    }
+    else if (CMM_GET_LV(19) == 3)
+    {
+        MESSAGE_REF(1, 8);
+        BIT_ON(3827);
+    }
+    else if (CMM_GET_LV(19) == 4)
+    {
+        MESSAGE_REF(1, 12);
+        BIT_ON(3828);
+    }
+    else if (CMM_GET_LV(19) == 5)
+    {
+        MESSAGE_REF(1, 0x10);
+        BIT_ON(3829);
+    }
+    else if (CMM_GET_LV(19) == 6)
+    {
+        MESSAGE_REF(1, 20);
+        BIT_ON(3830);
+        BIT_ON(3835);
+    }
+    else if (CMM_GET_LV(19) == 7)
+    {
+        MESSAGE_REF(1, 24);
+        BIT_ON(3831);
+        BIT_ON(3835);
+    }
+    else if (CMM_GET_LV(19) == 8)
+    {
+        MESSAGE_REF(1, 28);
+        BIT_ON(3832);
+    }
+    else if (CMM_GET_LV(19) == 9)
+    {
+        MESSAGE_REF(1, 0x20);
+        BIT_ON(3833);
+    }
+    else if (CMM_GET_LV(19) == 10)
+    {
+        MESSAGE_REF(1, 36);
+        BIT_ON(3834);
+    }
+
+    return;
+}
+
+
+// Procedure Index: 1
+void e800_004_callgift()
+{
+    SET_COUNT(63, 5);
+    MAIN_GIFT();
+    return;
+}
+
+
+// Procedure Index: 2
+void e800_004_endinit()
+{
+    BIT_OFF(3824);
+    BIT_OFF(3825);
+    BIT_OFF(3826);
+    BIT_OFF(3827);
+    BIT_OFF(3828);
+    BIT_OFF(3829);
+    BIT_OFF(3830);
+    BIT_OFF(3831);
+    BIT_OFF(3832);
+    BIT_OFF(3833);
+    BIT_OFF(3834);
+    BIT_OFF(3835);
+    BIT_OFF(3836);
+    BIT_OFF(3837);
+    BIT_OFF(3838);
+    BIT_OFF(3839);
+    SET_COUNT(63, 0);
+    BIT_OFF(4606);
+    return;
+}
+
+
+// Procedure Index: 3
+void e800_004_item_hit()
+{
+    GET_ITEM_WINDOW((0x3000 + 460), 1, 0);
+    SET_ITEM_NUM((0x3000 + 460), (GET_ITEM_NUM((0x3000 + 460)) + 1));
+    return;
+}
+
+
+// Procedure Index: 4
+void e800_004_item_hit2()
+{
+    GET_ITEM_WINDOW((0x3000 + 457), 1, 0);
+    SET_ITEM_NUM((0x3000 + 457), (GET_ITEM_NUM((0x3000 + 457)) + 1));
+    BIT_ON(2231);
+    return;
+}
+
+
+// Procedure Index: 5
+void e800_004_item_hit3()
+{
+    GET_ITEM_WINDOW((0x3000 + 452), 1, 0);
+    SET_ITEM_NUM((0x3000 + 452), (GET_ITEM_NUM((0x3000 + 452)) + 1));
+    return;
+}
+
+
+// Procedure Index: 6
+void e800_002_rank_up_announce_before()
+{
+    
+    if (CMM_CHK_LVUP(19))
+    {
+        EVT_SET_LOCAL_DATA(47, 1);
+    }
+
+    return;
+}
+
+
+// Procedure Index: 7
+void e800_002_rank_up_announce_after()
+{
+    
+    if (CMM_CHK_LVUP(19))
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_RANK_UP_ANNOUNCE_18, 0);
+        MSG_WND_CLS();
+    }
+
+    return;
+}
+
+
+// Procedure Index: 8
+void MAIN_GIFT()
+{
+    INIT_ITEM_SELECT();
+    SUB_GIFT_ITEM_CHK();
+    
+    if (giftItemsAvailable != 1)
+    {
+        return;
+    }
+
+    itemId = -1;
+    commuId = GET_COUNT(63);
+    SUB_GIFT_START_MSG();
+    itemId = START_ITEM_SELECT(0);
+    
+    if (itemId == -1)
+    {
+        MSG_WND_DSP();
+        MSG_MIND(MND_CANCEL, 0);
+        MSG_WND_CLS();
+        return;
+    }
+
+    SUB_GIFT_MISHIMA();
+    SUB_GIFT_MSGPOINT();
+    SUB_GIFT_ITEM_DEC();
+    AWARD_REQUEST(28, 0);
+    return;
+}
+
+
+// Procedure Index: 9
+void SUB_GIFT_ITEM_CHK()
+{
+    
+    if (GET_ITEM_NUM((0x3000 + 87)) >= 1) // heart ring
+    {
+        SET_ITEM_SELECT((0x3000 + 87));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 544)) >= 1) // silver bangle
+    {
+        SET_ITEM_SELECT((0x3000 + 544));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 84)) >= 1) // snack pack
+    {
+        SET_ITEM_SELECT((0x3000 + 84));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 542)) >= 1) // cup noodle set
+    {
+        SET_ITEM_SELECT((0x3000 + 542));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 543)) >= 1) // omni-vitamin
+    {
+        SET_ITEM_SELECT((0x3000 + 543));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 89)) >= 1) // designer perfume
+    {
+        SET_ITEM_SELECT((0x3000 + 89));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 90)) >= 1) // luxury aroma set
+    {
+        SET_ITEM_SELECT((0x3000 + 90));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 197)) >= 1) // crimson lipstick
+    {
+        SET_ITEM_SELECT((0x3000 + 197));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 195)) >= 1) // book cover
+    {
+        SET_ITEM_SELECT((0x3000 + 195));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 95)) >= 1) // sakura fan
+    {
+        SET_ITEM_SELECT((0x3000 + 95));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 82)) >= 1) // glass vase
+    {
+        SET_ITEM_SELECT((0x3000 + 82));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 184)) >= 1) // uji matcha flan
+    {
+        SET_ITEM_SELECT((0x3000 + 184));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 185)) >= 1) // truffles
+    {
+        SET_ITEM_SELECT((0x3000 + 185));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 196)) >= 1) // castella
+    {
+        SET_ITEM_SELECT((0x3000 + 196));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 545)) >= 1) // wrist weights
+    {
+        SET_ITEM_SELECT((0x3000 + 545));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 546)) >= 1) // sports sunglasses
+    {
+        SET_ITEM_SELECT((0x3000 + 546));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 91)) >= 1) // mini cactus
+    {
+        SET_ITEM_SELECT((0x3000 + 91));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 92)) >= 1) // flower basket
+    {
+        SET_ITEM_SELECT((0x3000 + 92));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 93)) >= 1) // bath of roses
+    {
+        SET_ITEM_SELECT((0x3000 + 93));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 83)) >= 1) //star mirror
+    {
+        SET_ITEM_SELECT((0x3000 + 83));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 94)) >= 1) // black mug
+    {
+        SET_ITEM_SELECT((0x3000 + 94));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 547)) >= 1) // kitchen tools set
+    {
+        SET_ITEM_SELECT((0x3000 + 547));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 548)) >= 1) // 48-sided 3d puzzle
+    {
+        SET_ITEM_SELECT((0x3000 + 548));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 640)) >= 1) // puzzle rings
+    {
+        SET_ITEM_SELECT((0x3000 + 640));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 641)) >= 1) // mochi cushion
+    {
+        SET_ITEM_SELECT((0x3000 + 641));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 97)) >= 1) // robot vacuum
+    {
+        SET_ITEM_SELECT((0x3000 + 97));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 325)) >= 1) // digital camera
+    {
+        SET_ITEM_SELECT((0x3000 + 325));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 326)) >= 1) // face beautifier
+    {
+        SET_ITEM_SELECT((0x3000 + 326));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 642)) >= 1) // electric toothbrush
+    {
+        SET_ITEM_SELECT((0x3000 + 642));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 643)) >= 1) // blaring alarm clock
+    {
+        SET_ITEM_SELECT((0x3000 + 643));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 644)) >= 1) // aroma machine
+    {
+        SET_ITEM_SELECT((0x3000 + 644));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 98)) >= 1) // motorbike figure
+    {
+        SET_ITEM_SELECT((0x3000 + 98));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 99)) >= 1) // local mascot set
+    {
+        SET_ITEM_SELECT((0x3000 + 99));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 172)) >= 1) // idol pins
+    {
+        SET_ITEM_SELECT((0x3000 + 172));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 645)) >= 1) // katana keychain
+    {
+        SET_ITEM_SELECT((0x3000 + 645));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 96)) >= 1) // fountain pen
+    {
+        SET_ITEM_SELECT((0x3000 + 96));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 540)) >= 1) // watercolor postcard
+    {
+        SET_ITEM_SELECT((0x3000 + 540));
+        giftItemAvailable = 1;
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 541)) >= 1) // leather pen case
+    {
+        SET_ITEM_SELECT((0x3000 + 541));
+        giftItemAvailable = 1;
+    }
+
+    return;
+}
+
+
+// Procedure Index: 10
+void SUB_GIFT_VSET()
+{
+    SET_MSG_VAR((0x3000 + 87), (0x3000 + 87), 5);   // heart ring
+    SET_MSG_VAR((0x3000 + 544), (0x3000 + 544), 5); // silver bangle
+    SET_MSG_VAR((0x3000 + 84), (0x3000 + 84), 5);   // snack pack
+    SET_MSG_VAR((0x3000 + 542), (0x3000 + 542), 5); // cup noodle set
+    SET_MSG_VAR((0x3000 + 543), (0x3000 + 543), 5); // omni-vitamin
+    SET_MSG_VAR((0x3000 + 89), (0x3000 + 89), 5);   // designer perfume
+    SET_MSG_VAR((0x3000 + 90), (0x3000 + 90), 5);   // luxury aroma set
+    SET_MSG_VAR((0x3000 + 197), (0x3000 + 197), 5); // crimson lipstick
+    SET_MSG_VAR((0x3000 + 195), (0x3000 + 195), 5); // book cover
+    SET_MSG_VAR((0x3000 + 95), (0x3000 + 95), 5);   // sakura fan
+    SET_MSG_VAR((0x3000 + 82), (0x3000 + 82), 5);   // glass vase
+    SET_MSG_VAR((0x3000 + 184), (0x3000 + 184), 5); // uji matcha flan
+    SET_MSG_VAR((0x3000 + 185), (0x3000 + 185), 5); // truffles
+    SET_MSG_VAR((0x3000 + 196), (0x3000 + 196), 5); // castella
+    SET_MSG_VAR((0x3000 + 545), (0x3000 + 545), 5); // wrist weights
+    SET_MSG_VAR((0x3000 + 546), (0x3000 + 546), 5); // sports sunglasses
+    SET_MSG_VAR((0x3000 + 91), (0x3000 + 91), 5);   // mini cactus
+    SET_MSG_VAR((0x3000 + 92), (0x3000 + 92), 5);   // flower basket
+    SET_MSG_VAR((0x3000 + 93), (0x3000 + 93), 5);   // bath of roses
+    SET_MSG_VAR((0x3000 + 83), (0x3000 + 83), 5);   // star mirror
+    SET_MSG_VAR((0x3000 + 94), (0x3000 + 94), 5);   // black mug
+    SET_MSG_VAR((0x3000 + 547), (0x3000 + 547), 5); // kitchen tools set
+    SET_MSG_VAR((0x3000 + 548), (0x3000 + 548), 5); // 48-sided 3d puzzle
+    SET_MSG_VAR((0x3000 + 640), (0x3000 + 640), 5); // puzzle rings
+    SET_MSG_VAR((0x3000 + 641), (0x3000 + 641), 5); // mochi cushion
+    SET_MSG_VAR((0x3000 + 97), (0x3000 + 97), 5);   // robot vacuum
+    SET_MSG_VAR((0x3000 + 325), (0x3000 + 325), 5); // digital camera
+    SET_MSG_VAR((0x3000 + 326), (0x3000 + 326), 5); // face beautifier
+    SET_MSG_VAR((0x3000 + 642), (0x3000 + 642), 5); // electric toothbrush
+    SET_MSG_VAR((0x3000 + 643), (0x3000 + 643), 5); // blaring alarm clock
+    SET_MSG_VAR((0x3000 + 644), (0x3000 + 644), 5); // aroma machine
+    SET_MSG_VAR((0x3000 + 98), (0x3000 + 98), 5);   // motorbike figure
+    SET_MSG_VAR((0x3000 + 99), (0x3000 + 99), 5);   // local mascot set
+    SET_MSG_VAR((0x3000 + 172), (0x3000 + 172), 5); // idol pins
+    SET_MSG_VAR((0x3000 + 645), (0x3000 + 645), 5); // katana keychain
+    SET_MSG_VAR((0x3000 + 96), (0x3000 + 96), 5);   // fountain pen
+    SET_MSG_VAR((0x3000 + 540), (0x3000 + 540), 5); // watercolor postcard
+    SET_MSG_VAR((0x3000 + 541), (0x3000 + 541), 5); // leather pen case
+    return;
+}
+
+
+// Procedure Index: 11
+void SUB_GIFT_MASK()
+{
+    int hiddenItemBitfield;
+    
+    if (GET_ITEM_NUM((0x3000 + 87)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 1);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 544)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 2);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 84)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 4);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 542)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 8);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 543)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x10);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 89)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x20);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 90)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x40);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 197)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x80);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 195)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x0100);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 95)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x0200);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 82)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x0400);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 184)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x0800);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 185)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x1000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 196)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x2000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 545)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x4000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 546)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x00008000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 91)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x00010000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 92)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x00020000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 93)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x00040000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 83)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x00080000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 94)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x00100000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 547)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x00200000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 548)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x00400000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 640)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x00800000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 641)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x01000000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 97)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x08000000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 325)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x10000000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 326)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x20000000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 642)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x40000000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 643)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0x80000000);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 644)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 98)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 99)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 172)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 645)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 540)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 541)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0);
+    }
+
+    
+    if (GET_ITEM_NUM((0x3000 + 96)) <= 0)
+    {
+        hiddenItemBitfield = (hiddenItemBitfield + 0);
+    }
+
+    PUT(hiddenItemBitfield);
+    return;
+}
+
+
+// Procedure Index: 12
+void SUB_GIFT_START_MSG()
+{
+    int msgId1;
+    int msgId2;
+    int msgId3;
+    int var14;
+
+    if (CMM_GET_LV(19) == 10)
+    {
+        if (BIT_CHK(3791)) { msgId1 = MND_GIFT_018_100; }
+        else { msgId1 = MND_GIFT_018_200; }
+    }
+    else { msgId1 = MND_GIFT_018_000; }
+
+    msgId2 = MND_GIFT_018_000_5R_0;
+    msgId3 = MND_GIFT_018_000_5R_1;
+    var14 = MND_GIFT_018_000_5R_2;
+
+    MSG_WND_DSP();
+    MSG_MIND(msgId1, 0);
+    MSG_WND_CLS();
+    MSG_WND_DSP();
+    MSG_MIND(msgId2, 0);
+    MSG_WND_CLS();
+    MSG_WND_DSP();
+    MSG_MIND(msgId3, 0);
+    MSG_WND_CLS();
+}
+
+void SUB_GIFT_MISHIMA()
+{
+    resHnd1 = EVT_GET_ASSET_RESHND(3);
+    resHnd2 = EVT_GET_ASSET_RESHND(4);
+    SUB_GIFT_VSET_MSG();
+
+    int itemIdInSection;
+    itemIdInSection = itemId - 0x3000;
+    switch (itemIdInSection)
+    {
+    // TODO gift preferences
+    case 544: // silver bangle, all guys like this
+        msgId4 = MND_GIFT_018_004;
+        msgId5 = MND_GIFT_018_005;
+        numNewPoints = 50;
+    default:
+        msgId4 = MND_GIFT_018_010;
+        msgId5 = MND_GIFT_018_011;
+        numNewPoints = 5;
+        break;
+    }
+}
+// Procedure Index: 15
+void SUB_GIFT_MSGPOINT()
+{
+    Fld_FadeOut_CutChange();
+    MDL_SET_LOOKAT_POS(resHnd2, FLD_MODEL_GET_X_HELPER_TRANSLATE(resHnd1, 1), FLD_MODEL_GET_Y_HELPER_TRANSLATE(resHnd1, 1), FLD_MODEL_GET_Z_HELPER_TRANSLATE(resHnd1, 1), 0);
+    WAIT(30);
+    Fld_FadeIn_Default();
+    MSG_WND_DSP();
+    MSG(msgId4, 0);
+    MSG_WND_CLS();
+    
+    if (numNewPoints > 0)
+    {
+        CMM_ADD_POINT_ID(commuId, numNewPoints, resHnd2);
+    }
+
+    MSG_WND_DSP();
+    MSG_MIND(msgId5, 0);
+    MSG_WND_CLS();
+    return;
+}
+
+
+// Procedure Index: 16
+void SUB_GIFT_ITEM_DEC()
+{
+    
+    if (itemId == (0x3000 + 87))
+    {
+        SET_ITEM_NUM((0x3000 + 87), (GET_ITEM_NUM((0x3000 + 87)) - 1));
+    }
+    else if (itemId == (0x3000 + 544))
+    {
+        SET_ITEM_NUM((0x3000 + 544), (GET_ITEM_NUM((0x3000 + 544)) - 1));
+    }
+    else if (itemId == (0x3000 + 84))
+    {
+        SET_ITEM_NUM((0x3000 + 84), (GET_ITEM_NUM((0x3000 + 84)) - 1));
+    }
+    else if (itemId == (0x3000 + 542))
+    {
+        SET_ITEM_NUM((0x3000 + 542), (GET_ITEM_NUM((0x3000 + 542)) - 1));
+    }
+    else if (itemId == (0x3000 + 543))
+    {
+        SET_ITEM_NUM((0x3000 + 543), (GET_ITEM_NUM((0x3000 + 543)) - 1));
+    }
+    else if (itemId == (0x3000 + 89))
+    {
+        SET_ITEM_NUM((0x3000 + 89), (GET_ITEM_NUM((0x3000 + 89)) - 1));
+    }
+    else if (itemId == (0x3000 + 90))
+    {
+        SET_ITEM_NUM((0x3000 + 90), (GET_ITEM_NUM((0x3000 + 90)) - 1));
+    }
+    else if (itemId == (0x3000 + 197))
+    {
+        SET_ITEM_NUM((0x3000 + 197), (GET_ITEM_NUM((0x3000 + 197)) - 1));
+    }
+    else if (itemId == (0x3000 + 195))
+    {
+        SET_ITEM_NUM((0x3000 + 195), (GET_ITEM_NUM((0x3000 + 195)) - 1));
+    }
+    else if (itemId == (0x3000 + 95))
+    {
+        SET_ITEM_NUM((0x3000 + 95), (GET_ITEM_NUM((0x3000 + 95)) - 1));
+    }
+    else if (itemId == (0x3000 + 82))
+    {
+        SET_ITEM_NUM((0x3000 + 82), (GET_ITEM_NUM((0x3000 + 82)) - 1));
+    }
+    else if (itemId == (0x3000 + 184))
+    {
+        SET_ITEM_NUM((0x3000 + 184), (GET_ITEM_NUM((0x3000 + 184)) - 1));
+    }
+    else if (itemId == (0x3000 + 185))
+    {
+        SET_ITEM_NUM((0x3000 + 185), (GET_ITEM_NUM((0x3000 + 185)) - 1));
+    }
+    else if (itemId == (0x3000 + 196))
+    {
+        SET_ITEM_NUM((0x3000 + 196), (GET_ITEM_NUM((0x3000 + 196)) - 1));
+    }
+    else if (itemId == (0x3000 + 545))
+    {
+        SET_ITEM_NUM((0x3000 + 545), (GET_ITEM_NUM((0x3000 + 545)) - 1));
+    }
+    else if (itemId == (0x3000 + 546))
+    {
+        SET_ITEM_NUM((0x3000 + 546), (GET_ITEM_NUM((0x3000 + 546)) - 1));
+    }
+    else if (itemId == (0x3000 + 91))
+    {
+        SET_ITEM_NUM((0x3000 + 91), (GET_ITEM_NUM((0x3000 + 91)) - 1));
+    }
+    else if (itemId == (0x3000 + 92))
+    {
+        SET_ITEM_NUM((0x3000 + 92), (GET_ITEM_NUM((0x3000 + 92)) - 1));
+    }
+    else if (itemId == (0x3000 + 93))
+    {
+        SET_ITEM_NUM((0x3000 + 93), (GET_ITEM_NUM((0x3000 + 93)) - 1));
+    }
+    else if (itemId == (0x3000 + 83))
+    {
+        SET_ITEM_NUM((0x3000 + 83), (GET_ITEM_NUM((0x3000 + 83)) - 1));
+    }
+    else if (itemId == (0x3000 + 94))
+    {
+        SET_ITEM_NUM((0x3000 + 94), (GET_ITEM_NUM((0x3000 + 94)) - 1));
+    }
+    else if (itemId == (0x3000 + 547))
+    {
+        SET_ITEM_NUM((0x3000 + 547), (GET_ITEM_NUM((0x3000 + 547)) - 1));
+    }
+    else if (itemId == (0x3000 + 548))
+    {
+        SET_ITEM_NUM((0x3000 + 548), (GET_ITEM_NUM((0x3000 + 548)) - 1));
+    }
+    else if (itemId == (0x3000 + 640))
+    {
+        SET_ITEM_NUM((0x3000 + 640), (GET_ITEM_NUM((0x3000 + 640)) - 1));
+    }
+    else if (itemId == (0x3000 + 641))
+    {
+        SET_ITEM_NUM((0x3000 + 641), (GET_ITEM_NUM((0x3000 + 641)) - 1));
+    }
+    else if (itemId == (0x3000 + 97))
+    {
+        SET_ITEM_NUM((0x3000 + 97), (GET_ITEM_NUM((0x3000 + 97)) - 1));
+    }
+    else if (itemId == (0x3000 + 325))
+    {
+        SET_ITEM_NUM((0x3000 + 325), (GET_ITEM_NUM((0x3000 + 325)) - 1));
+    }
+    else if (itemId == (0x3000 + 326))
+    {
+        SET_ITEM_NUM((0x3000 + 326), (GET_ITEM_NUM((0x3000 + 326)) - 1));
+    }
+    else if (itemId == (0x3000 + 642))
+    {
+        SET_ITEM_NUM((0x3000 + 642), (GET_ITEM_NUM((0x3000 + 642)) - 1));
+    }
+    else if (itemId == (0x3000 + 643))
+    {
+        SET_ITEM_NUM((0x3000 + 643), (GET_ITEM_NUM((0x3000 + 643)) - 1));
+    }
+    else if (itemId == (0x3000 + 644))
+    {
+        SET_ITEM_NUM((0x3000 + 644), (GET_ITEM_NUM((0x3000 + 644)) - 1));
+    }
+    else if (itemId == (0x3000 + 98))
+    {
+        SET_ITEM_NUM((0x3000 + 98), (GET_ITEM_NUM((0x3000 + 98)) - 1));
+    }
+    else if (itemId == (0x3000 + 99))
+    {
+        SET_ITEM_NUM((0x3000 + 99), (GET_ITEM_NUM((0x3000 + 99)) - 1));
+    }
+    else if (itemId == (0x3000 + 172))
+    {
+        SET_ITEM_NUM((0x3000 + 172), (GET_ITEM_NUM((0x3000 + 172)) - 1));
+    }
+    else if (itemId == (0x3000 + 645))
+    {
+        SET_ITEM_NUM((0x3000 + 645), (GET_ITEM_NUM((0x3000 + 645)) - 1));
+    }
+    else if (itemId == (0x3000 + 96))
+    {
+        SET_ITEM_NUM((0x3000 + 96), (GET_ITEM_NUM((0x3000 + 96)) - 1));
+    }
+    else if (itemId == (0x3000 + 540))
+    {
+        SET_ITEM_NUM((0x3000 + 540), (GET_ITEM_NUM((0x3000 + 540)) - 1));
+    }
+    else 
+    {
+        SET_ITEM_NUM((0x3000 + 541), (GET_ITEM_NUM((0x3000 + 541)) - 1));
+    }
+
+    return;
+}
+
+
+// Procedure Index: 34
+void SUB_GIFT_VSET_MSG()
+{
+    
+    if (itemId == (0x3000 + 87))
+    {
+        SET_MSG_VAR(30, (0x3000 + 87), 5);
+    }
+    else if (itemId == (0x3000 + 544))
+    {
+        SET_MSG_VAR(30, (0x3000 + 544), 5);
+    }
+    else if (itemId == (0x3000 + 84))
+    {
+        SET_MSG_VAR(30, (0x3000 + 84), 5);
+    }
+    else if (itemId == (0x3000 + 542))
+    {
+        SET_MSG_VAR(30, (0x3000 + 542), 5);
+    }
+    else if (itemId == (0x3000 + 543))
+    {
+        SET_MSG_VAR(30, (0x3000 + 543), 5);
+    }
+    else if (itemId == (0x3000 + 89))
+    {
+        SET_MSG_VAR(30, (0x3000 + 89), 5);
+    }
+    else if (itemId == (0x3000 + 90))
+    {
+        SET_MSG_VAR(30, (0x3000 + 90), 5);
+    }
+    else if (itemId == (0x3000 + 197))
+    {
+        SET_MSG_VAR(30, (0x3000 + 197), 5);
+    }
+    else if (itemId == (0x3000 + 195))
+    {
+        SET_MSG_VAR(30, (0x3000 + 195), 5);
+    }
+    else if (itemId == (0x3000 + 95))
+    {
+        SET_MSG_VAR(30, (0x3000 + 95), 5);
+    }
+    else if (itemId == (0x3000 + 82))
+    {
+        SET_MSG_VAR(30, (0x3000 + 82), 5);
+    }
+    else if (itemId == (0x3000 + 184))
+    {
+        SET_MSG_VAR(30, (0x3000 + 184), 5);
+    }
+    else if (itemId == (0x3000 + 185))
+    {
+        SET_MSG_VAR(30, (0x3000 + 185), 5);
+    }
+    else if (itemId == (0x3000 + 196))
+    {
+        SET_MSG_VAR(30, (0x3000 + 196), 5);
+    }
+    else if (itemId == (0x3000 + 545))
+    {
+        SET_MSG_VAR(30, (0x3000 + 545), 5);
+    }
+    else if (itemId == (0x3000 + 546))
+    {
+        SET_MSG_VAR(30, (0x3000 + 546), 5);
+    }
+    else if (itemId == (0x3000 + 91))
+    {
+        SET_MSG_VAR(30, (0x3000 + 92), 5);
+    }
+    else if (itemId == (0x3000 + 92))
+    {
+        SET_MSG_VAR(30, (0x3000 + 92), 5);
+    }
+    else if (itemId == (0x3000 + 93))
+    {
+        SET_MSG_VAR(30, (0x3000 + 93), 5);
+    }
+    else if (itemId == (0x3000 + 83))
+    {
+        SET_MSG_VAR(30, (0x3000 + 83), 5);
+    }
+    else if (itemId == (0x3000 + 94))
+    {
+        SET_MSG_VAR(30, (0x3000 + 94), 5);
+    }
+    else if (itemId == (0x3000 + 547))
+    {
+        SET_MSG_VAR(30, (0x3000 + 547), 5);
+    }
+    else if (itemId == (0x3000 + 548))
+    {
+        SET_MSG_VAR(30, (0x3000 + 548), 5);
+    }
+    else if (itemId == (0x3000 + 640))
+    {
+        SET_MSG_VAR(30, (0x3000 + 640), 5);
+    }
+    else if (itemId == (0x3000 + 641))
+    {
+        SET_MSG_VAR(30, (0x3000 + 641), 5);
+    }
+    else if (itemId == (0x3000 + 97))
+    {
+        SET_MSG_VAR(30, (0x3000 + 97), 5);
+    }
+    else if (itemId == (0x3000 + 325))
+    {
+        SET_MSG_VAR(30, (0x3000 + 325), 5);
+    }
+    else if (itemId == (0x3000 + 326))
+    {
+        SET_MSG_VAR(30, (0x3000 + 326), 5);
+    }
+    else if (itemId == (0x3000 + 642))
+    {
+        SET_MSG_VAR(30, (0x3000 + 642), 5);
+    }
+    else if (itemId == (0x3000 + 643))
+    {
+        SET_MSG_VAR(30, (0x3000 + 643), 5);
+    }
+    else if (itemId == (0x3000 + 644))
+    {
+        SET_MSG_VAR(30, (0x3000 + 644), 5);
+    }
+    else if (itemId == (0x3000 + 541))
+    {
+        SET_MSG_VAR(30, (0x3000 + 541), 5);
+    }
+    else if (itemId == (0x3000 + 540))
+    {
+        SET_MSG_VAR(30, (0x3000 + 540), 5);
+    }
+    else if (itemId == (0x3000 + 645))
+    {
+        SET_MSG_VAR(30, (0x3000 + 96), 5);
+    }
+    else if (itemId == (0x3000 + 644))
+    {
+        SET_MSG_VAR(30, (0x3000 + 645), 5);
+    }
+    else if (itemId == (0x3000 + 172))
+    {
+        SET_MSG_VAR(30, (0x3000 + 172), 5);
+    }
+    else if (itemId == (0x3000 + 99))
+    {
+        SET_MSG_VAR(30, (0x3000 + 99), 5);
+    }
+    else 
+    {
+        SET_MSG_VAR(30, (0x3000 + 98), 5);
+    }
+
+    return;
+}
+
+
+// Procedure Index: 35
+void Fld_FadeOut_CallField()
+{
+    FADEOUT(27, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 36
+void Fld_FadeOut_Crowd()
+{
+    FLD_REQ_SCN_CHANGE(0);
+}
+
+
+// Procedure Index: 37
+void Fld_FadeOut_CallEvent()
+{
+    FADEOUT(15, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 38
+void Fld_FadeOut_CallCalendar()
+{
+    FADEOUT(15, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 39
+void Fld_FadeOut_Default()
+{
+    FADEOUT(0, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 40
+void Fld_FadeOut_Wait10()
+{
+    FADEOUT(0, 10);
+    FADE_SYNC();
+    WAIT(10);
+}
+
+
+// Procedure Index: 41
+void Fld_FadeIn_Default()
+{
+    FADEIN(0, 20);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 42
+void Fld_FadeOut_Subway()
+{
+    FADEOUT(8, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 43
+void Fld_FadeOut_Symbol()
+{
+    FADEOUT(15, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 44
+void Fld_FadeOut_Rain()
+{
+    FADEOUT(11, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 45
+void Fld_FadeOut_Cross()
+{
+    FADEOUT(13, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 46
+void Fld_FadeOut_Parallel()
+{
+    FADEOUT(14, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 47
+void Fld_FadeOut_CutChange()
+{
+    FADEOUT(5, 10);
+    FADE_SYNC();
+}
+
+
+// Procedure Index: 48
+void Fld_FadeOut_Velvet()
+{
+    FADEOUT(19, 10);
+    FADE_SYNC();
+}
+

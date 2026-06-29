@@ -1,0 +1,30 @@
+import("e800_026.msg");
+
+void SUB_GIFT_START_MSG_hook()
+{
+    int msgId1;
+    int msgId2;
+    int msgId3;
+    int var14;
+
+    if (CMM_GET_LV(9) == 10)
+    {
+        if (BIT_CHK(3786)) { MND_GIFT_026_100; }
+        else { msgId1 = MND_GIFT_026_200; }
+    }
+    else { msgId1 = MND_GIFT_026_000; }
+
+    msgId2 = MND_GIFT_026_000_5R_0;
+    msgId3 = MND_GIFT_026_000_5R_1;
+    var14 = MND_GIFT_026_000_5R_2;
+
+    MSG_WND_DSP();
+    MSG_MIND(msgId1, 0);
+    MSG_WND_CLS();
+    MSG_WND_DSP();
+    MSG_MIND(msgId2, 0);
+    MSG_WND_CLS();
+    MSG_WND_DSP();
+    MSG_MIND(msgId3, 0);
+    MSG_WND_CLS();
+}
