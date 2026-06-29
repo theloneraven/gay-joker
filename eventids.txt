@@ -1,0 +1,42 @@
+major id groupings:
+- 704: yusuke confidant
+- 707: ryuji confidant
+- 718: mishima confidant
+- 726: akechi confidant
+- 747: hawai'i date
+- 748: culture festival
+- 749: christmas date (original)
+- 750: valentines date (original)
+- 751: christmas date (royal)
+- 752: valentines date (royal)
+- 754: white day
+- 800: generic hangout logic. there are no actual events with these ids, instead the bfs at these ids are shared across hangout events for that character
+- 803: jinbocho hangouts
+- 806: meiji shrine hangouts
+- 807: dome town
+- 811: skytree
+- 812: monjayaki
+- 814: akihabara
+- 818: planetarium
+- 822: didney worl
+- 826: ferris wheel
+- 829: aquarium
+
+minor ids:
+- for confidants:
+  - ids 1 and 2 are always bedroom hangouts
+  - for ryuji and mishima, 101 is romantic rank 10
+  - for yusuke, 101 instead is an additional event played after rank 10 if NOT romanced, and 102 is an additional event played after rank 10 if he *is* romanced
+  - for akechi, ids above 100 are used for the custom encounter
+- for hangouts:
+  - 43 is for romantic variants of yusuke hangouts
+  - 73 is for romantic variants of ryuji hangouts
+  - 81 is for *first-time* akechi hangouts, while 82 is for revisits to the same location
+- for date events:
+  - hawai'i: 5 for yusuke, 6 for ryuji, 7 for mishima
+  - culture festival: 50-51 for yusuke, 60-61 for ryuji, 70-71 for mishima
+  - christmas (original): 10 for yusuke, 11 for ryuji, 12 for mishima
+  - valentines (original): 12 for yusuke, 13 for ryuji, 14 for mishima
+  - christmas (royal): 120-125 for yusuke, 100-105 for ryuji, 110-115 for mishima
+  - valentines (royal): 130 for yusuke, 140 for ryuji, 150 for mishima
+  - white day: 130-133 for yusuke, 110-113 for ryuji, 120-123 for mishima
