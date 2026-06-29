@@ -284,6 +284,12 @@
           "ReleaseMetadataName": "p5rpc.flowscriptframework.ReleaseMetadata.json"
         }
       }
+    },
+    "GitHubRelease": {
+      "UserName": "theloneraven",
+      "RepositoryName": "gay-joker",
+      "UseReleaseTag": true,
+      "AssetFileName": "Mod.zip"
     }
   },
   "IsUniversalMod": false,
@@ -301,7 +307,5 @@
   "SupportedAppId": [
     "p5r.exe"
   ],
-  "ProjectUrl": "https://gamebanana.com/mods/689383",
-  "CreatorUrl": "",
-  "IsSeparator": false
+  "ProjectUrl": "https://gamebanana.com/mods/689383"
 }
