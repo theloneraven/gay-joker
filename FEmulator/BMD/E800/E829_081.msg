@@ -1,6 +1,7 @@
 [msg MSG_000_5_0 [Akechi]]
-[s][bup 0 9 13 65535 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]Last time we came here, you[n]did not know who I was.[n][f 1 3 65535][w][e]
-[s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 8161 65535 0]Does it feel any different now[n]knowing my true self?[n][f 1 3 65535][w][e]
+[s][bup 0 9 13 65535 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]When we came here in July, you[n]still thought I was simply the Detective Prince.[n][f 1 3 65535][w][e]
+[s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 8161 65535 0]Although... Hadn't you put the pieces[n]together by then?[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 2 0 8161 65535 0]Even still, you didn't know exactly of my[n]true nature. Does it feel any different from then?[n][f 1 3 65535][w][e]
 
 [msg MSG_001_0_0 [Akechi]]
 [s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 8161 65535 0]Tell me, does this feel different[n]than you expected now that you[n]know who I really am?[n][f 1 3 65535][w][e]
