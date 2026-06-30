@@ -8,7 +8,7 @@ void e747_101_01_dummy_hook()
     sVar0 = 0;
     BIT_ON(4040);
     
-    if (CMM_GET_LV(3) >= 5)
+    if (CMM_GET_LV(3) >= 5) // makoto
     {
         e747_101_01_link_msg();
         CALL_CHAT_DIRECT(411);
@@ -17,7 +17,7 @@ void e747_101_01_dummy_hook()
     }
 
     
-    if (CMM_GET_LV(7) >= 9)
+    if (CMM_GET_LV(7) >= 9) // ann
     {
         e747_101_01_link_msg();
         CALL_CHAT_DIRECT(471);
@@ -26,7 +26,7 @@ void e747_101_01_dummy_hook()
     }
 
     
-    if (CMM_GET_LV(15) >= 10)
+    if (CMM_GET_LV(15) >= 10) // kawakami
     {
         e747_101_01_link_msg();
         CALL_CHAT_DIRECT(592);
@@ -35,7 +35,7 @@ void e747_101_01_dummy_hook()
     }
 
     
-    if (CMM_GET_LV(18) >= 5)
+    if (CMM_GET_LV(18) >= 5) // hifumi
     {
         e747_101_01_link_msg();
         CALL_CHAT_DIRECT(638);
@@ -69,28 +69,26 @@ void e747_101_01_dummy_hook()
         hiddenOptions = (hiddenOptions - 128);
         sVar0 = 1;
     }
-
     
     if (!BIT_CHK(3785) && !BIT_CHK(3789) && !BIT_CHK(3791)) // platonic event
     {
         e747_101_01_link_msg();
+
+        if (hiddenOptions == 255)
+        {
+            WAIT(15);
+            MSG_WND_DSP();
+            MSG_MIND(MND_004_0_0, 0);
+            MSG_WND_CLS();
+            WAIT(15);
+            MSG_WND_DSP();
+            MSG_MIND(MND_005_0_0, 0);
+            MSG_WND_CLS();
+        }
+
         CALL_CHAT_DIRECT(489);
         hiddenOptions = (hiddenOptions - 16);
         sVar0 = 1;
-    }
-
-    e747_101_01_link_msg();
-    
-    if (hiddenOptions == 30)
-    {
-        WAIT(15);
-        MSG_WND_DSP();
-        MSG_MIND(MND_004_0_0, 0);
-        MSG_WND_CLS();
-        WAIT(15);
-        MSG_WND_DSP();
-        MSG_MIND(MND_005_0_0, 0);
-        MSG_WND_CLS();
     }
 
     MSG_WND_DSP();

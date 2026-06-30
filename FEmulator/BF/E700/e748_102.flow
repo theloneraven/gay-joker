@@ -9,7 +9,7 @@ void E748_101_01_invite_hook()
     sVar1 = 0;
     BIT_ON(4040);
     
-    if (CMM_GET_LV(3) >= 9)
+    if (CMM_GET_LV(3) >= 9) // makoto
     {
         E748_101_03_link_msg();
         CALL_CHAT_DIRECT(412);
@@ -17,14 +17,15 @@ void E748_101_01_invite_hook()
         sVar1 = 1;
         eventMinor = 0;
     }
-
+    
+    // haru
     E748_101_03_link_msg();
     CALL_CHAT_DIRECT(426);
     hiddenOptions = (hiddenOptions - 2);
     sVar1 = 1;
     eventMinor = 1;
     
-    if (CMM_GET_LV(7) >= 9)
+    if (CMM_GET_LV(7) >= 9) // ann
     {
         E748_101_03_link_msg();
         CALL_CHAT_DIRECT(472);
@@ -34,7 +35,7 @@ void E748_101_01_invite_hook()
     }
 
     
-    if (CMM_GET_LV(15) >= 10)
+    if (CMM_GET_LV(15) >= 10) // kawakami
     {
         E748_101_03_link_msg();
         CALL_CHAT_DIRECT(593);
@@ -81,18 +82,19 @@ void E748_101_01_invite_hook()
         sVar1 = 1;
     }
 
-    MSG_WND_DSP();
     
     if (hiddenOptions != 253)
     {
+        MSG_WND_DSP();
         MSG_MIND(MND_000_0_0, 0);
         MSG_WND_CLS();
         SEL_MASK(hiddenOptions);
-        selChoice = SEL_GENERIC_NOT_CANCEL(-1, 9);
+        selChoice = SEL_GENERIC_NOT_CANCEL(1, SEL_001_0_0);
         BIT_OFF(4040);
     }
     else // only haru available
     {
+        MSG_WND_DSP();
         MSG_MIND(MND_003_0_0, 0);
         MSG_WND_CLS();
         BIT_OFF(4040);
@@ -127,21 +129,21 @@ void E748_101_01_invite_hook()
         eventMinor = 40;
         BIT_ON(1288);
     }
-    else if (selChoice == 5)
+    else if (selChoice == 5) // yusuke
     {
         CALL_CHAT_DIRECT(1325);
         CHAT_SET_SWITCH(1325, 1);
         eventMinor = 50;
         BIT_ON(1288);
     }
-    else if (selChoice == 6)
+    else if (selChoice == 6) // ryuji
     {
         CALL_CHAT_DIRECT(1326);
         CHAT_SET_SWITCH(1326, 1);
         eventMinor = 60;
         BIT_ON(1288);
     }
-    else if (selChoice == 7)
+    else if (selChoice == 7) // mishima
     {
         CALL_CHAT_DIRECT(1324);
         CHAT_SET_SWITCH(1324, 1);

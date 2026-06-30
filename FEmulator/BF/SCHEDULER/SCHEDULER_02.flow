@@ -193,7 +193,7 @@ void sdl02_13_PM_D_RE_hook()
     }
 
 
-    if (BIT_CHK(3786) && CMM_GET_LV(19) == 10) // no actual akechi date for obvious reasons but the star will still change
+    if (BIT_CHK(3786) && CMM_GET_LV(9) == 10) // no actual akechi date for obvious reasons but the star will still change
     {
         bitchesBitfield = (bitchesBitfield + 0x2000);
     }

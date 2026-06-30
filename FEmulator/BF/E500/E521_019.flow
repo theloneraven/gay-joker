@@ -383,7 +383,7 @@ void e521_019_01_hook()
         BIT_ON(1288);
         eventMinor = 120;
     }
-    else if (selChoice == 10)
+    else if (selChoice == 10) // yusuke
     {
         CALL_CHAT_DIRECT(1334);
         CHAT_SET_SWITCH(1334, 1);
@@ -391,7 +391,7 @@ void e521_019_01_hook()
         BIT_ON(3825);
         eventMinor = 130;
     }
-    else if (selChoice == 11)
+    else if (selChoice == 11) // ryuji
     {
         CALL_CHAT_DIRECT(1335);
         CHAT_SET_SWITCH(1335, 1);
@@ -399,7 +399,7 @@ void e521_019_01_hook()
         BIT_ON(3825);
         eventMinor = 140;
     }
-    else if (selChoice == 12)
+    else if (selChoice == 12) // mishima
     {
         CALL_CHAT_DIRECT(1333);
         CHAT_SET_SWITCH(1333, 1);

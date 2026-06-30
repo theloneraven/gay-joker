@@ -1,0 +1,59 @@
+import("whitedaycommon.msg");
+
+void check_0214_state_tel_hook()
+{
+    int valentinesEventMinor;
+    int msgId;
+    valentinesEventMinor = GET_COUNT(352);
+    
+    if (EVT_GET_LOCAL_DATA(47) == 1) // this should only be 1 if you actively cheated on this character on valentines, if you spent time w them or saw the platonic event it should be 0
+    {
+        
+        if (valentinesEventMinor == 0 || valentinesEventMinor == 1000)
+        {
+            msgId = MND_0314_TEL_MKT;
+        }
+        else if (valentinesEventMinor == 10 || valentinesEventMinor == 1010)
+        {
+            msgId = MND_0314_TEL_HAR;
+        }
+        else if (valentinesEventMinor == 30 || valentinesEventMinor == 1030)
+        {
+            msgId = MND_0314_TEL_FTB;
+        }
+        else if (valentinesEventMinor == 40 || valentinesEventMinor == 1040)
+        {
+            msgId = MND_0314_TEL_THY;
+        }
+        else if (valentinesEventMinor == 50 || valentinesEventMinor == 1050)
+        {
+            msgId = MND_0314_TEL_TKM;
+        }
+        else if (valentinesEventMinor == 60 || valentinesEventMinor == 1060)
+        {
+            msgId = MND_0314_TEL_SDY;
+        }
+        else if (valentinesEventMinor == 70 || valentinesEventMinor == 1070)
+        {
+            msgId = MND_0314_TEL_ITK;
+        }
+        else if (valentinesEventMinor == 80 || valentinesEventMinor == 1080)
+        {
+            msgId = MND_0314_TEL_123;
+        }
+        else if (valentinesEventMinor == 120 || valentinesEventMinor == 1120)
+        {
+            msgId = MND_0314_TEL_SMR;
+        }
+        else if (valentinesEventMinor == 130) { msgId = MND_0314_TEL_YSK; } // yusuke
+        else if (valentinesEventMinor == 150) { msgId = MND_0314_TEL_MSA; } // mishima
+        else if (valentinesEventMinor == 90) || valentinesEventMinor == 140 || valentinesEventMinor == 1090)) { msgId = MND_0314_TEL_RYU; } // ryuji
+        else { return; }
+
+        MSG_WND_DSP();
+        MSG_MIND(msgId, 0);
+        MSG_WND_CLS();
+    }
+
+    return;
+}

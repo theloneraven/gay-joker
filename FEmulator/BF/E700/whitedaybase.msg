@@ -31,13 +31,9 @@
 [msg MND_0314_TEL_RYU]
 [s][vp 8 0 0 0 65535 0]Ryuji is calling me...[n][f 1 3 65535][w][e]
 
-[msg MND_0314_TEL_MSA]
-[s][vp 8 0 0 0 65535 0]Mishima is calling me...[n][f 1 3 65535][w][e]
-
 [msg MND_0214_STATE_SELECT]
-[s][vp 8 0 0 0 65535 0]バレンタインはどうだった?[n][f 1 3 65535][w][e]
+[s][vp 8 0 0 0 65535 0]How was Valentine's Day? [n][f 1 3 65535][w][e]
 
 [sel SEL_0214_STATE_SELECT_DB top]
 [s]Spent together[e]
 [s]Didn't spend together [e]
-
