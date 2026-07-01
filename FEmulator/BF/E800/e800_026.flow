@@ -9,7 +9,7 @@ void SUB_GIFT_START_MSG_hook()
 
     if (CMM_GET_LV(9) == 10)
     {
-        if (BIT_CHK(3786)) { MND_GIFT_026_100; }
+        if (BIT_CHK(3786)) { msgId1 = MND_GIFT_026_100; }
         else { msgId1 = MND_GIFT_026_200; }
     }
     else { msgId1 = MND_GIFT_026_000; }

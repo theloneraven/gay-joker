@@ -47,7 +47,7 @@ void check_0214_state_tel_hook()
         }
         else if (valentinesEventMinor == 130) { msgId = MND_0314_TEL_YSK; } // yusuke
         else if (valentinesEventMinor == 150) { msgId = MND_0314_TEL_MSA; } // mishima
-        else if (valentinesEventMinor == 90) || valentinesEventMinor == 140 || valentinesEventMinor == 1090)) { msgId = MND_0314_TEL_RYU; } // ryuji
+        else if (valentinesEventMinor == 90 || valentinesEventMinor == 140 || valentinesEventMinor == 1090) { msgId = MND_0314_TEL_RYU; } // ryuji
         else { return; }
 
         MSG_WND_DSP();

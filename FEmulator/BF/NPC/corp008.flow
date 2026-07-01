@@ -809,7 +809,7 @@ void SUB_COOP_SPOT_EVT_REV()
     MSG(MSG_C08_REV_SPOT_00_10, 0);
     MSG_WND_CLS();
     SEL_MASK(selId);
-    selChoice = SEL_GENERIC_NOT_CANCEL(-1, 160);
+    selChoice = SEL_GENERIC_NOT_CANCEL(-1, SEL_C08_REV_SPOT_00_10);
     
     if (selChoice == 0)
     {

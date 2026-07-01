@@ -18,6 +18,7 @@ major id groupings:
 - 812: monjayaki
 - 814: akihabara
 - 818: planetarium
+- 821: ueno
 - 822: didney worl
 - 826: ferris wheel
 - 829: aquarium
