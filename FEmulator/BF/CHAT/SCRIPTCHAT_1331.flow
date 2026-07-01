@@ -83,7 +83,7 @@ void CHAT_INVITE_MSG()
 // Procedure Index: 2
 void CHAT_RETURN_MSG()
 {
-    CHAT_SEL_LINE(2, 0);
+    CHAT_SEL_LINE(SEL_010_0_0, 0);
     MSG(MSG_020_0_0, 0);
     MSG(MSG_021_0_0, 0);
 }

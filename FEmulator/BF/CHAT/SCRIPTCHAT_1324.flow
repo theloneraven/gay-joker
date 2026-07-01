@@ -25,14 +25,14 @@ int sVar2;
 // Procedure Index: 0
 void chatProc()
 {
-    int var3;
-    int var4;
+    int month;
+    int day;
     int var5;
-    var3 = CHAT_GET_ARRIVAL_MONTH(-1);
-    var4 = CHAT_GET_ARRIVAL_DAY(-1);
+    month = CHAT_GET_ARRIVAL_MONTH(-1);
+    day = CHAT_GET_ARRIVAL_DAY(-1);
     var5 = 0;
     
-    if ((GET_DAY() == var4) && (GET_MONTH() == var3))
+    if ((GET_DAY() == day) && (GET_MONTH() == month))
     {
         var5 = 1;
     }
@@ -83,7 +83,7 @@ void CHAT_INVITE_MSG()
 // Procedure Index: 2
 void CHAT_RETURN_MSG()
 {
-    CHAT_SEL_LINE(3, 0);
+    CHAT_SEL_LINE(SEL_010_0_0, 0);
     MSG(MSG_020_0_0, 0);
     MSG(MSG_021_0_0, 0);
 }

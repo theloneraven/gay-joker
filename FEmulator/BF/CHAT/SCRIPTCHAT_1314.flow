@@ -51,7 +51,7 @@ void CHAT_MAIN_hook()
     
     if (CHAT_CHECK_READ(-1) == 1)
     {
-        CHAT_SEL_LINE(13, 0);
+        CHAT_SEL_LINE(SEL_002, 0);
         MSG(CHAT_REACTION_01, 0);
         MSG(CHAT_REACTION_02, 0);
         MSG(CHAT_REACTION_03, 0);
@@ -102,7 +102,7 @@ void CHAT_MAIN_hook()
                 if (selChoice == 0)
                 {
                     CHAT_SET_SEL(-1, 0, 0);
-                    CHAT_SEL_LINE(13, 0);
+                    CHAT_SEL_LINE(SEL_002, 0);
                     MSG(CHAT_REACTION_01, 0);
                     MSG(CHAT_REACTION_02, 0);
                     MSG(CHAT_REACTION_03, 0);
