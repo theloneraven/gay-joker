@@ -5,7 +5,7 @@
 [s][bup 0 2 0 65535 0][f 4 10 65535 0 0][f 4 23 1 207 32 10 31 10][vp 8 2 1 7060 65535 0]Okay... Let's grab some ramem.[n][w][e]
 [s][f 4 10 65535 0 0]We can talk at your place after...[n]About before.[n][w][e]
 
-[sel SEL_C07_SPOT_00_02 top]
+[sel SEL_C07_SPOT_00_01 top]
 [s]Let's go somewhere fun.[e]
 [s]Let's go to my room.[e]
 [s]Let's train.[e]

@@ -201,10 +201,7 @@ void RYUJI_EVENT_FROM_CHAT()
     BIT_OFF(4071);
     BIT_ON(4390);
     
-    if (BIT_CHK(3785))
-    {
-        BIT_ON(1288);
-    }
+    BIT_ON(1288);
 
     NET_SET_AFTER_SCHOOL_ACTION(8);
     if (BIT_CHK(164) == 1)
@@ -215,17 +212,7 @@ void RYUJI_EVENT_FROM_CHAT()
     HERO_CHAT_CLOSE();
     Fld_FadeOut_CallEvent();
     CMM_EXEC_EVENT();
-    
-    if ((BIT_CHK(3784) == 1) && (BIT_CHK(3785) == 0))
-    {
-        BIT_ON(3785);
-    }
-
-        
-    if (BIT_CHK(3785) == 1)
-    {
-        CALL_EVENT(707, 101);
-    }
+    CALL_EVENT(707, 101);
 
     
     if (var15 == 1)

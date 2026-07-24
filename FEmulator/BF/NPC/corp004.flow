@@ -36,11 +36,11 @@ void SUB_TALK_COOP_YUSUKE_hook()
 
     SUB_BEGIN_MSG_YUSUKE();
     
-    if ((sVar3 == -1) || (sVar3 == 10))
+    if ((sVar3 == -1) || (sVar3 == 10)) // cancel or go to hideout
     {
         return;
     }
-    else if (sVar3 == 6)
+    else if (sVar3 == 6) // study
     {
         BIT_OFF(4068);
         BIT_ON(4387);
@@ -56,7 +56,7 @@ void SUB_TALK_COOP_YUSUKE_hook()
         CALL_EVENT(795, 2);
         return;
     }
-    else if (sVar3 == 20)
+    else if (sVar3 == 20) // card duping
     {
         fldScript = FLD_SCRIPT_READ(7001, 0, 0);
         FLD_SCRIPT_READ_SYNC(fldScript);
@@ -110,10 +110,6 @@ void SUB_TALK_COOP_YUSUKE_hook()
             {
                 sVar3 = 1;
                 SUB_TALK_COOP_EVT();
-            }
-            else if (BIT_CHK(3789) == 1)
-            {
-                SUB_COOP_LOVERS_EVT_CHECK();
             }
             else 
             {
@@ -518,41 +514,39 @@ void SUB_COOP_LOVERS_EVT()
     SUB_COOP_EVT_RESET();
 }
 
-
-// Procedure Index: 108
-void SUB_COOP_LOVERS_EVT_CHECK()
+void SUB_COOP_GENERAL_EVT_CHECK_hook()
 {
-    int var151;
-    int var152;
-    var151 = 0;
+    int hiddenOptionBitfield;
+    int selChoice;
+    hiddenOptionBitfield = 0;
     SUB_COOP_LMAP_SPOT_CHECK();
     
     if (sVar2 == 0)
     {
-        var151 = (var151 + 1);
+        hiddenOptionBitfield = (hiddenOptionBitfield + 1);
     }
 
     
     if (BIT_CHK(3789) == 0)
     {
-        var151 = (var151 + 2);
+        hiddenOptionBitfield = (hiddenOptionBitfield + 2);
     }
 
     
-    if (var151 != 3)
+    if (hiddenOptionBitfield != 3)
     {
         MSG_WND_DSP();
         MSG(MSG_C04_SPOT_00_00, 0);
-        SEL_MASK(var151);
-        var152 = SEL(SEL_C04_SPOT_00_02);
+        SEL_MASK(hiddenOptionBitfield);
+        selChoice = SEL(SEL_C04_SPOT_00_01);
         MSG_WND_CLS();
         
-        if (var152 == 0)
+        if (selChoice == 0)
         {
             sVar3 = 2;
             SUB_COOP_SPOT_EVT();
         }
-        else if (var152 == 1)
+        else if (selChoice == 1)
         {
             sVar3 = 5;
             SUB_COOP_LOVERS_EVT();

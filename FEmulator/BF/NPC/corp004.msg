@@ -1,4 +1,4 @@
-[sel SEL_C04_SPOT_00_02 top]
+[sel SEL_C04_SPOT_00_01 top]
 [s]Let's go somewhere fun.[e]
 [s]Let's go to my room.[e]
 [s]Let's do some people watching.[e]

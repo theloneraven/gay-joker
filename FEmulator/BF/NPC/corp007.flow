@@ -14,11 +14,11 @@ void SUB_TALK_COOP_RYUJI_hook()
 
     SUB_BEGIN_MSG_RYUJI();
     
-    if ((sVar2 == -1) || (sVar2 == 10))
+    if ((sVar2 == -1) || (sVar2 == 10)) // cancel or go to hideout
     {
         return;
     }
-    else if (sVar2 == 6)
+    else if (sVar2 == 6) // study for exams
     {
         BIT_OFF(4071);
         BIT_ON(4390);
@@ -74,10 +74,6 @@ void SUB_TALK_COOP_RYUJI_hook()
             {
                 sVar2 = 1;
                 SUB_COOP_RANKUP_EVT();
-            }
-            else if (BIT_CHK(3782) == 1)
-            {
-                SUB_COOP_LOVERS_EVT_CHECK();
             }
             else 
             {
@@ -565,11 +561,6 @@ void SUB_COOP_TABLE_EVENT_START_hook()
         if (BIT_CHK(3785) == 1)
         {
             BIT_ON(3782);
-        }
-
-        
-        if (BIT_CHK(3785) == 1)
-        {
             CALL_EVENT(707, 101);
         }
 
@@ -598,31 +589,31 @@ void SUB_COOP_EVT_SET_hook()
     NET_SET_AFTER_SCHOOL_ACTION(8);
 }
 
-void SUB_COOP_LOVERS_EVT_CHECK()
+void SUB_COOP_GENERAL_EVT_CHECK_hook()
 {
-    int selId;
+    int hiddenOptionBitfield;
     int selChoice;
-    selId = 0;
+    hiddenOptionBitfield = 0;
     SUB_COOP_LMAP_SPOT_CHECK();
     
-    if (sVar2 == 0)
+    if (sVar1 == 0) // no hangout spots unlocked
     {
-        selId = (selId + 1);
+        hiddenOptionBitfield = (hiddenOptionBitfield + 1);
     }
 
     
-    if (BIT_CHK(3782) == 0)
+    if (BIT_CHK(3782) == 0) // cant invite to room
     {
-        selId = (selId + 2);
+        hiddenOptionBitfield = (hiddenOptionBitfield + 2);
     }
 
     
-    if (selId != 3)
+    if (hiddenOptionBitfield != 3)
     {
         MSG_WND_DSP();
         MSG(MSG_C07_SPOT_00_00, 0);
-        SEL_MASK(selId);
-        selChoice = SEL(SEL_C07_SPOT_00_02);
+        SEL_MASK(hiddenOptionBitfield);
+        selChoice = SEL(SEL_C07_SPOT_00_01);
         MSG_WND_CLS();
         
         if (selChoice == 0)

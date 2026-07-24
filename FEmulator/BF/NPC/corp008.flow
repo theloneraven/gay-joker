@@ -4,20 +4,20 @@ import("corp008.msg");
 void SUB_BEGIN_MSG_AKECHI_hook()
 {
     int fldScript;
-    int var5;
-    int var6;
+    int curPalace;
+    int infiltrationStage;
     int rank;
     fldScript = FLD_SCRIPT_READ(2500, 0, 0);
     FLD_SCRIPT_READ_SYNC(fldScript);
     FLD_SCRIPT_EXEC(fldScript, 0);
     FLD_SCRIPT_FREE(fldScript);
-    var5 = GET_COUNT(56);
-    var5 = (var5 / 10);
-    var6 = GET_COUNT(56);
-    var6 = REM(var6, 10);
+    curPalace = GET_COUNT(56);
+    curPalace = (curPalace / 10);
+    infiltrationStage = GET_COUNT(56);
+    infiltrationStage = REM(infiltrationStage, 10);
     rank = CMM_GET_LV(sVar0);
     
-    if (((var5 == 6) && (var6 == 5)) && BIT_CHK(1180))
+    if (((curPalace == 6) && (infiltrationStage == 5)) && BIT_CHK(1180))
     {
         MSG_WND_DSP();
         MSG(MSG_C02_BEGIN_D06_50_01, 0);
@@ -32,7 +32,7 @@ void SUB_BEGIN_MSG_AKECHI_hook()
         }
 
     }
-    else if (var5 == 10)
+    else if (curPalace == 10)
     {
         SUB_BEGIN_MSG_AKECHI_THEATER();
     }
