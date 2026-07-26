@@ -404,55 +404,25 @@ void SUB_COOP_RANKUP_EVT_hook()
 void SUB_COOP_GENERAL_EVT_CHECK_hook()
 {
     int selChoice;
+    int hiddenOptionBitfield;
+    hiddenOptionBitfield = 0;
     
-    if (sVar2 == 0)
+    if (BIT_CHK(3786))
     {
-        selChoice = (selChoice + 1);
-    }
+        SUB_COOP_LMAP_SPOT_CHECK();
+        if (sVar1 == 0) { hiddenOptionBitfield = 2; }
 
-    
-    if (BIT_CHK(3786) == 1)
-    {
-        
-        if (selChoice != 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_C08_REV_SPOT_00_00, 0);
-            selChoice = SEL(SEL_C08_REV_SPOT_00_01);
-            MSG_WND_CLS();
-            
-            if (selChoice == 0)
-            {
-                sVar2 = 5;
-                SUB_COOP_LOVERS_EVT();
-            }
-            else if (selChoice == 1)
-            {
-                sVar2 = 2;
-                SUB_COOP_SPOT_EVT_REV();
-            }
-            else 
-            {
-                sVar2 = 4;
-                SUB_COOP_GENERAL_EVT_REV();
-            }
-
-        }
-        else 
-        {
-            sVar2 = 4;
-            SUB_COOP_GENERAL_EVT_REV();
-        }
-
-    }
-    else if (sVar1 != 0)
-    {
         MSG_WND_DSP();
-        MSG(MSG_C08_SPOT_00_00, 0);
-        selChoice = SEL(SEL_C08_SPOT_00_01);
+        MSG(MSG_C08_REV_SPOT_00_00, 0);
+        selChoice = SEL(SEL_C08_REV_SPOT_00_01);
         MSG_WND_CLS();
-        
+            
         if (selChoice == 0)
+        {
+            sVar2 = 5;
+            SUB_COOP_LOVERS_EVT();
+        }
+        else if (selChoice == 1)
         {
             sVar2 = 2;
             SUB_COOP_SPOT_EVT();
@@ -460,9 +430,8 @@ void SUB_COOP_GENERAL_EVT_CHECK_hook()
         else 
         {
             sVar2 = 4;
-            SUB_COOP_GENERAL_EVT();
+            SUB_COOP_GENERAL_EVT_REV();
         }
-
     }
     else 
     {
@@ -474,7 +443,7 @@ void SUB_COOP_GENERAL_EVT_CHECK_hook()
 void SUB_COOP_SPOT_EVT_hook()
 {
     
-    if (BIT_CHK(3786) == 1)
+    if (BIT_CHK(12048) == 1)
     {
         MSG_WND_DSP();
         MSG(MSG_C08_REV_SPOT_00_10, 0);
@@ -501,51 +470,24 @@ void SUB_COOP_SPOT_EVT_hook()
     FLD_PANEL_MAP_PROC_SYNC(0);
     BIT_OFF(4607);
     SET_COUNT(61, 0);
-    DaytimeCorpPlayNG_Setup();
+    NightCorpPlayNG_Setup();
 }
 
 void SUB_COOP_LMAP_SPOT_CHECK_hook()
 {
     
-    if (BIT_CHK(3786) == 1)
+    if (BIT_CHK(10162)      // ueno
+        || BIT_CHK(10157)   // ikebukuro
+        || BIT_CHK(10159)   // asakusa
+        || BIT_CHK(10152)   // shinagawa
+        || BIT_CHK(10146)   // tsukishima
+        || BIT_CHK(10164)   // maihama
+        || BIT_CHK(10161)   // dome town
+        || BIT_CHK(10153)   // ferris wheel
+        || BIT_CHK(10148)   // jinbocho
+        || BIT_CHK(10163))  // meiji shrine
     {
-        
-        if (((((BIT_CHK(10146) == 1) || (BIT_CHK(10148) == 1)) || (BIT_CHK(10157) == 1)) || (BIT_CHK(10161) == 1)) || (BIT_CHK(10164) == 1))
-        {
-            sVar1 = 9;
-        }
-
-    }
-    else if (CMM_GET_LV(sVar0) > 3)
-    {
-        
-        if (BIT_CHK(3088) == 0)
-        {
-            
-            if ((((BIT_CHK(10145) == 1) || (BIT_CHK(10146) == 1)) || (BIT_CHK(10150) == 1)) || (BIT_CHK(10161) == 1))
-            {
-                sVar1 = 1;
-            }
-
-        }
-        else if (((((BIT_CHK(10145) == 1) || (BIT_CHK(10146) == 1)) || (BIT_CHK(10150) == 1)) || (BIT_CHK(10161) == 1)) || (BIT_CHK(10165) == 1))
-        {
-            sVar1 = 2;
-        }
-
-    }
-    else if (BIT_CHK(3088) == 0)
-    {
-        
-        if (((BIT_CHK(10146) == 1) || (BIT_CHK(10150) == 1)) || (BIT_CHK(10161) == 1))
-        {
-            sVar1 = 30;
-        }
-
-    }
-    else if ((((BIT_CHK(10146) == 1) || (BIT_CHK(10150) == 1)) || (BIT_CHK(10161) == 1)) || (BIT_CHK(10165) == 1))
-    {
-        sVar1 = 31;
+        sVar1 = 39;
     }
 }
 
@@ -797,363 +739,6 @@ void SUB_COOP_LOVERS_EVT()
 
     SUB_COOP_EVT_RESET();
     CALL_CALENDAR();
-}
-
-void SUB_COOP_SPOT_EVT_REV()
-{
-    int selId;
-    int selChoice;
-    BIT_ON(1288);
-    NET_SET_NIGHT_ACTION(93);
-    MSG_WND_DSP();
-    MSG(MSG_C08_REV_SPOT_00_10, 0);
-    MSG_WND_CLS();
-    SEL_MASK(selId);
-    selChoice = SEL_GENERIC_NOT_CANCEL(-1, SEL_C08_REV_SPOT_00_10);
-    
-    if (selChoice == 0)
-    {
-        
-        if (BIT_CHK(4465) == 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_UENO, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            BIT_ON(4465);
-            CALL_EVENT(821, 81);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-        else if (BIT_CHK(4465) == 1)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_UENO_, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            CALL_EVENT(821, 82);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-
-    }
-
-    
-    if ((selChoice == 1) && (BIT_CHK(10157) == 1))
-    {
-        
-        if (BIT_CHK(4456) == 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_IKEBUKUR, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            BIT_ON(4456);
-            CALL_EVENT(818, 81);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-        else if (BIT_CHK(4456) == 1)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_IKEBUKUR_2, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            CALL_EVENT(818, 82);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-
-    }
-    else if ((selChoice == 1) && (BIT_CHK(10157) == 0))
-    {
-        MSG_WND_DSP();
-        MSG(MSG_LOCATION_CHECK_3RD_R, 0);
-        MSG_WND_CLS();
-    }
-
-    
-    if ((selChoice == 2) && (BIT_CHK(10159) == 1))
-    {
-        
-        if (BIT_CHK(4457) == 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_SKYTREE, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            BIT_ON(4457);
-            CALL_EVENT(811, 81);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-        else if (BIT_CHK(4457) == 1)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_SKYTREE_, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            CALL_EVENT(811, 82);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-
-    }
-    else if ((selChoice == 2) && (BIT_CHK(10159) == 0))
-    {
-        MSG_WND_DSP();
-        MSG(MSG_LOCATION_CHECK_3RD_R, 0);
-        MSG_WND_CLS();
-    }
-
-    
-    if (selChoice == 3)
-    {
-        
-        if (BIT_CHK(4458) == 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_SHINAGAW, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            BIT_ON(4458);
-            CALL_EVENT(829, 81);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-        else if (BIT_CHK(4458) == 1)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_SHINAGAW_2, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            CALL_EVENT(829, 82);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-
-    }
-
-    
-    if ((selChoice == 4) && (BIT_CHK(10146) == 1))
-    {
-        
-        if (BIT_CHK(4459) == 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_TSUKISHI, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            BIT_ON(4459);
-            CALL_EVENT(812, 81);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-        else if (BIT_CHK(4459) == 1)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_TSUKISHI_2, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            CALL_EVENT(812, 82);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-
-    }
-    else if ((selChoice == 4) && (BIT_CHK(10146) == 0))
-    {
-        MSG_WND_DSP();
-        MSG(MSG_LOCATION_CHECK_3RD_R, 0);
-        MSG_WND_CLS();
-    }
-
-    
-    if (selChoice == 5)
-    {
-        
-        if (BIT_CHK(4460) == 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_MAIHAMA, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            BIT_ON(4460);
-            CALL_EVENT(822, 81);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-        else if (BIT_CHK(4460) == 1)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_MAIHAMA_, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            CALL_EVENT(822, 82);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-
-    }
-
-    
-    if (selChoice == 6)
-    {
-        
-        if (BIT_CHK(4461) == 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_SUIDOBAS, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            BIT_ON(4461);
-            CALL_EVENT(807, 81);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-        else if (BIT_CHK(4461) == 1)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_SUIDOBAS_2, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            CALL_EVENT(807, 82);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-
-    }
-
-    
-    if ((selChoice == 7) && (BIT_CHK(10153) == 1))
-    {
-        
-        if (BIT_CHK(4462) == 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_ODAIBA, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            BIT_ON(4462);
-            CALL_EVENT(826, 81);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-        else if (BIT_CHK(4462) == 1)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_ODAIBA_, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            CALL_EVENT(826, 82);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-
-    }
-    else if ((selChoice == 7) && (BIT_CHK(10153) == 0))
-    {
-        MSG_WND_DSP();
-        MSG(MSG_LOCATION_CHECK_3RD_R, 0);
-        MSG_WND_CLS();
-    }
-
-    
-    if ((selChoice == 8) && (BIT_CHK(10148) == 1))
-    {
-        
-        if (BIT_CHK(4463) == 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_JINBO, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            BIT_ON(4463);
-            CALL_EVENT(803, 81);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-        else if (BIT_CHK(4463) == 1)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_JINBO_, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            CALL_EVENT(803, 82);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-
-    }
-    else if ((selChoice == 8) && (BIT_CHK(10148) == 0))
-    {
-        MSG_WND_DSP();
-        MSG(MSG_LOCATION_CHECK_3RD_R, 0);
-        MSG_WND_CLS();
-    }
-
-    
-    if ((selChoice == 9) && (BIT_CHK(10163) == 1))
-    {
-        
-        if (BIT_CHK(4464) == 0)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_MEIJI, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            BIT_ON(4464);
-            CALL_EVENT(806, 81);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-        else if (BIT_CHK(4464) == 1)
-        {
-            MSG_WND_DSP();
-            MSG(MSG_AKECHI_SPOT_MEIJI_, 0);
-            MSG(MSG_MORGANA_COOP_ESCAPE, 0);
-            MSG_WND_CLS();
-            Fld_FadeOut_CallEvent();
-            CALL_EVENT(806, 82);
-            SUB_COOP_EVT_RESET();
-            CALL_CALENDAR();
-        }
-
-    }
-    else if ((selChoice == 9) && (BIT_CHK(10163) == 0))
-    {
-        MSG_WND_DSP();
-        MSG(MSG_LOCATION_CHECK_3RD_R, 0);
-        MSG_WND_CLS();
-    }
-
-    
-    if (selChoice == 10)
-    {
-        MSG_WND_DSP();
-        MSG(MSG_AKECHI_SPOT_CANCEL, 0);
-        MSG_WND_CLS();
-    }
-
 }
 
 void SUB_COOP_GENERAL_EVT_REV()

@@ -2,15 +2,15 @@
 [s][bup 0 9 13 65535 0][f 4 10 65535 0 0][vp 8 2 0 8127 65535 0]The museum? A rather tame option[n]from you.[n][w][e]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0]I suppose we can go.[n]Let's head there now.[n][w][e]
 
-[msg MSG_AKECHI_SPOT_UENO_ [Akechi]]
+[msg MSG_AKECHI_SPOT_UENO2 [Akechi]]
 [s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 8127 65535 0]Last time was a rather[n]intriguing talk.[n][w][e]
 [s][f 4 10 65535 0 0][vp 8 2 0 8051 65535 0]I am fine with going again.[n]You can lead the way.[n][w][e]
 
-[msg MSG_AKECHI_SPOT_IKEBUKUR [Akechi]]
+[msg MSG_AKECHI_SPOT_IKEBUKURO [Akechi]]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0]You want to go to the planetarium?[n]I have not went there before.[n][w][e]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 54418 65535 0]This better not disappoint me, [fName].[n][w][e]
 
-[msg MSG_AKECHI_SPOT_IKEBUKUR_2 [Akechi]]
+[msg MSG_AKECHI_SPOT_IKEBUKURO2 [Akechi]]
 [s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 8133 65535 0]Last time did not disappoint.[n]A rather pleasant surprise.[n][w][e]
 [s][f 4 10 65535 0 0][vp 8 2 0 54402 65535 0]Is there something new this time?[n]I suppose we shall find out.[n][w][e]
 
@@ -18,50 +18,50 @@
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 8127 65535 0]That tower, right? Fine, I guess[n]that works.[n][w][e]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 8051 65535 0]Shall we get going?[n][w][e]
 
-[msg MSG_AKECHI_SPOT_SKYTREE_ [Akechi]]
+[msg MSG_AKECHI_SPOT_SKYTREE2 [Akechi]]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 8133 65535 0]Again? I guess it isn't an issue.[n][w][e]
 
-[msg MSG_AKECHI_SPOT_SHINAGAW [Akechi]]
+[msg MSG_AKECHI_SPOT_SHINAGAWA [Akechi]]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 1 0 65535 0]Ah, yes. The aquarium. I suppose[n]we could go there.[n][w][e]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 8156 65535 0]How about we head there now?[n][w][e]
 
-[msg MSG_AKECHI_SPOT_SHINAGAW_2 [Akechi]]
+[msg MSG_AKECHI_SPOT_SHINAGAWA2 [Akechi]]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 8133 65535 0]I do suppose going there again[n]would be fine. Let us go.[n][w][e]
 
-[msg MSG_AKECHI_SPOT_TUKISHIM [Akechi]]
+[msg MSG_AKECHI_SPOT_TUKISHIMA [Akechi]]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 8133 65535 0]You want to get some Monjayaki?[n]I suppose I have not eaten.[n][w][e]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0]Why don't we head off now?[n][w][e]
 
-[msg MSG_AKECHI_SPOT_TUKISHIM_2 [Akechi]]
+[msg MSG_AKECHI_SPOT_TUKISHIMA2 [Akechi]]
 [s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 54439 65535 0]Making it myself last time[n]worked out well. I will make[n]it again this time.[n][w][e]
 
 [msg MSG_AKECHI_SPOT_MAIHAMA [Akechi]]
 [s][bup 0 9 13 65535 0][f 4 10 65535 0 0][vp 8 2 0 8127 65535 0]Why do you wish to go there?[n]I doesn't seem very helpful[n]in this moment...[n][w][e]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 54450 65535 0]But very well. Let us go now.[n][w][e]
 
-[msg MSG_AKECHI_SPOT_MAIHAMA_ [Akechi]]
+[msg MSG_AKECHI_SPOT_MAIHAMA2 [Akechi]]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 54402 65535 0]It wasn't too offensive the first time.[n]I suppose I will go along.[n][w][e]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 54450 65535 0]Let's head over now.[n][w][e]
 
-[msg MSG_AKECHI_SPOT_SUIDOBAS [Akechi]]
+[msg MSG_AKECHI_SPOT_SUIDOBASHI [Akechi]]
 [s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 54418 65535 0]Dome Town? I will admit I am curious[n]what you are like on those rides.[n][w][e]
 [s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 54450 65535 0]Fine then. Let's go.[n][w][e]
 
-[msg MSG_AKECHI_SPOT_SUIDOBAS_2 [Akechi]]
+[msg MSG_AKECHI_SPOT_SUIDOBASHI2 [Akechi]]
 [s][bup 0 9 10 65535 0][f 4 10 65535 0 0][vp 8 2 0 8127 65535 0]You want to go on more rides[n]again, correct? Then let's go.[n][w][e]
 
 [msg MSG_AKECHI_SPOT_ODAIBA [Akechi]]
 [s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 8133 65535 0]That's where the Ferris wheel is, right?[n][w][e]
 [s][f 4 10 65535 0 0][vp 8 2 0 54402 65535 0]I see... I can tell where[n]you're going with this. Fine.[n]Let's get going.[n][w][e]
 
-[msg MSG_AKECHI_SPOT_ODAIBA_ [Akechi]]
+[msg MSG_AKECHI_SPOT_ODAIBA2 [Akechi]]
 [s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 8133 65535 0]You want to go on the Ferris wheel[n]again, correct? Let's go then.[n][w][e]
 
 [msg MSG_AKECHI_SPOT_JINBO [Akechi]]
 [s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 8133 65535 0]Jinbocho? A surprising request.[n][w][e]
 [s][f 4 10 65535 0 0][vp 8 2 0 0 65535 0]That is fine. Let us go now.[n][w][e]
 
-[msg MSG_AKECHI_SPOT_JINBO_ [Akechi]]
+[msg MSG_AKECHI_SPOT_JINBO2 [Akechi]]
 [s][bup 0 9 11 65535 0][f 4 10 65535 0 0][vp 8 2 0 8133 65535 0]Again? All right. I am fine[n]getting more books. Let us go.[n][w][e]
 
 [msg MSG_AKECHI_SPOT_MEIJIJIN [Akechi]]
@@ -93,3 +93,33 @@
 [msg MSG_YUSUKE_SPOT_MEIJIJIN_3 [Yusuke]]
 [s][bup 0 5 0 65535 0][f 4 10 65535 0 0][f 4 23 1 204 3 10 0 10]A shrine, hm? Experiencing traditional[n]culture with you may help my inspiration.[n][w][e]
 [s][f 4 10 65535 0 0][vp 8 2 1 4059 65535 0]Let us go. I'll be counting[n]on you to lead the way.[n][w][e]
+
+[msg SUIDOUBASHI_COMMON_009 [Morgana]]
+[s][bup 0 3 0 0 0][f 4 10 65535 0 0]You've already been to [clr 2]Dome[n]Town[clr 27] in [clr 2]Suidobashi[clr 27] with Akechi.[n]Do you want to go again?[n][w][e]
+
+[msg TUKISIMA_COMMON_009 [Morgana]]
+[s][bup 0 3 0 0 0][f 4 10 65535 0 0]You've already been to the[n][clr 2]monjayaki shop[clr 27] in [clr 2]Tsukishima[clr 27] with[n]Akechi. Do you want to go again?[n][w][e]
+
+[msg IKEBUKURO_COMMON_009 [Morgana]]
+[s][bup 0 3 0 0 0][f 4 10 65535 0 0]You've already been to the[n][clr 2]planetarium[clr 27] in [clr 2]Ikebukuro[clr 27] with[n]Akechi. Do you want to go again?[n][w][e]
+
+[msg UENO_COMMON_009 [Morgana]]
+[s][bup 0 3 0 0 0][f 4 10 65535 0 0]You've already been to the[n][clr 2]art museum[clr 27] in [clr 2]Ueno[clr 27] with Akechi.[n]Do you want to go again?[n][w][e]
+
+[msg ASAKUSA_COMMON_009 [Morgana]]
+[s][bup 0 3 0 0 0][f 4 10 65535 0 0]You've already been to the[n][clr 2]Skytree[clr 27] in [clr 2]Asakusa[clr 27] with Akechi.[n]Do you want to go again?[n][w][e]
+
+[msg JINBOUTYOU_COMMON_009 [Morgana]]
+[s][bup 0 3 0 0 0][f 4 10 65535 0 0]You've already been to [clr 2]Book[n]Town[clr 27] in [clr 2]Jinbocho[clr 27] with Akechi.[n]Do you want to go again?[n][w][e]
+
+[msg ODAIBA_COMMON_009 [Morgana]]
+[s][bup 0 3 0 0 0][f 4 10 65535 0 0]You've already been to the [clr 2]Ferris[n]wheel[clr 27] in [clr 2]Odaiba Seaside Park[clr 27] with[n]Akechi. Do you want to go again?[n][w][e]
+
+[msg MAIHAMA_COMMON_009 [Morgana]]
+[s][bup 0 3 0 0 0][f 4 10 65535 0 0]You've already been to[n][clr 2]Destinyland[clr 27] in [clr 2]Maihama[clr 27] with[n]Akechi. Do you want to go again?[n][w][e]
+
+[msg MEIJIJINGU_COMMON_009 [Morgana]]
+[s][bup 0 3 0 0 0][f 4 10 65535 0 0]You've already [clr 2]prayed[clr 27] at[n][clr 2]Meiji Shrine[clr 27] with Akechi.[n]Do you want to go again?[n][w][e]
+
+[msg SINAGAWA_COMMON_009 [Morgana]]
+[s][bup 0 3 0 0 0][f 4 10 65535 0 0]You've already been to the[n][clr 2]aquarium[clr 27] in [clr 2]Shinagawa[clr 27] with[n]Akechi. Do you want to go again?[n][w][e]

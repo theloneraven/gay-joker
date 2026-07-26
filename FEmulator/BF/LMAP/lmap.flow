@@ -844,7 +844,7 @@ void go_spot_coop_hook()
 {
     int commuId;
     int trainFare;
-    int var184;
+    int eventId;
     int eventMajor;
     int eventMinor;
     int fldMajor;
@@ -905,9 +905,9 @@ void go_spot_coop_hook()
     MSG_WND_CLS();
     Fld_FadeOut_Subway();
     FLD_PANEL_MAP_PROC_END(0);
-    var184 = FLD_GET_LOCAL_COUNT((49152 + 10));
-    eventMajor = (var184 / 1000);
-    eventMinor = REM(var184, 1000);
+    eventId = FLD_GET_LOCAL_COUNT((49152 + 10));
+    eventMajor = (eventId / 1000);
+    eventMinor = REM(eventId, 1000);
     CALL_EVENT(eventMajor, eventMinor);
     TROPHY_REQUEST(116, 0);
     SYNC();
@@ -1277,166 +1277,1050 @@ void proc_SPOT_SET_AKECHI()
     BIT_ON(1288);
     NET_SET_NIGHT_ACTION(93);
     
-    if (sVar0 == 14)
+    if (sVar0 == 14) // ueno
     {
         
         if (BIT_CHK(4455) == 0)
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 821081);
             BIT_ON(4455);
-            sVar188 = 351;
+            sVar188 = MSG_AKECHI_SPOT_UENO;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 821082);
-            sVar188 = 352;
+            sVar188 = MSG_AKECHI_SPOT_UENO2;
         }
 
     }
-    else if (sVar0 == 12)
+    else if (sVar0 == 12) // ikebukuro
     {
         
         if (BIT_CHK(4456) == 0)
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 818081);
             BIT_ON(4456);
-            sVar188 = 353;
+            sVar188 = MSG_AKECHI_SPOT_IKEBUKURO;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 818082);
-            sVar188 = 354;
+            sVar188 = MSG_AKECHI_SPOT_IKEBUKURO2;
         }
 
     }
-    else if (sVar0 == 20)
+    else if (sVar0 == 20) // asakusa
     {
         
         if (BIT_CHK(4457) == 0)
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 811081);
             BIT_ON(4457);
-            sVar188 = 355;
+            sVar188 = MSG_AKECHI_SPOT_SKYTREE;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 811082);
-            sVar188 = 356;
+            sVar188 = MSG_AKECHI_SPOT_SKYTREE2;
         }
 
     }
-    else if (sVar0 == 34)
+    else if (sVar0 == 34) // shinagawa
     {
         
         if (BIT_CHK(4458) == 0)
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 829081);
             BIT_ON(4458);
-            sVar188 = 357;
+            sVar188 = MSG_AKECHI_SPOT_SHINAGAWA;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 829082);
-            sVar188 = 358;
+            sVar188 = MSG_AKECHI_SPOT_SHINAGAWA2;
         }
 
     }
-    else if (sVar0 == 25)
+    else if (sVar0 == 25) // tsukishima
     {
         
         if (BIT_CHK(4459) == 0)
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 812081);
             BIT_ON(4459);
-            sVar188 = 359;
+            sVar188 = MSG_AKECHI_SPOT_TUKISHIMA;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 812082);
-            sVar188 = 360;
+            sVar188 = MSG_AKECHI_SPOT_TUKISHIMA2;
         }
 
     }
-    else if (sVar0 == 0x20)
+    else if (sVar0 == 32) // maihama
     {
         
         if (BIT_CHK(4460) == 0)
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 822081);
             BIT_ON(4460);
-            sVar188 = 361;
+            sVar188 = MSG_AKECHI_SPOT_MAIHAMA;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 822082);
-            sVar188 = 362;
+            sVar188 = MSG_AKECHI_SPOT_MAIHAMA2;
         }
 
     }
-    else if (sVar0 == 21)
+    else if (sVar0 == 21) // dome town
     {
         
         if (BIT_CHK(4461) == 0)
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 807081);
             BIT_ON(4461);
-            sVar188 = 363;
+            sVar188 = MSG_AKECHI_SPOT_SUIDOBASHI;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 807082);
-            sVar188 = 364;
+            sVar188 = MSG_AKECHI_SPOT_SUIDOBASHI2;
         }
 
     }
-    else if (sVar0 == 26)
+    else if (sVar0 == 26) // ferris wheel
     {
         
         if (BIT_CHK(4462) == 0)
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 826081);
             BIT_ON(4462);
-            sVar188 = 365;
+            sVar188 = MSG_AKECHI_SPOT_ODAIBA;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 826082);
-            sVar188 = 366;
+            sVar188 = MSG_AKECHI_SPOT_ODAIBA2;
         }
 
     }
-    else if (sVar0 == 22)
+    else if (sVar0 == 22) // jinbocho
     {
         
         if (BIT_CHK(4463) == 0)
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 803081);
             BIT_ON(4463);
-            sVar188 = 367;
+            sVar188 = MSG_AKECHI_SPOT_JINBO;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 803082);
-            sVar188 = 368;
+            sVar188 = MSG_AKECHI_SPOT_JINBO2;
         }
 
     }
-    else if (sVar0 == 33)
+    else if (sVar0 == 33) // meiji shrine
     {
         
         if (BIT_CHK(4464) == 0)
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 806081);
             BIT_ON(4464);
-            sVar188 = 369;
+            sVar188 = MSG_AKECHI_SPOT_MEIJIJIN;
         }
         else 
         {
             FLD_SET_LOCAL_COUNT((49152 + 10), 806082);
-            sVar188 = 370;
+            sVar188 = MSG_AKECHI_SPOT_MEIJIJIN_2;
         }
 
     }
 
     return;
+}
+
+void lmap_ikebukuro_hook()
+{
+    int trainFare;
+    int commuId;
+    int selChoice;
+    
+    if (BIT_CHK(1008) == 1)
+    {
+        SYNC();
+    }
+    else 
+    {
+        trainFare = FLD_LMAP_GET_FARE(0);
+        
+        if (ADD_PC_MONEY(0) < (trainFare * 2))
+        {
+            proc_LMAP_NO_MONEY();
+            return;
+        }
+
+    }
+
+    
+    if (BIT_CHK(4607))
+    {
+        commuId = GET_COUNT(61);
+        MSG_WND_DSP();
+        
+        if (((commuId == 7) || (commuId == 25)) && BIT_CHK(4522))
+        {
+            MSG(IKEBUKURO_COMMON_002, 0);
+        }
+        else if ((commuId == 5) && BIT_CHK(4529))
+        {
+            MSG(IKEBUKURO_COMMON_003, 0);
+        }
+        else if (commuId == 9 && BIT_CHK(4456))
+        {
+            MSG(IKEBUKURO_COMMON_009);
+        }
+        else 
+        {
+            MSG(IKEBUKURO_COMMON_000, 0);
+        }
+
+        SEL_DEFKEY(14, 1);
+        selChoice = SEL(SEL_SPOT_GO);
+        MSG_WND_CLS();
+        
+        if (selChoice == 0)
+        {
+            sVar0 = 12;
+            BIT_ON(10122);
+            go_spot_coop();
+        }
+
+        return;
+    }
+
+    return;
+}
+
+void lmap_ueno_hook()
+{
+    int fldMajor;
+    int fldMinor;
+    int fldSub;
+    int trainFare;
+    int commuId;
+    int selChoice;
+    fldMajor = FLD_GET_MAJOR();
+    fldMinor = FLD_GET_MINOR();
+    fldSub = FLD_GET_DIV_INDEX();
+    
+    if ((BIT_CHK(1008) == 1) || (BIT_CHK(1039) == 1))
+    {
+        SYNC();
+    }
+    else 
+    {
+        trainFare = FLD_LMAP_GET_FARE(0);
+        
+        if (ADD_PC_MONEY(0) < (trainFare * 2))
+        {
+            proc_LMAP_NO_MONEY();
+            return;
+        }
+
+    }
+
+    
+    if (BIT_CHK(1008) == 1)
+    {
+        
+        if ((fldMajor == 20) && (fldMinor == 11))
+        {
+            Fld_FadeOut_CutChange();
+            FLD_PANEL_MAP_PROC_END(0);
+            FLD_LOCAL_FLAG_ON((49152 + 2));
+            Fld_FadeIn_Default();
+        }
+        else 
+        {
+            proc_fare();
+            Fld_FadeOut_Subway();
+            FLD_PANEL_MAP_PROC_END(0);
+            CALL_FIELD(20, 11, 880, 0);
+        }
+
+    }
+    else if (BIT_CHK(4607) == 1)
+    {
+        commuId = GET_COUNT(61);
+        MSG_WND_DSP();
+        
+        if (((commuId == 7) || (commuId == 25)) && BIT_CHK(4527))
+        {
+            MSG(UENO_COMMON_002, 0);
+        }
+        else if ((commuId == 5) && BIT_CHK(4533))
+        {
+            MSG(UENO_COMMON_003, 0);
+        }
+        else if (commuId == 9 && BIT_CHK(4455))
+        {
+            MSG(UENO_COMMON_009);
+        }
+        else 
+        {
+            MSG(UENO_COMMON_000, 0);
+        }
+
+        SEL_DEFKEY(14, 1);
+        selChoice = SEL(SEL_SPOT_GO);
+        MSG_WND_CLS();
+        
+        if (selChoice == 0)
+        {
+            sVar0 = 14;
+            BIT_ON(10126);
+            go_spot_coop();
+        }
+
+        return;
+    }
+    else if (BIT_CHK(1039) == 1)
+    {
+        
+        if ((fldMajor == 20) && (fldMinor == 11))
+        {
+            Fld_FadeOut_CutChange();
+            FLD_PANEL_MAP_PROC_END(0);
+            FLD_LOCAL_FLAG_ON((49152 + 2));
+            Fld_FadeIn_Default();
+        }
+        else 
+        {
+            proc_fare();
+            Fld_FadeOut_Subway();
+            FLD_PANEL_MAP_PROC_END(0);
+            CALL_FIELD(20, 11, 880, 0);
+        }
+
+        return;
+    }
+
+    return;
+}
+
+void lmap_asakusa_hook()
+{
+    int var133;
+    int trainFare;
+    int commuId;
+    int selChoice;
+    var133 = 0;
+    
+    if (BIT_CHK(1008) == 1)
+    {
+        SYNC();
+    }
+    else 
+    {
+        trainFare = FLD_LMAP_GET_FARE(0);
+        
+        if (ADD_PC_MONEY(0) < (trainFare * 2))
+        {
+            proc_LMAP_NO_MONEY();
+            return;
+        }
+
+    }
+
+    
+    if (BIT_CHK(4607))
+    {
+        commuId = GET_COUNT(61);
+        
+        if ((GET_WEATHER() == 1) || (GET_WEATHER_DETAIL() == 12))
+        {
+            MSG_WND_DSP();
+            MSG(ASAKUSA_BAD_WEATHER, 0);
+            MSG_WND_CLS();
+            return;
+        }
+
+        MSG_WND_DSP();
+        
+        if ((commuId == 10) || (commuId == 26))
+        {
+            
+            if ((BIT_CHK(4545) == 1) && (BIT_CHK(4546) == 0))
+            {
+                MSG(ASAKUSA_COMMON_005, 0);
+            }
+            else if ((BIT_CHK(4545) == 0) && (BIT_CHK(4546) == 1))
+            {
+                MSG(ASAKUSA_COMMON_015, 0);
+            }
+            else if ((BIT_CHK(4545) == 1) && (BIT_CHK(4546) == 1))
+            {
+                MSG(ASAKUSA_COMMON_025, 0);
+            }
+            else 
+            {
+                MSG(ASAKUSA_COMMON_000, 0);
+            }
+
+        }
+        else if ((commuId == 33) || (commuId == 34))
+        {
+            var133 = GET_OR(var133, GET_L_SHIFT(1, 1));
+            
+            if (BIT_CHK(4649) == 1)
+            {
+                
+                if (BIT_CHK(5248) == 1)
+                {
+                    MSG(ASAKUSA_COMMON_008, 0);
+                }
+                else 
+                {
+                    MSG(ASAKUSA_COMMON_007, 0);
+                }
+
+            }
+            else 
+            {
+                MSG(ASAKUSA_COMMON_000, 0);
+            }
+
+        }
+        else if (commuId == 9 && BIT_CHK(4457))
+        {
+            MSG(ASAKUSA_COMMON_009);
+        }
+        else 
+        {
+            MSG(ASAKUSA_COMMON_000, 0);
+        }
+
+        SEL_MASK(var133);
+        SEL_DEFKEY(14, 2);
+        selChoice = SEL(SEL_SPOT_GO_ASAKUSA);
+        MSG_WND_CLS();
+        
+        if (selChoice == 0)
+        {
+            sVar0 = 20;
+            BIT_ON(10124);
+            go_spot_coop();
+        }
+        else if (selChoice == 1)
+        {
+            sVar0 = 24;
+            BIT_ON(10124);
+            go_spot_coop();
+        }
+
+        return;
+    }
+
+    return;
+}
+
+void lmap_suidobasi_hook()
+{
+    int trainFare;
+    int commuId;
+    int selChoice;
+    
+    if (BIT_CHK(1008) == 1)
+    {
+        SYNC();
+    }
+    else 
+    {
+        trainFare = FLD_LMAP_GET_FARE(0);
+        
+        if (ADD_PC_MONEY(0) < (trainFare * 2))
+        {
+            proc_LMAP_NO_MONEY();
+            return;
+        }
+
+    }
+
+    
+    if (BIT_CHK(4607))
+    {
+        commuId = GET_COUNT(61);
+        
+        if ((GET_WEATHER() == 1) || (GET_WEATHER_DETAIL() == 12))
+        {
+            MSG_WND_DSP();
+            MSG(SUIDOUBASHI_BAD_WEATHER, 0);
+            MSG_WND_CLS();
+            return;
+        }
+
+        MSG_WND_DSP();
+        
+        if ((commuId == 8) && BIT_CHK(4515))
+        {
+            MSG(SUIDOUBASHI_COMMON_001, 0);
+        }
+        else if (((commuId == 3) || (commuId == 23)) && BIT_CHK(4537))
+        {
+            MSG(SUIDOUBASHI_COMMON_004, 0);
+        }
+        else if (commuId == 9 && BIT_CHK(4461)) // TODO: this flag is used by the game, replace with either a confirmed unused flag or custom save data
+        {
+            MSG(SUIDOUBASHI_COMMON_009);
+        }
+        else 
+        {
+            MSG(SUIDOUBASHI_COMMON_000, 0);
+        }
+
+        SEL_DEFKEY(14, 1);
+        selChoice = SEL(SEL_SPOT_GO);
+        MSG_WND_CLS();
+        
+        if (selChoice == 0)
+        {
+            sVar0 = 21;
+            BIT_ON(10125);
+            go_spot_coop();
+        }
+
+        return;
+    }
+
+    return;
+}
+
+void lmap_spot_jinbo_hook()
+{
+    int commuId;
+    int trainFare;
+    int selChoice;
+    
+    if (BIT_CHK(4607))
+    {
+        commuId = GET_COUNT(61);
+        
+        if (BIT_CHK(1008) == 1)
+        {
+            SYNC();
+        }
+        else 
+        {
+            trainFare = FLD_LMAP_GET_FARE(0);
+            
+            if (ADD_PC_MONEY(0) < (trainFare * 2))
+            {
+                proc_LMAP_NO_MONEY();
+                return;
+            }
+
+        }
+
+        
+        if ((GET_WEATHER() == 1) || (GET_WEATHER_DETAIL() == 12))
+        {
+            MSG_WND_DSP();
+            MSG(JINBOUTYOU_BAD_WEATHER, 0);
+            MSG_WND_CLS();
+            return;
+        }
+
+        MSG_WND_DSP();
+        
+        if ((commuId == 5) && BIT_CHK(4530))
+        {
+            MSG(JINBOUTYOU_COMMON_003, 0);
+        }
+        else if (commuId == 9 && BIT_CHK(4463))
+        {
+            MSG(JINBOUTYOU_COMMON_009);
+        }
+        else 
+        {
+            MSG(JINBOUTYOU_COMMON_000, 0);
+        }
+
+        SEL_DEFKEY(14, 1);
+        selChoice = SEL(SEL_SPOT_GO);
+        MSG_WND_CLS();
+        
+        if (selChoice == 0)
+        {
+            sVar0 = 22;
+            BIT_ON(10116);
+            go_spot_coop();
+        }
+
+        return;
+    }
+    else 
+    {
+        lmap_jinbo();
+    }
+
+}
+
+void lmap_tukisima_hook()
+{
+    int trainFare;
+    int commuId;
+    int selChoice;
+    
+    if (BIT_CHK(1008) == 1)
+    {
+        SYNC();
+    }
+    else 
+    {
+        trainFare = FLD_LMAP_GET_FARE(0);
+        
+        if (ADD_PC_MONEY(0) < (trainFare * 2))
+        {
+            proc_LMAP_NO_MONEY();
+            return;
+        }
+
+    }
+
+    
+    if (BIT_CHK(4607))
+    {
+        commuId = GET_COUNT(61);
+        MSG_WND_DSP();
+        
+        if ((commuId == 8) && BIT_CHK(4512))
+        {
+            MSG(TUKISIMA_COMMON_001, 0);
+        }
+        else if (((commuId == 3) || (commuId == 23)) && BIT_CHK(4538))
+        {
+            MSG(TUKISIMA_COMMON_004, 0);
+        }
+        else if (((commuId == 4) || (commuId == 24)) && BIT_CHK(4554))
+        {
+            MSG(TUKISIMA_COMMON_006, 0);
+        }
+        else if (commuId == 9 && BIT_CHK(4463))
+        {
+            MSG(TUKISIMA_COMMON_009);
+        }
+        else 
+        {
+            MSG(TUKISIMA_COMMON_000, 0);
+        }
+
+        SEL_DEFKEY(14, 1);
+        selChoice = SEL(SEL_SPOT_GO);
+        MSG_WND_CLS();
+        
+        if (selChoice == 0)
+        {
+            sVar0 = 25;
+            BIT_ON(10114);
+            go_spot_coop();
+        }
+
+        return;
+    }
+
+    return;
+}
+
+void lmap_odaiba_hook()
+{
+    int fldMajor;
+    int fldMinor;
+    int fldSub;
+    int trainFare;
+    int commuId;
+    int selChoice;
+    fldMajor = FLD_GET_MAJOR();
+    fldMinor = FLD_GET_MINOR();
+    fldSub = FLD_GET_DIV_INDEX();
+    
+    if ((BIT_CHK(1008) == 1) || (BIT_CHK(1039) == 1))
+    {
+        SYNC();
+    }
+    else 
+    {
+        trainFare = FLD_LMAP_GET_FARE(0);
+        
+        if (ADD_PC_MONEY(0) < (trainFare * 2))
+        {
+            proc_LMAP_NO_MONEY();
+            return;
+        }
+
+    }
+
+    
+    if (BIT_CHK(4607))
+    {
+        commuId = GET_COUNT(61);
+        MSG_WND_DSP();
+        
+        if (((commuId == 7) || (commuId == 25)) && BIT_CHK(4526))
+        {
+            MSG(ODAIBA_COMMON_002, 0);
+        }
+        else if ((commuId == 3) && BIT_CHK(4541))
+        {
+            MSG(ODAIBA_COMMON_004, 0);
+        }
+        else if ((commuId == 23) && BIT_CHK(4543))
+        {
+            
+            if ((GET_WEATHER() == 1) || (GET_WEATHER_DETAIL() == 12))
+            {
+                MSG(ODAIBA_BAD_WEATHER, 0);
+                MSG_WND_CLS();
+                return;
+            }
+
+            MSG(ODAIBA_COMMON_014, 0);
+        }
+        else if (((commuId == 10) || (commuId == 26)) && BIT_CHK(4550))
+        {
+            MSG(ODAIBA_COMMON_005, 0);
+        }
+        else if (((commuId == 4) || (commuId == 24)) && BIT_CHK(4559))
+        {
+            MSG(ODAIBA_COMMON_006, 0);
+        }
+        else if (((commuId == 33) || (commuId == 34)) && BIT_CHK(4654))
+        {
+            MSG(ODAIBA_COMMON_007, 0);
+        }
+        else if (commuId == 9 && BIT_CHK(4462))
+        {
+            MSG(ODAIBA_COMMON_009);
+        }
+        else if (commuId == 23)
+        {
+            
+            if ((GET_WEATHER() == 1) || (GET_WEATHER_DETAIL() == 12))
+            {
+                MSG(ODAIBA_BAD_WEATHER, 0);
+                MSG_WND_CLS();
+                return;
+            }
+
+            MSG(ODAIBA_COMMON_999, 0);
+        }
+        else 
+        {
+            MSG(ODAIBA_COMMON_000, 0);
+        }
+
+        SEL_DEFKEY(14, 1);
+        selChoice = SEL(SEL_SPOT_GO);
+        MSG_WND_CLS();
+        
+        if (selChoice == 0)
+        {
+            sVar0 = 26;
+            BIT_ON(10120);
+            go_spot_coop();
+        }
+
+        return;
+    }
+    else if (BIT_CHK(1039) == 1)
+    {
+        
+        if ((fldMajor == 20) && (fldMinor == 5))
+        {
+            Fld_FadeOut_CutChange();
+            FLD_PANEL_MAP_PROC_END(0);
+            FLD_LOCAL_FLAG_ON((49152 + 2));
+            Fld_FadeIn_Default();
+        }
+        else 
+        {
+            proc_fare();
+            Fld_FadeOut_Subway();
+            FLD_PANEL_MAP_PROC_END(0);
+            CALL_FIELD(20, 5, 0, 0);
+        }
+
+        return;
+    }
+
+}
+
+void lmap_maihama_hook()
+{
+    int trainFare;
+    int commuId;
+    int selChoice;
+    
+    if (BIT_CHK(1008) == 1)
+    {
+        SYNC();
+    }
+    else 
+    {
+        trainFare = FLD_LMAP_GET_FARE(0);
+        
+        if (ADD_PC_MONEY(0) < (trainFare * 2))
+        {
+            proc_LMAP_NO_MONEY();
+            return;
+        }
+
+    }
+
+    
+    if (BIT_CHK(4607))
+    {
+        commuId = GET_COUNT(61);
+        
+        if ((GET_WEATHER() == 1) || (GET_WEATHER_DETAIL() == 12))
+        {
+            MSG_WND_DSP();
+            MSG(MAIHAMA_BAD_WEATHER, 0);
+            MSG_WND_CLS();
+            return;
+        }
+
+        MSG_WND_DSP();
+        
+        if (((commuId == 7) || (commuId == 25)) && BIT_CHK(4524))
+        {
+            MSG(MAIHAMA_COMMON_002, 0);
+        }
+        else if (((commuId == 3) || (commuId == 23)) && BIT_CHK(4540))
+        {
+            MSG(MAIHAMA_COMMON_004, 0);
+        }
+        else if (((commuId == 10) || (commuId == 26)) && BIT_CHK(4549))
+        {
+            MSG(MAIHAMA_COMMON_005, 0);
+        }
+        else if (((commuId == 4) || (commuId == 24)) && BIT_CHK(4558))
+        {
+            MSG(MAIHAMA_COMMON_006, 0);
+        }
+        else if (((commuId == 33) || (commuId == 34)) && BIT_CHK(4653))
+        {
+            MSG(MAIHAMA_COMMON_007, 0);
+        }
+        else if (commuId == 9 && BIT_CHK(4460))
+        {
+            MSG(MAIHAMA_COMMON_009);
+        }
+        else 
+        {
+            MSG(MAIHAMA_COMMON_000, 0);
+        }
+
+        SEL_DEFKEY(14, 1);
+        selChoice = SEL(SEL_SPOT_GO);
+        MSG_WND_CLS();
+        
+        if (selChoice == 0)
+        {
+            sVar0 = 0x20;
+            BIT_ON(10128);
+            go_spot_coop();
+        }
+
+        return;
+    }
+
+}
+
+void lmap_meijijingu_hook()
+{
+    int commuId;
+    int trainFare;
+    int selChoice;
+    int fldMajor;
+    int fldMinor;
+    int fldSub;
+    int var167;
+    int var165;
+    int var166;
+    
+    if (BIT_CHK(4607))
+    {
+        commuId = GET_COUNT(61);
+        
+        if (BIT_CHK(1008) == 1)
+        {
+            SYNC();
+        }
+        else 
+        {
+            trainFare = FLD_LMAP_GET_FARE(0);
+            
+            if (ADD_PC_MONEY(0) < (trainFare * 2))
+            {
+                proc_LMAP_NO_MONEY();
+                return;
+            }
+
+        }
+
+        
+        if ((GET_WEATHER() == 1) || (GET_WEATHER_DETAIL() == 12))
+        {
+            MSG_WND_DSP();
+            MSG(MEIJIJINGU_BAD_WEATHER, 0);
+            MSG_WND_CLS();
+            return;
+        }
+
+        MSG_WND_DSP();
+        
+        if ((commuId == 5) && BIT_CHK(4531))
+        {
+            MSG(MEIJIJINGU_COMMON_003, 0);
+        }
+        else if (((commuId == 4) || (commuId == 24)) && BIT_CHK(4561))
+        {
+            MSG(MEIJIJINGU_COMMON_006, 0);
+        }
+        else if (((commuId == 33) || (commuId == 34)) && BIT_CHK(4648))
+        {
+            MSG(MEIJIJINGU_COMMON_007, 0);
+        }
+        else if (commuId == 9 && BIT_CHK(4464))
+        {
+            MSG(MEIJIJINGU_COMMON_009);
+        }
+        else 
+        {
+            MSG(MEIJIJINGU_COMMON_000, 0);
+        }
+
+        SEL_DEFKEY(14, 1);
+        selChoice = SEL(SEL_SPOT_GO);
+        MSG_WND_CLS();
+        
+        if (selChoice == 0)
+        {
+            sVar0 = 33;
+            BIT_ON(10127);
+            go_spot_coop();
+        }
+
+        return;
+    }
+    else 
+    {
+        fldMajor = FLD_GET_MAJOR();
+        fldMinor = FLD_GET_MINOR();
+        fldSub = FLD_GET_DIV_INDEX();
+        var167 = 0;
+        
+        if ((BIT_CHK(6147) == 1) && ((GET_TIME() == 5) || (GET_TIME() == 6)))
+        {
+            return;
+        }
+        else if ((BIT_CHK(4915) == 1) && ((GET_TIME() == 5) || (GET_TIME() == 6)))
+        {
+            return;
+        }
+        else if (BIT_CHK(10180) && ((GET_TIME() == 5) || (GET_TIME() == 6)))
+        {
+            return;
+        }
+        else 
+        {
+            var165 = 7;
+            var166 = 1;
+        }
+
+        
+        if ((fldMajor == 20) && (fldMinor == 12))
+        {
+            Fld_FadeOut_CutChange();
+            FLD_PANEL_MAP_PROC_END(0);
+            FLD_LOCAL_FLAG_ON((49152 + 2));
+            Fld_FadeIn_Default();
+            return;
+        }
+        else 
+        {
+            proc_fare();
+            Fld_FadeOut_Subway();
+            FLD_PANEL_MAP_PROC_END(0);
+            PLAYER_BAG_and_CLOTHES();
+            BIT_ON(10127);
+            CALL_FIELD(20, 12, 0, 0);
+        }
+
+    }
+
+    return;
+}
+
+void lmap_sinagawa_hook()
+{
+    int trainFare;
+    int commuId;
+    int selChoice;
+    
+    if (BIT_CHK(1008) == 1)
+    {
+        SYNC();
+    }
+    else 
+    {
+        trainFare = FLD_LMAP_GET_FARE(0);
+        
+        if (ADD_PC_MONEY(0) < (trainFare * 2))
+        {
+            proc_LMAP_NO_MONEY();
+            return;
+        }
+
+    }
+
+    
+    if (BIT_CHK(4607))
+    {
+        commuId = GET_COUNT(61);
+        MSG_WND_DSP();
+        
+        if ((commuId == 5) && BIT_CHK(4532))
+        {
+            MSG(SINAGAWA_COMMON_003, 0);
+        }
+        else if (((commuId == 33) || (commuId == 34)) && BIT_CHK(4652))
+        {
+            MSG(SINAGAWA_COMMON_007, 0);
+        }
+        else if (commuId == 9 && BIT_CHK(4464))
+        {
+            MSG(SINAGAWA_COMMON_009);
+        }
+        else 
+        {
+            MSG(SINAGAWA_COMMON_000, 0);
+        }
+
+        SEL_DEFKEY(14, 1);
+        selChoice = SEL(SEL_SPOT_GO);
+        MSG_WND_CLS();
+        
+        if (selChoice == 0)
+        {
+            sVar0 = 34;
+            BIT_ON(10648);
+            go_spot_coop();
+        }
+
+        return;
+    }
+
 }
