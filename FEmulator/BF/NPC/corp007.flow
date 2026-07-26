@@ -560,7 +560,6 @@ void SUB_COOP_TABLE_EVENT_START_hook()
         
         if (BIT_CHK(3785) == 1)
         {
-            BIT_ON(3782);
             CALL_EVENT(707, 101);
         }
 
@@ -602,7 +601,7 @@ void SUB_COOP_GENERAL_EVT_CHECK_hook()
     }
 
     
-    if (BIT_CHK(3782) == 0) // cant invite to room
+    if (!BIT_CHK(3785) || CMM_GET_LV(sVar0) < 10) // cant invite to room
     {
         hiddenOptionBitfield = (hiddenOptionBitfield + 2);
     }
