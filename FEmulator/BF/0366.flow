@@ -15,21 +15,20 @@ import("0366.msg");
 // 
 
 // Procedure Index: 0
-void BTL_0370_ENCOUNT()
+void BTL_0366_ENCOUNT()
 {
 }
 
 
 // Procedure Index: 1
-void BTL_0368_BTLSTART()
+void BTL_0366_BTLSTART()
 {
     int bcd;
     FADEIN(0, 15);
     BTL_LETTERBOX_IN(1);
     
-    if (BIT_CHK(11572) == 1)
+    if (BIT_CHK(11572))
     {
-        AI_SET_ENID_MAXSERIAL(570, 2);
         bcd = BTL_CUTSCENE_LOAD(828, 2);
         BTL_CUTSCENE_LOADSYNC(bcd);
         BTL_CUTSCENE_PLAY(bcd, 2, 570, 1, 1);
@@ -40,7 +39,6 @@ void BTL_0368_BTLSTART()
     }
     else 
     {
-        AI_SET_ENID_MAXSERIAL(570, 2);
         bcd = BTL_CUTSCENE_LOAD(828, 1);
         BTL_CUTSCENE_LOADSYNC(bcd);
         BTL_CUTSCENE_PLAY(bcd, 2, 570, 1, 1);
@@ -51,17 +49,21 @@ void BTL_0368_BTLSTART()
     }
 
     BTL_LETTERBOX_OUT(1);
+    AI_SET_ENID_MAXSERIAL(570, 2);
+    SET_BATTLE_FLAG(1, 5, 1);
+    BTL_SET_ENEMY_FLAG(570, 5, 1);
 }
 
 
 // Procedure Index: 2
-void BTL_0400_AISTART()
+void BTL_0366_AISTART()
 {
     int hp;
     int var1;
     int bcd;
     hp = GET_HP(1);
     
+    PUT(BTL_GET_CURRENT_CHARAID());
     if (((((BTL_GET_CURRENT_CHARAID() == 570) && (AI_CHK_ENIDHP(570, 70) == 1)) && (AI_CHK_ENHP_O(28) == 1)) && (hp >= 2)) && (BIT_CHK(3817) == 0))
     {
         FADEIN(0, 15);
@@ -84,19 +86,43 @@ void BTL_0400_AISTART()
 
 
 // Procedure Index: 3
-void BTL_0400_ACTSTART()
+void BTL_0366_ACTSTART()
 {
+    int curChara;
+    curChara = BTL_GET_CURRENT_CHARAID();
+    PUT(curChara);
+
+    if (AI_CHK_FRIDHP(1, 2))
+    {
+        BIT_ON(11420);
+        PUTS("joker deadge");
+        if (AI_CHK_ENIDHP(570, 2) && curChara == 570) // if hp somehow ties then winner is whoever last attacked
+        {
+            PUTS("akechi deadge");
+            BIT_OFF(11572);  
+        }
+        else { BIT_ON(11572); }
+    }
+    else if (AI_CHK_ENIDHP(570, 2))
+    {
+        BIT_ON(11420);
+        PUTS("akechi deadge");
+        BIT_OFF(11572);    
+    }
+
+    if (BIT_CHK(11420)) { PUTS("duel should end..."); }
 }
 
 
 // Procedure Index: 4
-void BTL_0400_ACTEND()
+void BTL_0366_ACTEND()
 {
+    PUT(BTL_GET_CURRENT_CHARAID());
 }
 
 
 // Procedure Index: 5
-void BTL_0400_BTLEND()
+void BTL_0366_BTLEND()
 {
     int bcd;
     FADEIN(0, 15);
@@ -121,19 +147,19 @@ void BTL_0400_BTLEND()
 
 
 // Procedure Index: 6
-void BTL_0400_TALK()
+void BTL_0366_TALK()
 {
 }
 
 
 // Procedure Index: 7
-void BTL_0400_TALK02()
+void BTL_0366_TALK02()
 {
 }
 
 
 // Procedure Index: 8
-void BTL_0400_EVENT0()
+void BTL_0366_EVENT0()
 {
 }
 
