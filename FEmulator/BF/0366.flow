@@ -49,7 +49,7 @@ void BTL_0366_BTLSTART()
     }
 
     BTL_LETTERBOX_OUT(1);
-    AI_SET_ENID_MAXSERIAL(570, 2);
+    SET_ENEMY_CUTIN_TYPE(0);
     SET_BATTLE_FLAG(1, 5, 1);
     BTL_SET_ENEMY_FLAG(570, 5, 1);
 }
@@ -99,7 +99,7 @@ void BTL_0366_ACTSTART()
         if (AI_CHK_ENIDHP(570, 2) && curChara == 570) // if hp somehow ties then winner is whoever last attacked
         {
             PUTS("akechi deadge");
-            BIT_OFF(11572);  
+            BIT_OFF(11572);
         }
         else { BIT_ON(11572); }
     }
@@ -107,10 +107,8 @@ void BTL_0366_ACTSTART()
     {
         BIT_ON(11420);
         PUTS("akechi deadge");
-        BIT_OFF(11572);    
+        BIT_OFF(11572);
     }
-
-    if (BIT_CHK(11420)) { PUTS("duel should end..."); }
 }
 
 
@@ -140,7 +138,6 @@ void BTL_0366_BTLEND()
     BTL_CUTSCENE_PLAY(bcd, 2, 570, 1, 1);
     BTL_CUTSCENE_SYNC(bcd);
     BTL_CUTSCENE_END(bcd);
-    BIT_OFF(11572);
     BIT_OFF(3817);
     BTL_LETTERBOX_OUT(1);
 }
