@@ -1,5 +1,7 @@
 import("lmap.msg");
 
+int akechiHangoutBitfield;
+
 void lmap_cancel_hook()
 {
     int fldMajor;
@@ -12,27 +14,27 @@ void lmap_cancel_hook()
     
     if ((fldMajor == 20) && (fldMinor == 3))
     {
-        FLD_LOCAL_FLAG_ON((49152 + 2));
+        FLD_LOCAL_FLAG_ON((0xC000 + 2));
     }
     else if ((fldMajor == 10) && (fldMinor == 13))
     {
-        FLD_LOCAL_FLAG_ON((49152 + 2));
+        FLD_LOCAL_FLAG_ON((0xC000 + 2));
     }
     else if ((fldMajor == 20) && (fldMinor == 12))
     {
-        FLD_LOCAL_FLAG_ON((49152 + 2));
+        FLD_LOCAL_FLAG_ON((0xC000 + 2));
     }
     else if ((fldMajor == 20) && (fldMinor == 11))
     {
-        FLD_LOCAL_FLAG_ON((49152 + 2));
+        FLD_LOCAL_FLAG_ON((0xC000 + 2));
     }
     else if ((fldMajor == 20) && (fldMinor == 5))
     {
-        FLD_LOCAL_FLAG_ON((49152 + 2));
+        FLD_LOCAL_FLAG_ON((0xC000 + 2));
     }
     else if ((fldMajor == 2) && (fldMinor == 1))
     {
-        FLD_LOCAL_FLAG_ON((49152 + 2));
+        FLD_LOCAL_FLAG_ON((0xC000 + 2));
     }
 
     
@@ -452,15 +454,15 @@ void lmap_error_disable_kf_hook()
 void lmap_error_disable_spot_hook()
 {
     int commuId;
-    int var171;
+    int locationId;
     commuId = GET_COUNT(61);
     
     if (BIT_CHK(4607) == 0)
     {
-        var171 = FLD_LMAP_GET_SELECT_ID();
+        locationId = FLD_LMAP_GET_SELECT_ID();
         MSG_WND_DSP();
         
-        if (var171 == 1)
+        if (locationId == 1)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -473,19 +475,19 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 2)
+        else if (locationId == 2)
         {
             MSG_MIND(MSG_ERROR_SPOT_YONCHA, 0);
         }
-        else if (var171 == 3)
+        else if (locationId == 3)
         {
             MSG_MIND(MSG_ERROR_SPOT_AOYAMA, 0);
         }
-        else if (var171 == 4)
+        else if (locationId == 4)
         {
             MSG_MIND(MSG_ERROR_SPOT_SHINJUKU, 0);
         }
-        else if (var171 == 5)
+        else if (locationId == 5)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -498,7 +500,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 6)
+        else if (locationId == 6)
         {
             
             if (GET_TIME() == 5)
@@ -511,7 +513,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 11)
+        else if (locationId == 11)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -524,7 +526,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 12)
+        else if (locationId == 12)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -537,7 +539,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 13)
+        else if (locationId == 13)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -550,7 +552,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 14)
+        else if (locationId == 14)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -563,7 +565,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 15)
+        else if (locationId == 15)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -576,7 +578,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 0x10)
+        else if (locationId == 0x10)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -589,7 +591,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 17)
+        else if (locationId == 17)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -602,11 +604,11 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 18)
+        else if (locationId == 18)
         {
             MSG_MIND(MSG_ERROR_SPOT_NAGATACHO, 0);
         }
-        else if (var171 == 19)
+        else if (locationId == 19)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -619,7 +621,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 20)
+        else if (locationId == 20)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -632,7 +634,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 21)
+        else if (locationId == 21)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -645,7 +647,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 22)
+        else if (locationId == 22)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -658,7 +660,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 25)
+        else if (locationId == 25)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -671,7 +673,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 26)
+        else if (locationId == 26)
         {
             
             if (CHK_DAYS_STARTEND(7, 24, 8, 31))
@@ -688,11 +690,11 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 27)
+        else if (locationId == 27)
         {
             MSG_MIND(MSG_ERROR_SPOT_AKASAKA, 0);
         }
-        else if (var171 == 28)
+        else if (locationId == 28)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -705,15 +707,15 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 29)
+        else if (locationId == 29)
         {
             MSG_MIND(MSG_ERROR_SPOT_BEACH, 0);
         }
-        else if (var171 == 30)
+        else if (locationId == 30)
         {
             MSG_MIND(MSG_ERROR_SPOT_ROPPONGI, 0);
         }
-        else if (var171 == 0x20)
+        else if (locationId == 0x20)
         {
             
             if (CHK_DAYS_STARTEND(7, 24, 8, 31))
@@ -730,7 +732,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 33)
+        else if (locationId == 33)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -752,7 +754,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 35)
+        else if (locationId == 35)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -765,7 +767,7 @@ void lmap_error_disable_spot_hook()
             }
 
         }
-        else if (var171 == 34)
+        else if (locationId == 34)
         {
             
             if (BIT_CHK(1039) == 0)
@@ -852,7 +854,7 @@ void go_spot_coop_hook()
     int fldSub;
     int entranceId;
     commuId = GET_COUNT(61);
-    FLD_SET_LOCAL_COUNT((49152 + 10), 0);
+    FLD_SET_LOCAL_COUNT((0xC000 + 10), 0);
     trainFare = FLD_LMAP_GET_FARE(0);
     
     if (commuId == 8)
@@ -905,7 +907,7 @@ void go_spot_coop_hook()
     MSG_WND_CLS();
     Fld_FadeOut_Subway();
     FLD_PANEL_MAP_PROC_END(0);
-    eventId = FLD_GET_LOCAL_COUNT((49152 + 10));
+    eventId = FLD_GET_LOCAL_COUNT((0xC000 + 10));
     eventMajor = (eventId / 1000);
     eventMinor = REM(eventId, 1000);
     CALL_EVENT(eventMajor, eventMinor);
@@ -914,7 +916,7 @@ void go_spot_coop_hook()
     BIT_OFF(1288);
     BIT_OFF(4896);
     BIT_OFF(4607);
-    FLD_SET_LOCAL_COUNT((49152 + 10), 0);
+    FLD_SET_LOCAL_COUNT((0xC000 + 10), 0);
     SET_COUNT(376, 0);
     
     if ((BIT_CHK(5006) == 0) && (BIT_CHK(5005) == 0))
@@ -1028,13 +1030,13 @@ void proc_SPOT_SET_RYUJI_hook()
         
         if (BIT_CHK(4514) == 0)
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 800071);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 800071);
             BIT_ON(4514);
             sVar188 = 165;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 800072);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 800072);
             sVar188 = 166;
         }
 
@@ -1044,13 +1046,13 @@ void proc_SPOT_SET_RYUJI_hook()
         
         if (BIT_CHK(4512) == 0)
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 812071);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 812071);
             BIT_ON(4512);
             sVar188 = 167;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 812072);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 812072);
             sVar188 = 168;
         }
 
@@ -1063,21 +1065,21 @@ void proc_SPOT_SET_RYUJI_hook()
             
             if (BIT_CHK(3785) == 0)
             {
-                FLD_SET_LOCAL_COUNT((49152 + 10), 814071);
+                FLD_SET_LOCAL_COUNT((0xC000 + 10), 814071);
                 BIT_ON(4513);
                 sVar188 = 169;
             }
             else if (BIT_CHK(3785) == 1)
             {
-                FLD_SET_LOCAL_COUNT((49152 + 10), 814073);
+                FLD_SET_LOCAL_COUNT((0xC000 + 10), 814073);
                 BIT_ON(4513);
-                sVar188 = 374;
+                sVar188 = MSG_RYUJI_SPOT_AKIHABARA_3;
             }
 
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 814072);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 814072);
             sVar188 = 170;
         }
 
@@ -1090,21 +1092,21 @@ void proc_SPOT_SET_RYUJI_hook()
             
             if (BIT_CHK(3785) == 0)
             {
-                FLD_SET_LOCAL_COUNT((49152 + 10), 807071);
+                FLD_SET_LOCAL_COUNT((0xC000 + 10), 807071);
                 BIT_ON(4515);
                 sVar188 = 171;
             }
             else if (BIT_CHK(3785) == 1)
             {
-                FLD_SET_LOCAL_COUNT((49152 + 10), 807073);
+                FLD_SET_LOCAL_COUNT((0xC000 + 10), 807073);
                 BIT_ON(4515);
-                sVar188 = 373;
+                sVar188 = MSG_RYUJI_SPOT_SUIDOUBAS_3;
             }
 
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 807072);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 807072);
             sVar188 = 172;
         }
 
@@ -1114,13 +1116,13 @@ void proc_SPOT_SET_RYUJI_hook()
         
         if (BIT_CHK(4517) == 0)
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 824071);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 824071);
             BIT_ON(4517);
             sVar188 = 173;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 824072);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 824072);
             sVar188 = 174;
         }
 
@@ -1130,13 +1132,13 @@ void proc_SPOT_SET_RYUJI_hook()
         
         if (BIT_CHK(4518) == 0)
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 830071);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 830071);
             BIT_ON(4518);
             sVar188 = 175;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 830072);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 830072);
             sVar188 = 176;
         }
 
@@ -1155,13 +1157,13 @@ void proc_SPOT_SET_YUSUKE_hook()
         
         if (BIT_CHK(4528) == 0)
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 800041);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 800041);
             BIT_ON(4528);
             sVar188 = 191;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 800042);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 800042);
             sVar188 = 192;
         }
 
@@ -1171,13 +1173,13 @@ void proc_SPOT_SET_YUSUKE_hook()
         
         if (BIT_CHK(4533) == 0)
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 821041);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 821041);
             BIT_ON(4533);
             sVar188 = 193;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 821042);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 821042);
             sVar188 = 194;
         }
 
@@ -1190,21 +1192,21 @@ void proc_SPOT_SET_YUSUKE_hook()
             
             if (BIT_CHK(3789) == 0)
             {
-                FLD_SET_LOCAL_COUNT((49152 + 10), 818041);
+                FLD_SET_LOCAL_COUNT((0xC000 + 10), 818041);
                 BIT_ON(4529);
                 sVar188 = 195;
             }
             else if (BIT_CHK(3789) == 1)
             {
-                FLD_SET_LOCAL_COUNT((49152 + 10), 818043);
+                FLD_SET_LOCAL_COUNT((0xC000 + 10), 818043);
                 BIT_ON(4529);
-                sVar188 = 375;
+                sVar188 = MSG_YUSUKE_SPOT_IKEBUKUR_3;
             }
 
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 818042);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 818042);
             sVar188 = 196;
         }
 
@@ -1214,13 +1216,13 @@ void proc_SPOT_SET_YUSUKE_hook()
         
         if (BIT_CHK(4530) == 0)
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 803041);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 803041);
             BIT_ON(4530);
             sVar188 = 197;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 803042);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 803042);
             sVar188 = 198;
         }
 
@@ -1233,21 +1235,21 @@ void proc_SPOT_SET_YUSUKE_hook()
             
             if (BIT_CHK(3789) == 0)
             {
-                FLD_SET_LOCAL_COUNT((49152 + 10), 806041);
+                FLD_SET_LOCAL_COUNT((0xC000 + 10), 806041);
                 BIT_ON(4531);
                 sVar188 = 199;
             }
             else if (BIT_CHK(3789) == 1)
             {
-                FLD_SET_LOCAL_COUNT((49152 + 10), 806043);
+                FLD_SET_LOCAL_COUNT((0xC000 + 10), 806043);
                 BIT_ON(4531);
-                sVar188 = 376;
+                sVar188 = MSG_YUSUKE_SPOT_MEIJIJIN_3;
             }
 
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 806042);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 806042);
             sVar188 = 200;
         }
 
@@ -1257,13 +1259,13 @@ void proc_SPOT_SET_YUSUKE_hook()
         
         if (BIT_CHK(4532) == 0)
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 829041);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 829041);
             BIT_ON(4532);
             sVar188 = 201;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 829042);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 829042);
             sVar188 = 202;
         }
 
@@ -1280,15 +1282,15 @@ void proc_SPOT_SET_AKECHI()
     if (sVar0 == 14) // ueno
     {
         
-        if (BIT_CHK(4455) == 0)
+        if (!CheckAkechiBitfield(0))
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 821081);
-            BIT_ON(4455);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 821081);
+            UpdateAkechiBitfield(0);
             sVar188 = MSG_AKECHI_SPOT_UENO;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 821082);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 821082);
             sVar188 = MSG_AKECHI_SPOT_UENO2;
         }
 
@@ -1296,15 +1298,15 @@ void proc_SPOT_SET_AKECHI()
     else if (sVar0 == 12) // ikebukuro
     {
         
-        if (BIT_CHK(4456) == 0)
+        if (!CheckAkechiBitfield(1))
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 818081);
-            BIT_ON(4456);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 818081);
+            UpdateAkechiBitfield(1);
             sVar188 = MSG_AKECHI_SPOT_IKEBUKURO;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 818082);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 818082);
             sVar188 = MSG_AKECHI_SPOT_IKEBUKURO2;
         }
 
@@ -1312,15 +1314,15 @@ void proc_SPOT_SET_AKECHI()
     else if (sVar0 == 20) // asakusa
     {
         
-        if (BIT_CHK(4457) == 0)
+        if (!CheckAkechiBitfield(2))
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 811081);
-            BIT_ON(4457);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 811081);
+            UpdateAkechiBitfield(2);
             sVar188 = MSG_AKECHI_SPOT_SKYTREE;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 811082);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 811082);
             sVar188 = MSG_AKECHI_SPOT_SKYTREE2;
         }
 
@@ -1328,15 +1330,15 @@ void proc_SPOT_SET_AKECHI()
     else if (sVar0 == 34) // shinagawa
     {
         
-        if (BIT_CHK(4458) == 0)
+        if (!CheckAkechiBitfield(3))
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 829081);
-            BIT_ON(4458);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 829081);
+            UpdateAkechiBitfield(3);
             sVar188 = MSG_AKECHI_SPOT_SHINAGAWA;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 829082);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 829082);
             sVar188 = MSG_AKECHI_SPOT_SHINAGAWA2;
         }
 
@@ -1344,15 +1346,15 @@ void proc_SPOT_SET_AKECHI()
     else if (sVar0 == 25) // tsukishima
     {
         
-        if (BIT_CHK(4459) == 0)
+        if (!CheckAkechiBitfield(4))
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 812081);
-            BIT_ON(4459);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 812081);
+            UpdateAkechiBitfield(4);
             sVar188 = MSG_AKECHI_SPOT_TUKISHIMA;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 812082);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 812082);
             sVar188 = MSG_AKECHI_SPOT_TUKISHIMA2;
         }
 
@@ -1360,15 +1362,15 @@ void proc_SPOT_SET_AKECHI()
     else if (sVar0 == 32) // maihama
     {
         
-        if (BIT_CHK(4460) == 0)
+        if (!CheckAkechiBitfield(5))
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 822081);
-            BIT_ON(4460);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 822081);
+            UpdateAkechiBitfield(5);
             sVar188 = MSG_AKECHI_SPOT_MAIHAMA;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 822082);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 822082);
             sVar188 = MSG_AKECHI_SPOT_MAIHAMA2;
         }
 
@@ -1376,15 +1378,15 @@ void proc_SPOT_SET_AKECHI()
     else if (sVar0 == 21) // dome town
     {
         
-        if (BIT_CHK(4461) == 0)
+        if (!CheckAkechiBitfield(6))
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 807081);
-            BIT_ON(4461);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 807081);
+            UpdateAkechiBitfield(6);
             sVar188 = MSG_AKECHI_SPOT_SUIDOBASHI;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 807082);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 807082);
             sVar188 = MSG_AKECHI_SPOT_SUIDOBASHI2;
         }
 
@@ -1392,15 +1394,15 @@ void proc_SPOT_SET_AKECHI()
     else if (sVar0 == 26) // ferris wheel
     {
         
-        if (BIT_CHK(4462) == 0)
+        if (!CheckAkechiBitfield(7))
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 826081);
-            BIT_ON(4462);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 826081);
+            UpdateAkechiBitfield(7);
             sVar188 = MSG_AKECHI_SPOT_ODAIBA;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 826082);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 826082);
             sVar188 = MSG_AKECHI_SPOT_ODAIBA2;
         }
 
@@ -1408,15 +1410,15 @@ void proc_SPOT_SET_AKECHI()
     else if (sVar0 == 22) // jinbocho
     {
         
-        if (BIT_CHK(4463) == 0)
+        if (!CheckAkechiBitfield(8))
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 803081);
-            BIT_ON(4463);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 803081);
+            UpdateAkechiBitfield(8);
             sVar188 = MSG_AKECHI_SPOT_JINBO;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 803082);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 803082);
             sVar188 = MSG_AKECHI_SPOT_JINBO2;
         }
 
@@ -1424,21 +1426,35 @@ void proc_SPOT_SET_AKECHI()
     else if (sVar0 == 33) // meiji shrine
     {
         
-        if (BIT_CHK(4464) == 0)
+        if (!CheckAkechiBitfield(9))
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 806081);
-            BIT_ON(4464);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 806081);
+            UpdateAkechiBitfield(9);
             sVar188 = MSG_AKECHI_SPOT_MEIJIJIN;
         }
         else 
         {
-            FLD_SET_LOCAL_COUNT((49152 + 10), 806082);
+            FLD_SET_LOCAL_COUNT((0xC000 + 10), 806082);
             sVar188 = MSG_AKECHI_SPOT_MEIJIJIN_2;
         }
 
     }
 
     return;
+}
+
+int CheckAkechiBitfield(int nthBit)
+{
+    int result;
+    akechiHangoutBitfield = GET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "akechiHangouts");
+    result = GET_R_SHIFT(akechiHangoutBitfield, nthBit);
+
+    return result;
+}
+
+void UpdateAkechiBitfield(int nthBit)
+{
+    SET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "akechiHangouts", akechiHangoutBitfield + GET_L_SHIFT(1, nthBit));
 }
 
 void lmap_ikebukuro_hook()
@@ -1477,7 +1493,7 @@ void lmap_ikebukuro_hook()
         {
             MSG(IKEBUKURO_COMMON_003, 0);
         }
-        else if (commuId == 9 && BIT_CHK(4456))
+        else if (commuId == 9 && CheckAkechiBitfield(1))
         {
             MSG(IKEBUKURO_COMMON_009);
         }
@@ -1539,7 +1555,7 @@ void lmap_ueno_hook()
         {
             Fld_FadeOut_CutChange();
             FLD_PANEL_MAP_PROC_END(0);
-            FLD_LOCAL_FLAG_ON((49152 + 2));
+            FLD_LOCAL_FLAG_ON((0xC000 + 2));
             Fld_FadeIn_Default();
         }
         else 
@@ -1564,7 +1580,7 @@ void lmap_ueno_hook()
         {
             MSG(UENO_COMMON_003, 0);
         }
-        else if (commuId == 9 && BIT_CHK(4455))
+        else if (commuId == 9 && CheckAkechiBitfield(0))
         {
             MSG(UENO_COMMON_009);
         }
@@ -1593,7 +1609,7 @@ void lmap_ueno_hook()
         {
             Fld_FadeOut_CutChange();
             FLD_PANEL_MAP_PROC_END(0);
-            FLD_LOCAL_FLAG_ON((49152 + 2));
+            FLD_LOCAL_FLAG_ON((0xC000 + 2));
             Fld_FadeIn_Default();
         }
         else 
@@ -1693,7 +1709,7 @@ void lmap_asakusa_hook()
             }
 
         }
-        else if (commuId == 9 && BIT_CHK(4457))
+        else if (commuId == 9 && CheckAkechiBitfield(2))
         {
             MSG(ASAKUSA_COMMON_009);
         }
@@ -1771,7 +1787,7 @@ void lmap_suidobasi_hook()
         {
             MSG(SUIDOUBASHI_COMMON_004, 0);
         }
-        else if (commuId == 9 && BIT_CHK(4461)) // TODO: this flag is used by the game, replace with either a confirmed unused flag or custom save data
+        else if (commuId == 9 && CheckAkechiBitfield(6))
         {
             MSG(SUIDOUBASHI_COMMON_009);
         }
@@ -1838,7 +1854,7 @@ void lmap_spot_jinbo_hook()
         {
             MSG(JINBOUTYOU_COMMON_003, 0);
         }
-        else if (commuId == 9 && BIT_CHK(4463))
+        else if (commuId == 9 && CheckAkechiBitfield(8))
         {
             MSG(JINBOUTYOU_COMMON_009);
         }
@@ -1907,7 +1923,7 @@ void lmap_tukisima_hook()
         {
             MSG(TUKISIMA_COMMON_006, 0);
         }
-        else if (commuId == 9 && BIT_CHK(4463))
+        else if (commuId == 9 && CheckAkechiBitfield(4))
         {
             MSG(TUKISIMA_COMMON_009);
         }
@@ -1999,7 +2015,7 @@ void lmap_odaiba_hook()
         {
             MSG(ODAIBA_COMMON_007, 0);
         }
-        else if (commuId == 9 && BIT_CHK(4462))
+        else if (commuId == 9 && CheckAkechiBitfield(7))
         {
             MSG(ODAIBA_COMMON_009);
         }
@@ -2040,7 +2056,7 @@ void lmap_odaiba_hook()
         {
             Fld_FadeOut_CutChange();
             FLD_PANEL_MAP_PROC_END(0);
-            FLD_LOCAL_FLAG_ON((49152 + 2));
+            FLD_LOCAL_FLAG_ON((0xC000 + 2));
             Fld_FadeIn_Default();
         }
         else 
@@ -2113,7 +2129,7 @@ void lmap_maihama_hook()
         {
             MSG(MAIHAMA_COMMON_007, 0);
         }
-        else if (commuId == 9 && BIT_CHK(4460))
+        else if (commuId == 9 && CheckAkechiBitfield(5))
         {
             MSG(MAIHAMA_COMMON_009);
         }
@@ -2193,7 +2209,7 @@ void lmap_meijijingu_hook()
         {
             MSG(MEIJIJINGU_COMMON_007, 0);
         }
-        else if (commuId == 9 && BIT_CHK(4464))
+        else if (commuId == 9 && CheckAkechiBitfield(9))
         {
             MSG(MEIJIJINGU_COMMON_009);
         }
@@ -2245,7 +2261,7 @@ void lmap_meijijingu_hook()
         {
             Fld_FadeOut_CutChange();
             FLD_PANEL_MAP_PROC_END(0);
-            FLD_LOCAL_FLAG_ON((49152 + 2));
+            FLD_LOCAL_FLAG_ON((0xC000 + 2));
             Fld_FadeIn_Default();
             return;
         }
@@ -2300,7 +2316,7 @@ void lmap_sinagawa_hook()
         {
             MSG(SINAGAWA_COMMON_007, 0);
         }
-        else if (commuId == 9 && BIT_CHK(4464))
+        else if (commuId == 9 && CheckAkechiBitfield(3))
         {
             MSG(SINAGAWA_COMMON_009);
         }

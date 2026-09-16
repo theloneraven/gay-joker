@@ -1,0 +1,261 @@
+[
+  {
+    "Index": "0xD82D",
+    "ReturnType": "int",
+    "Name": "GET_CUSTOM_SAVE_DATA_INT",
+    "Description": "Returns the value of a saved byte, short, or int made by Custom Save Data Framework.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      }
+    ]
+  },
+  {
+    "Index": "0x58F9",
+    "ReturnType": "float",
+    "Name": "GET_CUSTOM_SAVE_DATA_FLOAT",
+    "Description": "Returns the value of a saved float made by Custom Save Data Framework.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      }
+    ]
+  },
+  {
+    "Index": "0x3730",
+    "ReturnType": "int",
+    "Name": "SET_CUSTOM_SAVE_DATA_INT",
+    "Description": "Modifies a value of integral type made by Custom Save Data Framework. Returns 1 if the operation succeeded.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      },
+      {
+        "Type": "int",
+        "Name": "value",
+        "Description": "The new value of the field being written to."
+      }
+    ]
+  },
+  {
+    "Index": "0xFFCD",
+    "ReturnType": "int",
+    "Name": "SET_CUSTOM_SAVE_DATA_FLOAT",
+    "Description": "Modifies a value of floating-point type made by Custom Save Data Framework. Returns 1 if the operation succeeded.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      },
+      {
+        "Type": "float",
+        "Name": "value",
+        "Description": "The new value of the field being written to."
+      }
+    ]
+  },
+  {
+    "Index": "0x835C",
+    "ReturnType": "float",
+    "Name": "PRINT_CUSTOM_SAVE_DATA_STRING",
+    "Description": "Prints to log the value of a string made by Custom Save Data Framework.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      }
+    ]
+  },
+  {
+    "Index": "0x5806",
+    "ReturnType": "int",
+    "Name": "SET_CUSTOM_SAVE_DATA_STRING",
+    "Description": "Modifies a value of string type made by Custom Save Data Framework. Returns 1 if the operation succeeded.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      },
+      {
+        "Type": "string",
+        "Name": "value",
+        "Description": "The new value of the field being written to."
+      }
+    ]
+  },
+  {
+    "Index": "0x9AD0",
+    "ReturnType": "void",
+    "Name": "CREATE_CUSTOM_SAVE_DATA_INT",
+    "Description": "Creates a Custom Save Data Framework object of int type.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      },
+      {
+        "Type": "int",
+        "Name": "value",
+        "Description": "The default value of the field being created."
+      },
+      {
+        "Type": "int",
+        "Name": "unusedDataPolicy",
+        "Description": "Whether to discard this object if a save file is loaded with its associated mod disabled. 0 to keep, 1 to discard.",
+        "DefaultValue": "0"
+      }
+    ]
+  },
+  {
+    "Index": "0xBE62",
+    "ReturnType": "void",
+    "Name": "CREATE_CUSTOM_SAVE_DATA_FLOAT",
+    "Description": "Creates a Custom Save Data Framework object of float type.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      },
+      {
+        "Type": "float",
+        "Name": "value",
+        "Description": "The default value of the field being created."
+      },
+      {
+        "Type": "int",
+        "Name": "unusedDataPolicy",
+        "Description": "Whether to discard this object if a save file is loaded with its associated mod disabled. 0 to keep, 1 to discard.",
+        "DefaultValue": "0"
+      }
+    ]
+  },
+  {
+    "Index": "0xABA8",
+    "ReturnType": "void",
+    "Name": "CREATE_CUSTOM_SAVE_DATA_STRING",
+    "Description": "Creates a Custom Save Data Framework object of string type.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      },
+      {
+        "Type": "string",
+        "Name": "value",
+        "Description": "The default value of the field being created."
+      },
+      {
+        "Type": "int",
+        "Name": "unusedDataPolicy",
+        "Description": "Whether to discard this object if a save file is loaded with its associated mod disabled. 0 to keep, 1 to discard.",
+        "DefaultValue": "0"
+      }
+    ]
+  },
+  {
+    "Index": "0x73A7",
+    "ReturnType": "int",
+    "Name": "CUSTOM_SAVE_ENTRY_EXISTS",
+    "Description": "Returns 1 if a Custom Save Data Framework entry matching the specified mod id and key exists, 0 otherwise.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      }
+    ]
+  },
+  {
+    "Index": "0xCEBB",
+    "ReturnType": "int",
+    "Name": "CUSTOM_SAVE_MOD_KEY_EXISTS",
+    "Description": "Returns whether custom save data exists for a given mod id.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      }
+    ]
+  },
+  {
+    "Index": "0x79E3",
+    "ReturnType": "int",
+    "Name": "TRY_REMOVE_CUSTOM_SAVE_ENTRY",
+    "Description": "Removes an entry made by Custom Save Data Framework. Returns 1 if the operation succeeded, 0 otherwise.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "key",
+        "Description": "Key of a saved value as defined by the mod passed to modId."
+      }
+    ]
+  }
+]

@@ -39,6 +39,24 @@
           },
           "ReleaseMetadataName": "p5rpc.bustupparam.merging.ReleaseMetadata.json"
         },
+        "p5rpc.flowutils": {
+          "Config": {
+            "UserName": "oceanstuck",
+            "RepositoryName": "p5rpc.flowutils",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "p5rpc.flowutils.ReleaseMetadata.json"
+        },
+        "p5rpc.flowutils.customsavedata": {
+          "Config": {
+            "UserName": "oceanstuck",
+            "RepositoryName": "p5rpc.flowutils",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "p5rpc.flowutils.customsavedata.ReleaseMetadata.json"
+        },
         "p5rpc.modloader": {
           "Config": {
             "UserName": "Sewer56",
@@ -263,6 +281,20 @@
     },
     "GameBananaDependencies": {
       "IdToConfigMap": {
+        "p5rpc.flowutils": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 706324
+          },
+          "ReleaseMetadataName": "p5rpc.flowutils.ReleaseMetadata.json"
+        },
+        "p5rpc.flowutils.customsavedata": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 706324
+          },
+          "ReleaseMetadataName": "p5rpc.flowutils.customsavedata.ReleaseMetadata.json"
+        },
         "p5rpc.misc.maleromanceconftext": {
           "Config": {
             "ItemType": "Mod",
@@ -283,6 +315,13 @@
             "ItemId": 510809
           },
           "ReleaseMetadataName": "p5rpc.flowscriptframework.ReleaseMetadata.json"
+        },
+        "p5rpc.CustomSaveDataFramework": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 550194
+          },
+          "ReleaseMetadataName": "p5rpc.CustomSaveDataFramework.ReleaseMetadata.json"
         }
       }
     },
@@ -296,6 +335,8 @@
   "IsUniversalMod": false,
   "ModDependencies": [
     "p5rpc.bustupparam.merging",
+    "p5rpc.flowutils",
+    "p5rpc.flowutils.customsavedata",
     "p5rpc.misc.maleromanceconftext",
     "p5rpc.modloader",
     "p5r.enhance.cbt",
@@ -308,5 +349,7 @@
   "SupportedAppId": [
     "p5r.exe"
   ],
-  "ProjectUrl": "https://gamebanana.com/mods/689383"
+  "ProjectUrl": "https://gamebanana.com/mods/689383",
+  "CreatorUrl": "",
+  "IsSeparator": false
 }

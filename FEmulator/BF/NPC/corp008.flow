@@ -9,6 +9,7 @@ void SUB_COOP_GENERAL_EVT_CHECK_hook()
     
     if (BIT_CHK(3786))
     {
+        if (!CUSTOM_SAVE_ENTRY_EXISTS("p5rpc.BiJoker.events", "akechiHangouts")) { CREATE_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "akechiHangouts", 0); } // this should be created after custom encounter, fallback statement here is mostly for testing
         SUB_COOP_LMAP_SPOT_CHECK();
         if (sVar1 == 0) { hiddenOptionBitfield = 2; }
 
@@ -42,7 +43,6 @@ void SUB_COOP_GENERAL_EVT_CHECK_hook()
 
 void SUB_COOP_SPOT_EVT_hook()
 {
-    
     if (BIT_CHK(12048))
     {
         MSG_WND_DSP();
@@ -180,15 +180,6 @@ void SUB_COOP_FIGHT_EVT()
     BIT_ON(12308);
     BIT_ON(12310);
     FLD_PARTY_SAVE();
-    PARTY_OUT(2);
-    PARTY_OUT(3);
-    PARTY_OUT(4);
-    PARTY_OUT(5);
-    PARTY_OUT(6);
-    PARTY_OUT(8);
-    PARTY_OUT(7);
-    PARTY_OUT(9);
-    PARTY_OUT(10);
     CALL_EVENTBATTLE(726, 100, 870);
     BIT_ON(3898);
     
@@ -208,11 +199,12 @@ void SUB_COOP_FIGHT_EVT()
 
         BIT_OFF(3997);
         BIT_OFF(4072);
+        CREATE_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "akechiHangouts", 0);   // create value here so that resetting it to default works
+        SET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "akechiHangouts", 0);      // reset this value to default before dates can be accessed in case of ng+
     }
     else 
     {
         CALL_EVENT(726, 103);
-        FLD_PARTY_LOAD();
         BIT_OFF(12308);
         BIT_OFF(12310);
         BIT_OFF(12309);
@@ -237,9 +229,13 @@ void SUB_COOP_LOVERS_EVT()
     BIT_ON(1288);
     Fld_FadeOut_CallEvent();
     
-    if (!BIT_CHK(4602))
+    int roomEventSeen;
+    int akechiHangoutBitfield;
+    akechiHangoutBitfield = GET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "akechiHangouts");
+    roomEventSeen = GET_R_SHIFT(akechiHangoutBitfield, 16);
+    if (!roomEventSeen)
     {
-        BIT_ON(4602);
+        SET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "akechiHangouts", akechiHangoutBitfield + GET_L_SHIFT(1, 16));
         CALL_EVENT(726, 1);
     }
     else 
