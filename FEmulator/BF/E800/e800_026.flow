@@ -28,3 +28,9 @@ void SUB_GIFT_START_MSG_hook()
     MSG_MIND(msgId3, 0);
     MSG_WND_CLS();
 }
+
+void give_lockpick_index_50()
+{
+    GET_ITEM_WINDOW((0x3000 + 336), 3, 0);
+    SET_ITEM_NUM((0x3000 + 336), (GET_ITEM_NUM((0x3000 + 336)) + 3));
+}
