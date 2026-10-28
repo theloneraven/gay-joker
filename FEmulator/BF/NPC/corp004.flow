@@ -440,11 +440,12 @@ void SUB_COOP_TABLE_EVENT_START_hook()
     }
     else if (rank == 9)
     {
-        
         if ((BIT_CHK(3788) == 1) && (BIT_CHK(3789) == 0))
         {
             BIT_ON(3789);
         }
+        CREATE_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "yusukeHangouts", 0);   // create value here so that resetting it to default works
+        SET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "yusukeHangouts", 0);      // reset this value to default before dates can be accessed in case of ng+
 
         CALL_EVENT(704, 91);
     }
@@ -500,10 +501,15 @@ void SUB_COOP_LOVERS_EVT()
     SUB_COOP_EVT_SET();
     BIT_OFF(6253);
     Fld_FadeOut_CallEvent();
+
+    int roomEventSeen;
+    int yusukeHangoutBitfield;
+    yusukeHangoutBitfield = GET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "yusukeHangouts");
+    roomEventSeen = GET_R_SHIFT(yusukeHangoutBitfield, 16);
     
-    if (BIT_CHK(4601) == 0)
+    if (!roomEventSeen)
     {
-        BIT_ON(4601);
+        SET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "yusukeHangouts", yusukeHangoutBitfield + GET_L_SHIFT(1, 16));
         CALL_EVENT(704, 1);
     }
     else 
@@ -526,12 +532,8 @@ void SUB_COOP_GENERAL_EVT_CHECK_hook()
         hiddenOptionBitfield = (hiddenOptionBitfield + 1);
     }
 
-    
-    if (BIT_CHK(3789) == 0)
-    {
-        hiddenOptionBitfield = (hiddenOptionBitfield + 2);
-    }
-
+    if (!BIT_CHK(3789)) { hiddenOptionBitfield = (hiddenOptionBitfield + 2); }
+    else if (!CUSTOM_SAVE_ENTRY_EXISTS("p5rpc.BiJoker.events", "yusukeHangouts")) { CREATE_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "yusukeHangouts", 0); } // should already be created at rank 9, fallback is here for testing
     
     if (hiddenOptionBitfield != 3)
     {

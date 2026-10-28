@@ -144,6 +144,9 @@ void SUB_TALK_COOP_EVT_hook()
         MSG_WND_DSP();
         MSG(MSG_C18_YES_08_00, 0);
         MSG_WND_CLS();
+
+        CREATE_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "mishimaHangouts", 0);   // create value here so that resetting it to default works
+        SET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "mishimaHangouts", 0);      // reset this value to default before dates can be accessed in case of ng+
     }
     else if (BIT_CHK(3791) == 1)
     {

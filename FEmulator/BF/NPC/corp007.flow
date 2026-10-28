@@ -396,6 +396,9 @@ void SUB_COOP_RANKUP_EVT_hook()
         MSG_WND_DSP();
         MSG(MSG_C07_YES_08_00, 0);
         MSG_WND_CLS();
+
+        CREATE_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "ryujiHangouts", 0);   // create value here so that resetting it to default works
+        SET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "ryujiHangouts", 0);      // reset this value to default before dates can be accessed in case of ng+
     }
     else if (BIT_CHK(3785) == 1)
     {
@@ -595,6 +598,7 @@ void SUB_COOP_GENERAL_EVT_CHECK_hook()
     hiddenOptionBitfield = 0;
     SUB_COOP_LMAP_SPOT_CHECK();
     
+    if (!CUSTOM_SAVE_ENTRY_EXISTS("p5rpc.BiJoker.events", "ryujiHangouts")) { CREATE_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "ryujiHangouts", 0); }
     if (sVar1 == 0) // no hangout spots unlocked
     {
         hiddenOptionBitfield = (hiddenOptionBitfield + 1);
@@ -648,10 +652,15 @@ void SUB_COOP_LOVERS_EVT()
     SUB_COOP_EVT_SET();
     BIT_OFF(6253);
     Fld_FadeOut_CallEvent();
+
+    int roomEventSeen;
+    int ryujiHangoutBitfield;
+    ryujiHangoutBitfield = GET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "ryujiHangouts");
+    roomEventSeen = GET_R_SHIFT(ryujiHangoutBitfield, 16);
     
-    if (BIT_CHK(4600) == 0)
+    if (!roomEventSeen)
     {
-        BIT_ON(4600);
+        SET_CUSTOM_SAVE_DATA_INT("p5rpc.BiJoker.events", "ryujiHangouts", ryujiHangoutBitfield + GET_L_SHIFT(1, 16));
         CALL_EVENT(707, 1);
     }
     else 
