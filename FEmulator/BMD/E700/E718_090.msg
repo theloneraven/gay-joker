@@ -1,4 +1,4 @@
-[msg MSG_034_0_0 [Mishima]]
+[msg MSG_034_1_0 [Mishima]]
 [s][bup 0 111 3 65535 0][f 4 10 65535 0 0][vp 8 2 0 19001 65535 0]S-So... Um... [fName]...[n][f 1 3 65535][w][e]
 [s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]I want to thank you for, you know,[n]being by my side and helping me change.[n][f 1 3 65535][w][e]
 [s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]Y-You're really special, y-you know![n][f 1 3 65535][w][e]
@@ -16,13 +16,6 @@
 
 [msg MSG_038_0_0 [Mishima]]
 [s][bup 0 111 3 65535 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]What am I even saying...?[n][f 1 3 65535][w][e]
-
-[msg MND_039_0_0]
-[s][vp 8 0 0 0 65535 0]I should choose my[n]words carefully...[n][f 1 3 65535][w][e]
-
-[msg MND_039_5_0]
-[s][vp 8 0 0 0 65535 0]I should choose my[n]words carefully...[n][f 1 3 65535][w][e]
-[s][vp 8 0 0 0 65535 0]I'm already [clr 2]in a relationship[n]with someone else[clr 27]...[n][f 1 3 65535][w][e]
 
 [msg MSG_040_0_0 [Mishima]]
 [s][bup 0 111 3 65535 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]I probably sound really stupid, huh?[n][f 1 3 65535][w][e]
